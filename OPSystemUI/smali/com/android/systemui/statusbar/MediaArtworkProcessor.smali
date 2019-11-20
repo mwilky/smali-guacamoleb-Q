@@ -6,6 +6,8 @@
 # instance fields
 .field private mDownSample:I
 
+.field private mColorAlpha:I
+
 .field private mArtworkCache:Landroid/graphics/Bitmap;
 
 .field private final mTmpSize:Landroid/graphics/Point;
@@ -26,6 +28,10 @@
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mDownSample:I
+    
+    const/16 v0, 0xb2
+
+    iput v0, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
 
     return-void
 .end method
@@ -50,7 +56,9 @@
 .end method
 
 .method public final processArtwork(Landroid/content/Context;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    .locals 7
+    .locals 8
+    
+    move-object v7, p0
 
     const-string v0, "context"
 
@@ -77,35 +85,54 @@
 
     :cond_1
     sget v6, Lcom/android/mwilky/Renovate;->mAlbumArtBlurAmount:F
-    
+
     const/high16 v5, 0x40a00000    # 5.0f
 
     cmpg-float v4, v6, v5
 
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
+
     if-gez v4, :cond_e
 
-    .line 24
-    const/4 v4, 0x2
+    iput v3, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mDownSample:I
 
-    iput v4, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mDownSample:I
+    iget v1, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
+
+    int-to-float v1, v1
+
+    const/high16 v4, 0x3f000000    # 0.5f
+
+    mul-float/2addr v1, v4
+
+    float-to-int v1, v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
 
     goto :goto_1b
 
-    .line 25
     :cond_e
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    cmpg-float v1, v6, v1
 
-    cmpg-float v4, v6, v5
+    if-gez v1, :cond_1b
 
-    if-gez v4, :cond_1b
+    iput v2, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mDownSample:I
 
-    .line 26
-    const/4 v4, 0x1
+    iget v1, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
 
-    iput v4, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mDownSample:I
+    int-to-float v1, v1
 
-    .line 29
+    const v4, 0x3dcccccd    # 0.1f
+
+    mul-float/2addr v1, v4
+
+    float-to-int v1, v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
+
     :cond_1b
     :goto_1b
     invoke-virtual {p1}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
@@ -166,77 +193,109 @@
 
     move-result-object p0
 
-    const-string p2, "inBitmap"
+    const-string v0, "inBitmap"
 
-    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v0
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    if-eq v0, v1, :cond_2
-
-    invoke-virtual {p0, v1, v3}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
-
-    move-object p0, v0
-
-    :cond_2
-    sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
-
-    const/4 v1, 0x2
-
-    invoke-static {p1, p0, v0, v1}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
-
-    move-result-object v0
-
-    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
+    move-result-object v1
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {p2, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    if-eq v1, v2, :cond_2
 
-    move-result-object p2
+    invoke-virtual {p0, v2, v3}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
-    invoke-static {p1, p2}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
+
+    move-object p0, v1
+
+    :cond_2
+    sget-object v1, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
+
+    const/4 v2, 0x2
+
+    invoke-static {p1, p0, v1, v2}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
+
+    move-result-object v1
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v2
+
+    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v2
+
+    invoke-static {p1}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
+
+    move-result-object v3
+
+    invoke-static {p1, v3}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
 
     move-result-object p1
     
     float-to-int v5, v6
-    
-    if-eqz v5, :cond_noblur
-
-    invoke-virtual {v0, p2}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
 
     invoke-virtual {p1, v6}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
 
-	:cond_noblur
     invoke-virtual {p1, v1}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
 
     invoke-virtual {p1, v2}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
 
-    invoke-virtual {v0}, Landroid/renderscript/Allocation;->destroy()V
+    invoke-virtual {v2, v0}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {p1}, Landroid/renderscript/Allocation;->destroy()V
+    invoke-static {p2}, Lcom/android/systemui/statusbar/notification/MediaNotificationProcessor;->findBackgroundSwatch(Landroid/graphics/Bitmap;)Landroidx/palette/graphics/Palette$Swatch;
+
+    move-result-object p2
+
+    invoke-virtual {v1}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->destroy()V
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
+    invoke-virtual {p1}, Landroid/renderscript/ScriptIntrinsicBlur;->destroy()V
+
+    new-instance p0, Landroid/graphics/Canvas;
+
+    invoke-direct {p0, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    const-string p1, "swatch"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroidx/palette/graphics/Palette$Swatch;->getRgb()I
+
+    move-result p1
+
+    iget p2, v7, Lcom/android/systemui/statusbar/MediaArtworkProcessor;->mColorAlpha:I
+
+    invoke-static {p1, p2}, Lcom/android/internal/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/graphics/Canvas;->drawColor(I)V
+    
+    :cond_nooverlay
     const-string p0, "outBitmap"
 
-    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object p2
+    return-object v0
 .end method
