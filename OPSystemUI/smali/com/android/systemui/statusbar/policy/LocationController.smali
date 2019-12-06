@@ -29,3 +29,9 @@
 
 .method public abstract setLocationEnabled(Z)Z
 .end method
+
+.method public abstract setLocationMode(I)Z
+.end method
+
+.method public abstract getLocationCurrentState()I
+.end method
