@@ -33,21 +33,9 @@
 .end method
 
 .method public static getCornerRadiusBottom(Landroid/content/Context;)I
-    .locals 4
+    .locals 2
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const-string v1, "rounded_corner_radius_bottom"
-
-    const-string v2, "dimen"
-
-    const-string v3, "android"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
+    sget v0, Lcom/android/systemui/R$dimen;->rounded_corner_radius_bottom:I
 
     if-lez v0, :cond_0
 
@@ -112,21 +100,9 @@
 .end method
 
 .method public static getCornerRadiusTop(Landroid/content/Context;)I
-    .locals 4
+    .locals 2
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const-string v1, "rounded_corner_radius_top"
-
-    const-string v2, "dimen"
-
-    const-string v3, "android"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
+    sget v0, Lcom/android/systemui/R$dimen;->rounded_corner_radius_top:I
 
     if-lez v0, :cond_0
 

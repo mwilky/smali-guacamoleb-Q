@@ -6,6 +6,8 @@
 # static fields
 .field public static final PORTRAIT_NON_DETECT_CORNER_SCALE:F
 
+.field public static final PORTRAIT_NON_DETECT_SCALE:F
+
 .field private static sScreenHeight:I
 
 .field private static sScreenWidth:I
@@ -13,13 +15,51 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
-    const-string v0, "persist.gesture_button.corner"
+    const/4 v0, 0x1
 
-    const/16 v1, 0xb
+    new-array v1, v0, [I
 
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    const/4 v2, 0x0
+
+    aput v0, v1, v2
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v0
+
+    const v1, 0x3dcccccd    # 0.1f
+
+    const-string v3, "persist.portrait_non.detect.scale"
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v3, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x3
+
+    invoke-static {v3, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    :goto_0
+    int-to-float v0, v0
+
+    mul-float/2addr v0, v1
+
+    sput v0, Lcom/oneplus/phone/OpSideGestureConfiguration;->PORTRAIT_NON_DETECT_SCALE:F
+
+    const/16 v0, 0xb
+
+    const-string v1, "persist.gesture_button.corner"
+
+    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -255,27 +295,39 @@
 .end method
 
 .method public static getWindowHeight(I)I
-    .locals 1
+    .locals 3
 
     invoke-static {p0}, Lcom/oneplus/phone/OpSideGestureConfiguration;->getScreenHeight(I)I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    const v0, 0x3f333333    # 0.7f
-
-    mul-float/2addr p0, v0
-
-    invoke-static {}, Lcom/oneplus/phone/OpSideGestureConfiguration;->getAnimRadius()I
 
     move-result v0
 
     int-to-float v0, v0
 
-    add-float/2addr p0, v0
+    sget v1, Lcom/oneplus/phone/OpSideGestureConfiguration;->PORTRAIT_NON_DETECT_SCALE:F
 
-    float-to-int p0, p0
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    sub-float/2addr v2, v1
+
+    mul-float/2addr v0, v2
+
+    invoke-static {}, Lcom/oneplus/phone/OpSideGestureConfiguration;->getAnimRadius()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    add-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    invoke-static {p0}, Lcom/oneplus/phone/OpSideGestureConfiguration;->getScreenHeight(I)I
+
+    move-result p0
+
+    invoke-static {p0, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result p0
 
     return p0
 .end method

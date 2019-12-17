@@ -176,26 +176,26 @@
 
     if-eqz p0, :cond_6
 
-    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2000()I
+    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$1900()I
 
     move-result p0
 
     if-nez p0, :cond_3
 
-    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2100()I
+    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2000()I
 
     move-result p0
 
     if-eqz p0, :cond_6
 
     :cond_3
-    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2000()I
+    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$1900()I
 
     move-result p0
 
     iput p0, p3, Landroid/graphics/Rect;->left:I
 
-    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2100()I
+    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$2000()I
 
     move-result p0
 
@@ -594,7 +594,11 @@
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    invoke-static {}, Lcom/android/systemui/ScreenDecorations;->access$1900()Z
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/systemui/ScreenDecorations;->shouldDrawCutout(Landroid/content/Context;)Z
 
     move-result v0
 

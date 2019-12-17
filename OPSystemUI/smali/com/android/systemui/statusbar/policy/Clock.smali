@@ -16,10 +16,6 @@
 
 
 # instance fields
-.field private mDarkIconColor:I
-
-.field private mClockColor:I
-
 .field private final mAmPmStyle:I
 
 .field private mAttached:Z
@@ -176,7 +172,15 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/util/Locale;
+.method static synthetic access$100()Ljava/lang/String;
+    .locals 1
+
+    sget-object v0, Lcom/android/systemui/statusbar/policy/Clock;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/util/Locale;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mLocale:Ljava/util/Locale;
@@ -184,7 +188,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$102(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Locale;)Ljava/util/Locale;
+.method static synthetic access$202(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Locale;)Ljava/util/Locale;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mLocale:Ljava/util/Locale;
@@ -192,7 +196,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$202(Lcom/android/systemui/statusbar/policy/Clock;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$302(Lcom/android/systemui/statusbar/policy/Clock;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormatString:Ljava/lang/String;
@@ -200,7 +204,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/util/Calendar;
+.method static synthetic access$400(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/util/Calendar;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
@@ -208,7 +212,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$302(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Calendar;)Ljava/util/Calendar;
+.method static synthetic access$402(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Calendar;)Ljava/util/Calendar;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
@@ -216,7 +220,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/text/SimpleDateFormat;
+.method static synthetic access$500(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/text/SimpleDateFormat;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormat:Ljava/text/SimpleDateFormat;
@@ -224,7 +228,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/statusbar/policy/Clock;)Landroid/os/Handler;
+.method static synthetic access$600(Lcom/android/systemui/statusbar/policy/Clock;)Landroid/os/Handler;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecondsHandler:Landroid/os/Handler;
@@ -232,7 +236,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/lang/Runnable;
+.method static synthetic access$700(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/lang/Runnable;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecondTick:Ljava/lang/Runnable;
@@ -593,12 +597,8 @@
     return p0
 .end method
 
-.method public updateClockVisibility()V
+.method private updateClockVisibility()V
     .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mClockPosition:I
-    
-    if-nez v0, :cond_0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->shouldBeVisible()Z
 
@@ -1043,15 +1043,9 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
-    
-    const/4 v0, 0x0
-    
-    int-to-float v0, v0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateViews(F)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/HighlightHintController;
 
@@ -1067,19 +1061,23 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 2
-    
-    float-to-int v0, p2
+    .locals 0
 
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
+    invoke-static {p1, p0, p3}, Lcom/android/systemui/plugins/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
 
-    if-nez v0, :cond_0 #set to grey if dark intensity is 1
+    move-result p1
 
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
+    iput p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mNonAdaptedColor:I
+
+    iget-boolean p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mUseWallpaperTextColor:Z
+
+    if-nez p1, :cond_0
+
+    iget p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mNonAdaptedColor:I
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_0
-    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
-
     return-void
 .end method
 
@@ -1122,13 +1120,35 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 2
+    .locals 3
 
     invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
 
     if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/android/systemui/statusbar/policy/Clock;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "unregisterReceiver, tag:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
@@ -1392,7 +1412,7 @@
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->setClockVisibleByUser(Z)V
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 
     :goto_0
     return-void
@@ -1403,7 +1423,7 @@
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockVisibleByPolicy:Z
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 
     return-void
 .end method
@@ -1413,7 +1433,7 @@
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockVisibleByUser:Z
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 
     return-void
 .end method
@@ -1443,6 +1463,28 @@
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDemoMode:Z
 
     if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/systemui/statusbar/policy/Clock;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "updateClock is in demo mode, tag:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
@@ -1512,38 +1554,5 @@
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :goto_0
-    return-void
-.end method
-
-.method public updateViews(F)V
-    .locals 2
-    
-    float-to-int v0, p1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
-
-    if-nez v0, :cond_dark #set to grey if dark intensity is 1
-
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
-
-    :cond_dark
-    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
-
-    return-void
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mClockColorOP:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
-	
-    sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
-	
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
-	
     return-void
 .end method

@@ -52,9 +52,17 @@
 
     const-string v2, "com.android.systemui.shared.recents.ISystemUiProxy"
 
-    if-eq p1, v0, :cond_8
+    if-eq p1, v0, :cond_a
 
     const v0, 0x5f4e5446
+
+    if-eq p1, v0, :cond_9
+
+    const/16 v0, 0x66
+
+    if-eq p1, v0, :cond_8
+
+    const/16 v0, 0x67
 
     if-eq p1, v0, :cond_7
 
@@ -307,11 +315,33 @@
     return v1
 
     :cond_7
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result p1
+
+    invoke-interface {p0, p1}, Lcom/android/systemui/shared/recents/ISystemUiProxy;->notifyGestureEnded(I)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     return v1
 
     :cond_8
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-interface {p0}, Lcom/android/systemui/shared/recents/ISystemUiProxy;->notifyGestureStarted()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    return v1
+
+    :cond_9
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    return v1
+
+    :cond_a
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I

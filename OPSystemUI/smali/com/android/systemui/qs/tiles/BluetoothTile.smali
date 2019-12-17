@@ -188,10 +188,6 @@
 
 .method private getSecondaryLabel(ZZZZ)Ljava/lang/String;
     .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-nez v0, :cond_7
 
     if-eqz p2, :cond_0
 
@@ -479,8 +475,6 @@
 
 .method protected handleClick()V
     .locals 4
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 

@@ -154,7 +154,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations$ValidatingPreDrawListener;->this$0:Lcom/android/systemui/ScreenDecorations;
 
-    invoke-static {v0}, Lcom/android/systemui/ScreenDecorations;->access$2200(Lcom/android/systemui/ScreenDecorations;)V
+    invoke-static {v0}, Lcom/android/systemui/ScreenDecorations;->access$2100(Lcom/android/systemui/ScreenDecorations;)V
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations$ValidatingPreDrawListener;->this$0:Lcom/android/systemui/ScreenDecorations;
 

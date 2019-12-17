@@ -82,6 +82,8 @@
         <item>Qualcomm® aptX™ 音訊</item>
         <item>Qualcomm® aptX™ HD 音訊</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive 音訊</item>
+        <item>Qualcomm® aptX™ TWS+ 音訊</item>
         <item>啟用選用的轉碼器</item>
         <item>停用選用的轉碼器</item>
     </string-array>
@@ -92,6 +94,8 @@
         <item>Qualcomm® aptX™ 音訊</item>
         <item>Qualcomm® aptX™ HD 音訊</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive 音訊</item>
+        <item>Qualcomm® aptX™ TWS+ 音訊</item>
         <item>啟用選用的轉碼器</item>
         <item>停用選用的轉碼器</item>
     </string-array>

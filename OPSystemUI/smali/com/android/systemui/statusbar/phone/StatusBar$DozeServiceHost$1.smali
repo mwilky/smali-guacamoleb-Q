@@ -87,7 +87,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->access$2802(Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->access$2902(Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
 
@@ -140,7 +140,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$2702(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$2802(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost$1;->val$callback:Lcom/android/systemui/doze/DozeHost$PulseCallback;
 
@@ -150,7 +150,7 @@
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$1400(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
 
@@ -187,7 +187,7 @@
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$1400(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
     const/4 v0, 0x1
 

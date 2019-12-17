@@ -110,10 +110,6 @@
 
 .method private getSecondaryLabel(Z)Ljava/lang/String;
     .locals 6
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-nez v0, :cond_hide
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mManager:Landroid/hardware/display/ColorDisplayManager;
 
@@ -129,7 +125,6 @@
 
     if-eq v0, v1, :cond_0
 
-    :cond_hide
     const/4 p0, 0x0
 
     return-object p0
@@ -368,8 +363,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->isColorCalibrationAvailable()Z
 

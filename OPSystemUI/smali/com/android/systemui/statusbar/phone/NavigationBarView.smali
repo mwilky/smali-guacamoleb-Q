@@ -819,19 +819,37 @@
 .end method
 
 .method private chooseNavigationIconDrawableRes(II)I
-    .locals 0
+    .locals 1
 
-    iget-object p0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mOverviewProxyService:Lcom/android/systemui/recents/OverviewProxyService;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mOverviewProxyService:Lcom/android/systemui/recents/OverviewProxyService;
 
-    invoke-virtual {p0}, Lcom/android/systemui/recents/OverviewProxyService;->shouldShowSwipeUpUI()Z
+    invoke-virtual {v0}, Lcom/android/systemui/recents/OverviewProxyService;->shouldShowSwipeUpUI()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget p0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mNavBarMode:I
+
+    invoke-static {p0}, Lcom/android/systemui/shared/system/QuickStepContract;->isLegacyMode(I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
 
     move p1, p2
 
-    :cond_0
+    :cond_1
     return p1
 .end method
 
@@ -3500,19 +3518,23 @@
 .end method
 
 .method public getHomeDrawable()Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
-    .locals 1
+    .locals 3
 
     invoke-static {}, Lcom/oneplus/util/OpNavBarUtils;->isSupportCustomNavBar()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcom/oneplus/util/OpUtils;->isCTS()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mOverviewProxyService:Lcom/android/systemui/recents/OverviewProxyService;
 
@@ -3522,36 +3544,23 @@
 
     if-eqz v0, :cond_0
 
-    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home_quick_step2:I
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mNavBarMode:I
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
+    invoke-static {v0}, Lcom/android/systemui/shared/system/QuickStepContract;->isLegacyMode(I)Z
 
-    move-result-object v0
+    move-result v0
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home2:I
-
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
-
-    move-result-object v0
+    move v1, v2
 
     :goto_0
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->orientHomeButton(Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;)V
+    if-eqz v1, :cond_1
 
-    return-object v0
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mOverviewProxyService:Lcom/android/systemui/recents/OverviewProxyService;
-
-    invoke-virtual {v0}, Lcom/android/systemui/recents/OverviewProxyService;->shouldShowSwipeUpUI()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home_quick_step:I
+    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home_quick_step2:I
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3559,14 +3568,59 @@
 
     goto :goto_1
 
-    :cond_2
-    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home:I
+    :cond_1
+    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home2:I
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
     move-result-object v0
 
     :goto_1
+    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->orientHomeButton(Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;)V
+
+    return-object v0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mOverviewProxyService:Lcom/android/systemui/recents/OverviewProxyService;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/OverviewProxyService;->shouldShowSwipeUpUI()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mNavBarMode:I
+
+    invoke-static {v0}, Lcom/android/systemui/shared/system/QuickStepContract;->isLegacyMode(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    move v1, v2
+
+    :goto_2
+    if-eqz v1, :cond_4
+
+    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home_quick_step:I
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_4
+    sget v0, Lcom/android/systemui/R$drawable;->ic_sysbar_home:I
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
+
+    move-result-object v0
+
+    :goto_3
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->orientHomeButton(Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;)V
 
     return-object v0

@@ -1287,6 +1287,8 @@
     <dimen name="op_emergency_panel_indicator_hint_text_size">34.0px</dimen>
     <dimen name="op_emergency_panel_indicator_margin_top">247.0px</dimen>
     <dimen name="op_emergency_panel_indicator_padding">94.0px</dimen>
+    <dimen name="op_fp_indication_max_text_size_1080p">0.0px</dimen>
+    <dimen name="op_fp_indication_max_text_size_2k">0.0px</dimen>
     <dimen name="op_front_camera_animation_front_camera_posistion">235.0px</dimen>
     <dimen name="op_global_actions_item_icon_size">60.0px</dimen>
     <dimen name="op_global_actions_item_min_size">230.0px</dimen>
@@ -1526,7 +1528,6 @@
     <dimen name="qs_battery_padding">2.0dip</dimen>
     <dimen name="qs_brightness_view_margin_bottom">1.0dip</dimen>
     <dimen name="qs_brightness_view_margin_top">8.0dip</dimen>
-    <dimen name="qs_brightness_view_margin_top_mod">50.0dip</dimen>
     <dimen name="qs_carrier_info_text_size">14.0sp</dimen>
     <dimen name="qs_carrier_margin_width">4.0dip</dimen>
     <dimen name="qs_carrier_text_padding">21.0dip</dimen>
@@ -1923,5 +1924,4 @@
     <dimen name="zen_mode_condition_detail_button_padding">8.0dip</dimen>
     <dimen name="zen_mode_condition_detail_item_interline_spacing">4.0dip</dimen>
     <dimen name="zen_mode_condition_detail_item_spacing">12.0dip</dimen>
-    <dimen name="quick_qs_total_height_tweak">260.0dip</dimen>
 </resources>

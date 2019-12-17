@@ -44,7 +44,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p0, p1, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$700(Lcom/android/systemui/statusbar/phone/StatusBar;ZZ)V
+    invoke-static {p0, p1, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$800(Lcom/android/systemui/statusbar/phone/StatusBar;ZZ)V
 
     return-void
 .end method

@@ -237,17 +237,8 @@
 .end method
 
 .method private getSecondaryLabel(ZLjava/lang/String;)Ljava/lang/CharSequence;
-    .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-eqz v0, :cond_stock
-    
-    const/4 v0, 0x0
-    
-    return-object v0
+    .locals 0
 
-    :cond_stock
     if-eqz p1, :cond_0
 
     iget-object p0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
@@ -401,8 +392,6 @@
 
 .method protected handleClick()V
     .locals 4
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 

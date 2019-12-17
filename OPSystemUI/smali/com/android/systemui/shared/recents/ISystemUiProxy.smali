@@ -47,6 +47,22 @@
     .end annotation
 .end method
 
+.method public abstract notifyGestureEnded(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract notifyGestureStarted()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onAssistantGestureCompletion(F)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

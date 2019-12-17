@@ -44,6 +44,18 @@
     return-void
 .end method
 
+.method public onPhoneStateChanged(I)V
+    .locals 0
+
+    invoke-super {p0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onPhoneStateChanged(I)V
+
+    iget-object p0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$302(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
+
+    return-void
+.end method
+
 .method public onStrongAuthStateChanged(I)V
     .locals 0
 

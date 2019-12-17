@@ -32,7 +32,7 @@
 .end method
 
 .method private getHistogram(Landroid/graphics/Bitmap;)[I
-    .locals 8
+    .locals 10
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -44,57 +44,90 @@
 
     const/16 v1, 0x100
 
-    new-array v1, v1, [I
+    new-array v2, v1, [I
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    move v3, v2
+    move v4, v3
 
     :goto_0
-    if-ge v3, v0, :cond_1
+    if-ge v4, v0, :cond_3
 
-    move v4, v2
+    move v5, v3
 
     :goto_1
-    if-ge v4, p0, :cond_0
+    if-ge v5, p0, :cond_2
 
-    invoke-virtual {p1, v4, v3}, Landroid/graphics/Bitmap;->getPixel(II)I
-
-    move-result v5
-
-    invoke-static {v5}, Landroid/graphics/Color;->red(I)I
+    invoke-virtual {p1, v5, v4}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v6
 
-    invoke-static {v5}, Landroid/graphics/Color;->green(I)I
+    invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v7
 
-    add-int/2addr v6, v7
+    invoke-static {v6}, Landroid/graphics/Color;->green(I)I
 
-    invoke-static {v5}, Landroid/graphics/Color;->blue(I)I
+    move-result v8
 
-    move-result v5
+    add-int/2addr v7, v8
 
-    add-int/2addr v6, v5
+    invoke-static {v6}, Landroid/graphics/Color;->blue(I)I
 
-    aget v5, v1, v6
+    move-result v6
 
+    add-int/2addr v7, v6
+
+    if-ltz v7, :cond_0
+
+    if-ge v7, v1, :cond_0
+
+    aget v6, v2, v7
+
+    add-int/lit8 v6, v6, 0x1
+
+    aput v6, v2, v7
+
+    goto :goto_2
+
+    :cond_0
+    sget-boolean v6, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v6, :cond_1
+
+    invoke-static {}, Lcom/android/systemui/glwallpaper/ImageProcessHelper;->access$200()Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "wrong array index: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    :goto_2
     add-int/lit8 v5, v5, 0x1
-
-    aput v5, v1, v6
-
-    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
+    :cond_2
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_1
-    return-object v1
+    :cond_3
+    return-object v2
 .end method
 
 .method private isSolidColor(Landroid/graphics/Bitmap;[I)Z

@@ -1806,32 +1806,6 @@
 
     invoke-direct/range {v9 .. v14}, Lcom/android/systemui/volume/VolumeDialogImpl;->addRow(IIIZZ)V
 
-    const/4 v10, 0x5
-
-    const-string v11, "ic_volume_notification"
-
-    const-string v12, "drawable"
-
-    invoke-static {v11, v12}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v11
-
-    const-string v5, "ic_volume_notification_mute"
-
-    const-string v12, "drawable"
-
-    invoke-static {v5, v12}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v12
-
-    const/4 v13, 0x1
-
-    const/4 v14, 0x1
-
-    move-object v9, p0
-
-    invoke-direct/range {v9 .. v14}, Lcom/android/systemui/volume/VolumeDialogImpl;->addRow(IIIZZ)V
-
     iget-object v0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/media/AudioSystem;->isSingleVolume(Landroid/content/Context;)Z
@@ -2121,16 +2095,7 @@
 
 .method private isLandscape()Z
     .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mRightHandVolumeMenu:Z
-    
-    if-eqz v0, :cond_stock
-    
-    const/4 v0, 0x1
-    
-    return v0
 
-    :cond_stock
     iget-object p0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2825,8 +2790,6 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {p0}, Lcom/oneplus/volume/OpVolumeDialogImpl;->loadOpDimens()V
-    
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mHandler:Lcom/android/systemui/volume/VolumeDialogImpl$H;
 
     const/4 v1, 0x1
@@ -3298,13 +3261,13 @@
 
     const-wide/16 v3, 0x1e
 
-    const/4 v7, 0x4 # alarm stream
+    const/4 v7, 0x4
 
-    const/4 v8, 0x2 # ring stream
+    const/4 v8, 0x2
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    const/4 v10, 0x3 # media stream
+    const/4 v10, 0x3
 
     const v12, 0x3ecccccd    # 0.4f
 
@@ -3338,17 +3301,6 @@
     if-eq v15, v8, :cond_3
 
     if-eq v15, v7, :cond_3
-    
-    sget-boolean v10, Lcom/android/mwilky/Renovate;->mUnlinkVolume:Z
-    
-    if-eqz v10, :cond_mw
-    
-    const/4 v10, 0x5
-    
-    if-eq v15, v10, :cond_3
-    
-    :cond_mw
-    const/4 v10, 0x3
 
     if-ne v15, v10, :cond_7
 

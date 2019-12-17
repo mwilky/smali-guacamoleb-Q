@@ -456,13 +456,19 @@
 
     invoke-virtual {p4}, Lorg/codeaurora/internal/SignalStrength;->getRsrp()I
 
-    move-result p4
+    move-result v0
 
-    invoke-static {p3, p4}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient;->access$1700(Lcom/android/systemui/statusbar/policy/FiveGServiceClient;I)I
+    invoke-static {p3, v0}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient;->access$1700(Lcom/android/systemui/statusbar/policy/FiveGServiceClient;I)I
 
     move-result p3
 
     invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$1602(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
+
+    invoke-virtual {p4}, Lorg/codeaurora/internal/SignalStrength;->getRsrp()I
+
+    move-result p3
+
+    invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$1802(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$3;->this$0:Lcom/android/systemui/statusbar/policy/FiveGServiceClient;
 
@@ -537,13 +543,13 @@
 
     move-result p3
 
-    invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$1802(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
+    invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$1902(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
 
     invoke-virtual {p4}, Lorg/codeaurora/internal/UpperLayerIndInfo;->getUpperLayerIndInfoAvailable()I
 
     move-result p3
 
-    invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$1902(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
+    invoke-static {p2, p3}, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;->access$2002(Lcom/android/systemui/statusbar/policy/FiveGServiceClient$FiveGServiceState;I)I
 
     iget-object p0, p0, Lcom/android/systemui/statusbar/policy/FiveGServiceClient$3;->this$0:Lcom/android/systemui/statusbar/policy/FiveGServiceClient;
 

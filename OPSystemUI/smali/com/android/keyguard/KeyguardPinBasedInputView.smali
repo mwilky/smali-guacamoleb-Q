@@ -631,7 +631,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Lcom/android/keyguard/KeyguardPinBasedInputView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
 
@@ -639,13 +639,28 @@
 
     move-result p1
 
+    if-nez p1, :cond_1
+
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->isShown()Z
+
+    move-result p1
+
     if-nez p1, :cond_0
 
+    const-string p0, "KeyguardPinBasedInputView"
+
+    const-string p1, "return to avoid simpin requestFocus when VIEW.GONE"
+
+    invoke-static {p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     iget-object p0, p0, Lcom/android/keyguard/KeyguardPinBasedInputView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
 
     invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 

@@ -332,46 +332,29 @@
 .end method
 
 .method private handleToggleStateChanged(ZZ)V
-    .registers 5
-    .param p1, "z"    # Z
-    .param p2, "z2"    # Z
+    .locals 1
 
-    .line 21
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSDetail;->mSwitchState:Z
 
-    .line 22
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSDetail;->mAnimatingOpen:Z
 
-    if-nez v0, :cond_20
+    if-eqz v0, :cond_0
 
-    .line 23
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
 
     invoke-virtual {v0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 24
-    iget-object v0, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeader:Landroid/view/View;
+    iget-object p1, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeader:Landroid/view/View;
 
-    invoke-virtual {v0, p2}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 25
-    iget-object v0, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
+    iget-object p0, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
 
-    invoke-virtual {v0, p2}, Landroid/widget/Switch;->setEnabled(Z)V
+    invoke-virtual {p0, p2}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    .line 26
-    iget-object v0, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
-
-    sget v1, Lcom/android/mwilky/Renovate;->mAccentColor:I
-
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/Switch;->setThumbTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 28
-    :cond_20
     return-void
 .end method
 

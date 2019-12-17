@@ -93,6 +93,8 @@
 
 .field protected mStartDozingRequested:Z
 
+.field protected mTelecomManager:Landroid/telecom/TelecomManager;
+
 .field private mThemeColor:I
 
 .field private mThemeSetting:Lcom/oneplus/util/SystemSetting;
@@ -3790,6 +3792,18 @@
     iput-object v0, p0, Lcom/oneplus/systemui/statusbar/phone/OpStatusBar;->mOpWakingUpScrimController:Lcom/oneplus/systemui/statusbar/phone/OpWakingUpScrimController;
 
     invoke-direct {p0}, Lcom/oneplus/systemui/statusbar/phone/OpStatusBar;->initDetectCTSReceiver()V
+
+    iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
+
+    const-string v1, "telecom"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/telecom/TelecomManager;
+
+    iput-object v0, p0, Lcom/oneplus/systemui/statusbar/phone/OpStatusBar;->mTelecomManager:Landroid/telecom/TelecomManager;
 
     return-void
 .end method

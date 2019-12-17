@@ -27,8 +27,6 @@
 
 .field private static mOpCustRegionleft:I
 
-.field private static mShouldDrawaCutout:Z
-
 
 # instance fields
 .field private MAX_BLOCK_INTERVAL:I
@@ -291,10 +289,10 @@
     return p0
 .end method
 
-.method static synthetic access$1900()Z
+.method static synthetic access$1900()I
     .locals 1
 
-    sget-boolean v0, Lcom/android/systemui/ScreenDecorations;->mShouldDrawaCutout:Z
+    sget v0, Lcom/android/systemui/ScreenDecorations;->mOpCustRegionleft:I
 
     return v0
 .end method
@@ -310,7 +308,7 @@
 .method static synthetic access$2000()I
     .locals 1
 
-    sget v0, Lcom/android/systemui/ScreenDecorations;->mOpCustRegionleft:I
+    sget v0, Lcom/android/systemui/ScreenDecorations;->mOpCustRegionRight:I
 
     return v0
 .end method
@@ -323,15 +321,7 @@
     return p1
 .end method
 
-.method static synthetic access$2100()I
-    .locals 1
-
-    sget v0, Lcom/android/systemui/ScreenDecorations;->mOpCustRegionRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$2200(Lcom/android/systemui/ScreenDecorations;)V
+.method static synthetic access$2100(Lcom/android/systemui/ScreenDecorations;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/ScreenDecorations;->postOpPendingMaxTime()V
@@ -1381,7 +1371,27 @@
 .method private shouldDrawCutout()Z
     .locals 0
 
-    sget-boolean p0, Lcom/android/systemui/ScreenDecorations;->mShouldDrawaCutout:Z
+    iget-object p0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
+
+    invoke-static {p0}, Lcom/android/systemui/ScreenDecorations;->shouldDrawCutout(Landroid/content/Context;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static shouldDrawCutout(Landroid/content/Context;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    const v0, 0x1110081
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
 
     return p0
 .end method
@@ -1432,20 +1442,6 @@
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/ScreenDecorations;->mHasRoundedCorner:Z
-
-    iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x1110081
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/systemui/ScreenDecorations;->mShouldDrawaCutout:Z
 
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
 

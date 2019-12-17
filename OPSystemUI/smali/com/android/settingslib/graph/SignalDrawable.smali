@@ -489,30 +489,6 @@
     return p0
 .end method
 
-.method public static getState(IIZ)I
-    .locals 0
-
-    if-eqz p2, :cond_0
-
-    const/4 p2, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p2, 0x0
-
-    :goto_0
-    shl-int/lit8 p2, p2, 0x10
-
-    shl-int/lit8 p1, p1, 0x8
-
-    or-int/2addr p1, p2
-
-    or-int/2addr p0, p1
-
-    return p0
-.end method
-
 .method private isInState(I)Z
     .locals 0
 

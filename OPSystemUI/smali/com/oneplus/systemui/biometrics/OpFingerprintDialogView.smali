@@ -1651,7 +1651,28 @@
 
     :cond_19
     :goto_8
-    if-nez v0, :cond_1a
+    iget-object v5, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
+    invoke-static {v5}, Lcom/oneplus/util/OpUtils;->isCutoutHide(Landroid/content/Context;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1a
+
+    iget v5, v1, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    iget-object v6, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
+    invoke-static {v6}, Lcom/oneplus/util/OpUtils;->getCutoutPathdataHeight(Landroid/content/Context;)I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    iput v5, v1, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    :cond_1a
+    if-nez v0, :cond_1b
 
     iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mOwnerString:Ljava/lang/String;
 
@@ -1659,12 +1680,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
-
-    :cond_1a
-    move v3, v4
+    if-eqz v0, :cond_1c
 
     :cond_1b
+    move v3, v4
+
+    :cond_1c
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->screenOrientation:I
 
     const v0, 0x50e0013
@@ -3084,34 +3105,7 @@
     .locals 18
 
     move-object/from16 v0, p0
-    
-    sget v2, Lcom/oneplus/aod/OpAodDisplayViewManager;->mPulseStatus:I
-	
-	const v4, 0x2
-	
-	if-ne v2, v4, :cond_stock
-	
-	sget-boolean v2, Lcom/android/mwilky/Renovate;->mAodFingerprint:Z
-	
-	if-nez v2, :cond_stock
 
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconNormal:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    const v4, 0x8
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDisable:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDim:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    return-void    
-    
-    :cond_stock
     move/from16 v1, p1
 
     iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -3926,44 +3920,100 @@
 .end method
 
 .method private handleUpdateIndicationTextSize()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/android/systemui/R$dimen;->oneplus_contorl_text_size_body1:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mDialogImpl:Lcom/oneplus/systemui/biometrics/OpBiometricDialogImpl;
+
+    invoke-virtual {v2}, Lcom/oneplus/systemui/biometrics/OpBiometricDialogImpl;->is2KDisplay()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget v2, Lcom/android/systemui/R$dimen;->op_fp_indication_max_text_size_2k:I
+
+    goto :goto_0
+
+    :cond_0
+    sget v2, Lcom/android/systemui/R$dimen;->op_fp_indication_max_text_size_1080p:I
+
+    :goto_0
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    sget-boolean v2, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->DEBUG_ONEPLUS:Z
+
+    if-eqz v2, :cond_1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "preferTextSize = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, ", maxTextSize = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "OpFingerprintDialogView"
+
+    invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    if-le v0, v1, :cond_2
+
+    move v0, v1
+
+    :cond_2
+    iget-object p0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
-    iget-object p0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+    int-to-float v0, v0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    move-result-object p0
-
-    sget v2, Lcom/android/systemui/R$dimen;->oneplus_contorl_text_size_body1:I
-
-    invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    invoke-virtual {v0, v1, p0}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    :cond_0
+    :cond_3
     return-void
 .end method
 
 .method private handleUpdateLayoutDimension(ZF)V
     .locals 2
-
-    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mDialogImpl:Lcom/oneplus/systemui/biometrics/OpBiometricDialogImpl;
-
-    invoke-virtual {v0}, Lcom/oneplus/systemui/biometrics/OpBiometricDialogImpl;->isSupportResolutionSwitch()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
 
     iput p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mDisplayWidth:F
 
@@ -4133,13 +4183,30 @@
 
     iput-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mPressedLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->isAttachedToWindow()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mPressedLayout:Landroid/view/ViewGroup;
+
+    if-eqz p2, :cond_2
+
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mWindowManager:Landroid/view/WindowManager;
+
+    iget-object v1, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mPressedLayoutParams:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-interface {v0, p2, v1}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_2
     iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mViewLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-virtual {p0, p2}, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->handleConfigurationChange(Landroid/view/WindowManager$LayoutParams;)V
 
     iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_8
 
     iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mDisplay:Landroid/view/Display;
 
@@ -4157,13 +4224,13 @@
 
     move-result-object p2
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     sget v0, Lcom/android/systemui/R$dimen;->op_biometric_icon_normal_location_y_2k:I
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     sget v0, Lcom/android/systemui/R$dimen;->op_biometric_icon_normal_location_y_1080p:I
 
     :goto_2
@@ -4171,17 +4238,30 @@
 
     iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
 
+    invoke-static {p2}, Lcom/oneplus/util/OpUtils;->isCutoutHide(Landroid/content/Context;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
+    invoke-static {p2}, Lcom/oneplus/util/OpUtils;->getCutoutPathdataHeight(Landroid/content/Context;)I
+
+    :cond_4
+    iget-object p2, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mContext:Landroid/content/Context;
+
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_5
 
     sget v0, Lcom/android/systemui/R$dimen;->op_keyguard_indication_padding_bottom_2k:I
 
     goto :goto_3
 
-    :cond_3
+    :cond_5
     sget v0, Lcom/android/systemui/R$dimen;->op_keyguard_indication_padding_bottom_1080p:I
 
     :goto_3
@@ -4195,13 +4275,13 @@
 
     move-result-object v0
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_6
 
     sget v1, Lcom/android/systemui/R$dimen;->fp_animation_height_2k:I
 
     goto :goto_4
 
-    :cond_4
+    :cond_6
     sget v1, Lcom/android/systemui/R$dimen;->fp_animation_height_1080p:I
 
     :goto_4
@@ -4213,13 +4293,13 @@
 
     move-result-object v1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_7
 
     sget p1, Lcom/android/systemui/R$dimen;->op_biometric_icon_normal_width_2k:I
 
     goto :goto_5
 
-    :cond_5
+    :cond_7
     sget p1, Lcom/android/systemui/R$dimen;->op_biometric_icon_normal_width_1080p:I
 
     :goto_5
@@ -4237,7 +4317,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_8
 
     div-int/lit8 v0, v0, 0x2
 
@@ -4253,7 +4333,7 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    :cond_6
+    :cond_8
     return-void
 .end method
 
@@ -4986,7 +5066,7 @@
 
     if-ne p1, p2, :cond_6
 
-    sget p1, Lcom/android/systemui/R$string;->kg_prompt_reason_timeout_pattern:I
+    sget p1, Lcom/android/systemui/R$string;->op_kg_prompt_reason_timeout_pattern:I
 
     :goto_2
     move v0, p1
@@ -4998,7 +5078,7 @@
 
     if-ne p1, p2, :cond_7
 
-    sget p1, Lcom/android/systemui/R$string;->kg_prompt_reason_timeout_password:I
+    sget p1, Lcom/android/systemui/R$string;->op_kg_prompt_reason_timeout_password:I
 
     goto :goto_2
 
@@ -5007,7 +5087,7 @@
 
     if-ne p1, p2, :cond_8
 
-    sget p1, Lcom/android/systemui/R$string;->kg_prompt_reason_timeout_pin:I
+    sget p1, Lcom/android/systemui/R$string;->op_kg_prompt_reason_timeout_pin:I
 
     goto :goto_2
 
@@ -5861,6 +5941,12 @@
     if-nez v1, :cond_2
 
     :cond_1
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/oneplus/util/OpUtils;->isSupportRefreshRateSwitch()Z
+
+    move-result v0
+
     if-eqz v0, :cond_2
 
     const/4 v0, 0x1

@@ -27,9 +27,6 @@
 .method public abstract calculateGoingToFullShadeDelay()J
 .end method
 
-.method public abstract canSkipBouncer()Z
-.end method
-
 .method public abstract getKeyguardFadingAwayDelay()J
 .end method
 

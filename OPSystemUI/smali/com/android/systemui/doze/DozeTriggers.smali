@@ -1058,6 +1058,12 @@
 
     if-ne p8, v0, :cond_0
 
+    const-string p0, "DozeTriggers"
+
+    const-string p1, "In pocket, drop event"
+
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     return-void
 
     :cond_0

@@ -565,7 +565,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
 
@@ -635,17 +635,34 @@
 
     iget-object v4, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
 
+    invoke-static {v4}, Lcom/oneplus/util/OpUtils;->isCutoutHide(Landroid/content/Context;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    iget-object v4, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
+
+    invoke-static {v4}, Lcom/oneplus/util/OpUtils;->getCutoutPathdataHeight(Landroid/content/Context;)I
+
+    move-result v4
+
+    sub-int/2addr v3, v4
+
+    :cond_2
+    iget-object v4, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
+
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     sget v2, Lcom/android/systemui/R$dimen;->op_keyguard_indication_padding_bottom_2k:I
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     sget v2, Lcom/android/systemui/R$dimen;->op_keyguard_indication_padding_bottom_1080p:I
 
     :goto_2
@@ -657,11 +674,11 @@
 
     add-int/2addr v1, v2
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     goto :goto_3
 
-    :cond_3
+    :cond_4
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -689,7 +706,7 @@
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1222,6 +1239,63 @@
     return-void
 .end method
 
+.method private resetIndicationTextSize()V
+    .locals 3
+
+    iget-object v0, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/android/systemui/R$dimen;->oneplus_contorl_text_size_body1:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/widget/FrameLayout;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-static {}, Lcom/oneplus/util/OpUtils;->is2KResolution()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget v2, Lcom/android/systemui/R$dimen;->op_fp_indication_max_text_size_2k:I
+
+    goto :goto_0
+
+    :cond_0
+    sget v2, Lcom/android/systemui/R$dimen;->op_fp_indication_max_text_size_1080p:I
+
+    :goto_0
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    if-le v0, v1, :cond_1
+
+    move v0, v1
+
+    :cond_1
+    iget-object p0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationText:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p0, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    return-void
+.end method
+
 .method private setLeftButton(Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;)V
     .locals 0
 
@@ -1315,19 +1389,6 @@
     return-void
 
     :cond_0
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mDozing:Z
 
     if-nez v1, :cond_1
@@ -1357,20 +1418,7 @@
 
 .method private updateLeftAffordanceIcon()V
     .locals 7
-	
-	sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLeftAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLeftButton:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     invoke-interface {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;->getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
@@ -1630,20 +1678,7 @@
 
 .method private updateRightAffordanceIcon()V
     .locals 7
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightButton:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     invoke-interface {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;->getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
@@ -2417,7 +2452,7 @@
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 3
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
@@ -2441,21 +2476,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    iget-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationText:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v2, Lcom/android/systemui/R$dimen;->oneplus_contorl_text_size_body1:I
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    invoke-virtual {p1, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->resetIndicationTextSize()V
 
     iget-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
@@ -2682,6 +2703,8 @@
     check-cast v0, Landroid/widget/TextView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationText:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->resetIndicationTextSize()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->calculateIndicationBottomMargin()V
 

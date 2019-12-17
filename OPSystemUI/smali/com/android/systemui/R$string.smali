@@ -630,8 +630,6 @@
 
 .field public static final keyguard_indication_trust_disabled:I = 0x7f110345
 
-.field public static final keyguard_indication_trust_unlocked:I = 0x7f110346
-
 .field public static final keyguard_plugged_in:I = 0x7f110359
 
 .field public static final keyguard_plugged_in_charging_fast:I = 0x7f11035a
@@ -667,8 +665,6 @@
 .field public static final kg_prompt_reason_restart_pattern:I = 0x7f110382
 
 .field public static final kg_prompt_reason_restart_pin:I = 0x7f110383
-
-.field public static final kg_prompt_reason_timeout_password:I = 0x7f110387
 
 .field public static final kg_prompt_reason_timeout_pattern:I = 0x7f110388
 
@@ -813,6 +809,16 @@
 .field public static final oneplus_screen_features_not_available_toast:I = 0x7f110482
 
 .field public static final op_emergency_indicator_hint_text:I = 0x7f11049c
+
+.field public static final op_keyguard_indication_face_unlocked:I = 0x7f11049d
+
+.field public static final op_keyguard_indication_trust_unlocked:I = 0x7f11049e
+
+.field public static final op_kg_prompt_reason_timeout_password:I = 0x7f11049f
+
+.field public static final op_kg_prompt_reason_timeout_pattern:I = 0x7f1104a0
+
+.field public static final op_kg_prompt_reason_timeout_pin:I = 0x7f1104a1
 
 .field public static final op_quick_settings_night_display_label:I = 0x7f1104ab
 

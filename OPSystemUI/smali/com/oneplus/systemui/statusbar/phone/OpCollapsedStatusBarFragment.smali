@@ -26,10 +26,21 @@
 
     invoke-static {}, Lcom/oneplus/util/OpUtils;->isSupportCustomStatusBar()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/oneplus/util/OpUtils;->isCutoutHide(Landroid/content/Context;)Z
+
     move-result p0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_1
 
+    :cond_0
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
@@ -46,7 +57,7 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 

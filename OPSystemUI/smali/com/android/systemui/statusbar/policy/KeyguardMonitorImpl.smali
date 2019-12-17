@@ -17,11 +17,7 @@
     .end annotation
 .end field
 
-.field private mCanSkipBouncer:Z
-
 .field private final mContext:Landroid/content/Context;
-
-.field private mCurrentUser:I
 
 .field private mKeyguardFadingAway:Z
 
@@ -42,8 +38,6 @@
 .field private mSecure:Z
 
 .field private mShowing:Z
-
-.field private final mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
 
 
 # direct methods
@@ -68,30 +62,6 @@
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    new-instance p1, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl$1;
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mContext:Landroid/content/Context;
-
-    invoke-direct {p1, p0, v0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;Landroid/content/Context;)V
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
-
-    return-void
-.end method
-
-.method static synthetic access$002(Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mCurrentUser:I
-
-    return p1
-.end method
-
-.method static synthetic access$100(Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->updateCanSkipBouncerState()V
-
     return-void
 .end method
 
@@ -107,22 +77,6 @@
     sget-object p0, Lcom/android/systemui/statusbar/policy/-$$Lambda$CusFj6pVztwBZlitsnMLA9Hx95I;->INSTANCE:Lcom/android/systemui/statusbar/policy/-$$Lambda$CusFj6pVztwBZlitsnMLA9Hx95I;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->forEach(Ljava/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method private updateCanSkipBouncerState()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mCurrentUser:I
-
-    invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getUserCanSkipBouncer(I)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mCanSkipBouncer:Z
 
     return-void
 .end method
@@ -156,21 +110,9 @@
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mListening:Z
 
-    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mCurrentUser:I
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->updateCanSkipBouncerState()V
-
     iget-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {p1, p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
-
-    iget-object p0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
-
-    invoke-virtual {p0}, Lcom/android/systemui/settings/CurrentUserTracker;->startTracking()V
 
     :cond_0
     return-void
@@ -196,14 +138,6 @@
     add-long/2addr v0, v2
 
     return-wide v0
-.end method
-
-.method public canSkipBouncer()Z
-    .locals 0
-
-    iget-boolean p0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mCanSkipBouncer:Z
-
-    return p0
 .end method
 
 .method public getKeyguardFadingAwayDelay()J
@@ -348,8 +282,6 @@
 .method public onTrustChanged(I)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->updateCanSkipBouncerState()V
-
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->notifyKeyguardChanged()V
 
     return-void
@@ -389,10 +321,6 @@
     iget-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {p1, p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
-
-    iget-object p0, p0, Lcom/android/systemui/statusbar/policy/KeyguardMonitorImpl;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
-
-    invoke-virtual {p0}, Lcom/android/systemui/settings/CurrentUserTracker;->stopTracking()V
 
     :cond_0
     return-void

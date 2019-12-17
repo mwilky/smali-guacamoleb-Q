@@ -1292,7 +1292,7 @@
 
     int-to-float v1, p3
 
-    const v2, 0x3e99999a    # 0.3f
+    sget v2, Lcom/oneplus/phone/OpSideGestureConfiguration;->PORTRAIT_NON_DETECT_SCALE:F
 
     mul-float/2addr v1, v2
 
