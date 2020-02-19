@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private mTime:Landroid/widget/TextView;
-
 .field private mActions:Lcom/android/internal/widget/NotificationActionListLayout;
 
 .field protected mActionsContainer:Landroid/view/View;
@@ -286,17 +284,7 @@
 .end method
 
 .method private resolveTemplateViews(Landroid/service/notification/StatusBarNotification;)V
-    .locals 4
-    
-    move-object v3, p1
-    
-    invoke-virtual {v3}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/Notification;->isColorized()Z
-
-    move-result v3
+    .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationViewWrapper;->mView:Landroid/view/View;
 
@@ -338,18 +326,7 @@
     check-cast p1, Landroid/widget/TextView;
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mTitle:Landroid/widget/TextView;
-    
-    iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mTitle:Landroid/widget/TextView;
-    
-    if-eqz p1, :cond_stock
-    
-    if-nez v3, :cond_stock
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mNotificationTitleTextColor:I
-    
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :cond_stock
     iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationViewWrapper;->mView:Landroid/view/View;
 
     const v0, 0x1020475
@@ -361,41 +338,7 @@
     check-cast p1, Landroid/widget/TextView;
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mText:Landroid/widget/TextView;
-    
-    iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mText:Landroid/widget/TextView;
-    
-    if-eqz p1, :cond_stock2
-    
-    if-nez v3, :cond_stock2
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mNotificationSummaryTextColor:I
-    
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :cond_stock2
-    iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationViewWrapper;->mView:Landroid/view/View;
-
-    const v0, 0x1020494
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/TextView;
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mTime:Landroid/widget/TextView;
-    
-    iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mTime:Landroid/widget/TextView;
-    
-    if-eqz p1, :cond_stock3
-    
-    if-nez v3, :cond_stock3
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mNotificationTitleTextColor:I
-    
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    :cond_stock3
     iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationViewWrapper;->mView:Landroid/view/View;
 
     const v0, 0x102000d
@@ -453,20 +396,7 @@
     check-cast p1, Landroid/widget/ImageView;
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mReplyAction:Landroid/widget/ImageView;
-    
-    iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->mReplyAction:Landroid/widget/ImageView;
-    
-    if-eqz p1, :cond_stock4
-    
-    if-nez v3, :cond_stock4
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mNotificationReplyButtonColor:I
-    
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {p1, v2, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
-
-    :cond_stock4
     iget-object p1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationViewWrapper;->mView:Landroid/view/View;
 
     const v0, 0x102036e

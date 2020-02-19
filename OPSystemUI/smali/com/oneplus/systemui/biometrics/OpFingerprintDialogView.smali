@@ -283,7 +283,7 @@
 
     invoke-virtual {p0, p4}, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->initHandler(Landroid/os/Looper;)V
 
-    const-string p2, "window"
+    const-string/jumbo p2, "window"
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -648,8 +648,6 @@
     invoke-direct {p0}, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->handleUpdateIndicationTextSize()V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -2904,7 +2902,7 @@
     goto :goto_2
 
     :cond_2
-    const-string p0, "try to add press layout, but it is attached before"
+    const-string/jumbo p0, "try to add press layout, but it is attached before"
 
     invoke-static {v1, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2956,7 +2954,7 @@
     goto :goto_2
 
     :cond_5
-    const-string p0, "try to remove press layout, but it is removed before"
+    const-string/jumbo p0, "try to remove press layout, but it is removed before"
 
     invoke-static {v1, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3105,34 +3103,7 @@
     .locals 18
 
     move-object/from16 v0, p0
-    
-    sget v2, Lcom/oneplus/aod/OpAodDisplayViewManager;->mPulseStatus:I
-	
-	const v4, 0x2
-	
-	if-ne v2, v4, :cond_stock
-	
-	sget-boolean v2, Lcom/android/mwilky/Renovate;->mAodFingerprint:Z
-	
-	if-nez v2, :cond_stock
 
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconNormal:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    const v4, 0x8
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDisable:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDim:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
-    
-    invoke-virtual {v2, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setVisibility(I)V
-    
-    return-void    
-    
-    :cond_stock
     move/from16 v1, p1
 
     iget-object v2, v0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -3255,7 +3226,7 @@
 
     move-object/from16 v17, v3
 
-    const-string v3, "updateIconVisibility: fp client = "
+    const-string/jumbo v3, "updateIconVisibility: fp client = "
 
     invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4964,7 +4935,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateFPIndicationText: lockout:"
+    const-string/jumbo v1, "updateFPIndicationText: lockout:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5138,7 +5109,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "updateFPIndicationText: "
+    const-string/jumbo p2, "updateFPIndicationText: "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5245,7 +5216,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateTimeOutAnimation: animate="
+    const-string/jumbo v1, "updateTimeOutAnimation: animate="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6647,7 +6618,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateDimViewVisibility: show = "
+    const-string/jumbo v1, "updateDimViewVisibility: show = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6704,7 +6675,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateFpDaemonStatus: "
+    const-string/jumbo v1, "updateFpDaemonStatus: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

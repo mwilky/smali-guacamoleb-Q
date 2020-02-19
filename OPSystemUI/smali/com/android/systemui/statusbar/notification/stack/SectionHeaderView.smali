@@ -35,7 +35,7 @@
 .end method
 
 .method private bindContents()V
-    .locals 3
+    .locals 1
 
     sget v0, Lcom/android/systemui/R$id;->header_label:I
 
@@ -52,12 +52,6 @@
     check-cast v0, Landroid/widget/TextView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/stack/SectionHeaderView;->mLabelView:Landroid/widget/TextView;
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/notification/stack/SectionHeaderView;->mLabelView:Landroid/widget/TextView;
-    
-    sget v1, Lcom/android/mwilky/Renovate;->mNotificationOtherTextColor:I
-    
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     sget v0, Lcom/android/systemui/R$id;->btn_clear_all:I
 
@@ -74,14 +68,6 @@
     check-cast v0, Landroid/widget/ImageView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/stack/SectionHeaderView;->mClearAllButton:Landroid/widget/ImageView;
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/notification/stack/SectionHeaderView;->mClearAllButton:Landroid/widget/ImageView;
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mNotificationOtherButtonColor:I
-    
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/stack/SectionHeaderView;->mOnClearClickListener:Landroid/view/View$OnClickListener;
 

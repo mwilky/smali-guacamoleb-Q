@@ -113,7 +113,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateClockVisibility: mClockStyle="
+    const-string/jumbo v1, "updateClockVisibility: mClockStyle="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -558,7 +558,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateClock: style = "
+    const-string/jumbo v1, "updateClock: style = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -606,7 +606,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateClock: updateDisplayTextDB = "
+    const-string/jumbo v1, "updateClock: updateDisplayTextDB = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -638,7 +638,7 @@
 
     const-string v0, "ClockViewCtrl"
 
-    const-string v1, "updateOwnerInfo"
+    const-string/jumbo v1, "updateOwnerInfo"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -699,16 +699,6 @@
     iget-object p0, p0, Lcom/oneplus/aod/OpClockViewCtrl;->mOwnerInfo:Landroid/widget/TextView;
 
     invoke-virtual {p0, v2}, Landroid/widget/TextView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public updateThinText()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/oneplus/aod/OpClockViewCtrl;->mClockView:Lcom/oneplus/aod/OpTextClock;
-
-    invoke-virtual {v0}, Lcom/oneplus/aod/OpTextClock;->init()V
 
     return-void
 .end method

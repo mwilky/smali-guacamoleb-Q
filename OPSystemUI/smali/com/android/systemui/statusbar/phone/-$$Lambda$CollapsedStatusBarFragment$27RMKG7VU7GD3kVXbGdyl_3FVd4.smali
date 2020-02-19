@@ -9,18 +9,18 @@
 # instance fields
 .field private final synthetic f$0:Landroid/view/View;
 
-.field private final synthetic f$1:Z
+.field private final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;Z)V
+.method public synthetic constructor <init>(Landroid/view/View;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$0:Landroid/view/View;
 
-    iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$1:Z
+    iput p2, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$1:I
 
     return-void
 .end method
@@ -32,9 +32,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$0:Landroid/view/View;
 
-    iget-boolean p0, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$1:Z
+    iget p0, p0, Lcom/android/systemui/statusbar/phone/-$$Lambda$CollapsedStatusBarFragment$27RMKG7VU7GD3kVXbGdyl_3FVd4;->f$1:I
 
-    invoke-static {v0, p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->lambda$animateHide$0(Landroid/view/View;Z)V
+    invoke-static {v0, p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->lambda$animateHiddenState$0(Landroid/view/View;I)V
 
     return-void
 .end method

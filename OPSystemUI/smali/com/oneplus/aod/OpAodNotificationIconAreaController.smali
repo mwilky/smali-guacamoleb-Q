@@ -3,10 +3,6 @@
 .source "OpAodNotificationIconAreaController.java"
 
 
-# static fields
-.field public static mActiveNotifications:Z
-
-
 # instance fields
 .field private mContext:Landroid/content/Context;
 
@@ -210,14 +206,6 @@
 
 .method public updateNotificationIcons(Lcom/android/systemui/statusbar/phone/NotificationIconContainer;)V
     .locals 12
-    
-    const/16 v1, 0x8
-    
-    sget v0, Lcom/oneplus/aod/OpAodDisplayViewManager;->mPulseStatus:I
-    
-    const v2, 0x2
-    
-    if-eq v0, v2, :cond_c
 
     iget-object v0, p0, Lcom/oneplus/aod/OpAodNotificationIconAreaController;->mContext:Landroid/content/Context;
 
@@ -248,10 +236,6 @@
     goto/16 :goto_7
 
     :cond_0
-    const/4 v0, 0x1
-    
-    sput-boolean v0,  Lcom/oneplus/aod/OpAodNotificationIconAreaController;->mActiveNotifications:Z
-    
     invoke-direct {p0}, Lcom/oneplus/aod/OpAodNotificationIconAreaController;->reloadDimens()V
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -284,7 +268,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "updateNotificationIcons: iconSize="
+    const-string/jumbo v9, "updateNotificationIcons: iconSize="
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -311,17 +295,13 @@
     :cond_2
     if-nez v4, :cond_3
 
-    const-string p1, "updateNotificationIcons: setVisibility to gone"
+    const-string/jumbo p1, "updateNotificationIcons: setVisibility to gone"
 
     invoke-static {v8, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object p0, p0, Lcom/oneplus/aod/OpAodNotificationIconAreaController;->mNotificationIconArea:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
-    
-    const/4 v0, 0x0
-    
-    sput-boolean v0,  Lcom/oneplus/aod/OpAodNotificationIconAreaController;->mActiveNotifications:Z
 
     return-void
 

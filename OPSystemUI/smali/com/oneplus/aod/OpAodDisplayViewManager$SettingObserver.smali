@@ -36,15 +36,7 @@
 
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
-    .locals 5
-    
-    move-object v1, p0
-    
-    move v2, p1
-    
-    move-object v3, p2
-    
-    move v4, p3
+    .locals 1
 
     invoke-super {p0, p1, p2, p3}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;I)V
 
@@ -151,23 +143,6 @@
     invoke-virtual {p2, p0}, Lcom/oneplus/aod/OpAodLightEffectContainer;->setLightIndex(I)V
 
     :cond_2
-    const-string v0, "tweaks_thin_aod_clock"
-
-    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_mw
-    
-    iget-object v0, v1, Lcom/oneplus/aod/OpAodDisplayViewManager$SettingObserver;->this$0:Lcom/oneplus/aod/OpAodDisplayViewManager;
-
-    invoke-virtual {v0}, Lcom/oneplus/aod/OpAodDisplayViewManager;->updateThinText()V
-    
-    :cond_mw
     :goto_0
     return-void
 .end method

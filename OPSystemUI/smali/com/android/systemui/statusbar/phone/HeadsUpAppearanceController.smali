@@ -28,7 +28,7 @@
 
 .field private final mHeadsUpManager:Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;
 
-.field public final mHeadsUpStatusBarView:Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
+.field private final mHeadsUpStatusBarView:Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
 
 .field mIsExpanded:Z
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
@@ -469,7 +469,7 @@
 .end method
 
 .method private setShown(Z)V
-    .locals 3
+    .locals 2
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mShown:Z
 
@@ -528,25 +528,11 @@
     move-result p1
 
     if-nez p1, :cond_2
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mClockPosition:I
-    
-    if-eqz v2, :cond_mw
-    
-    iget-object p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
-    
-    const v2, 0x8
-    
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-	goto :goto_mw
-    
-    :cond_mw
     iget-object p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->show(Landroid/view/View;)V
 
-    :goto_mw
     :cond_2
     iget-object p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mCenteredIconView:Landroid/view/View;
 
@@ -1100,10 +1086,4 @@
 
     :cond_4
     return-void
-.end method
-
-.method public updateViews(F)V
-	.locals 0
-	
-	return-void
 .end method

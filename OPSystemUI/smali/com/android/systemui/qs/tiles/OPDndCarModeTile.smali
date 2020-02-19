@@ -47,7 +47,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/OPDndCarModeTile;->CAR_MODE_STATUS:Ljava/lang/String;
 
-    const-string v0, "zen_mode_car"
+    const-string/jumbo v0, "zen_mode_car"
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndCarModeTile;->ZEN_MODE_CAR:Ljava/lang/String;
 
@@ -193,8 +193,6 @@
 
 .method protected handleClick()V
     .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object p0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -208,7 +206,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "user clicked dnd: "
+    const-string/jumbo v1, "user clicked dnd: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

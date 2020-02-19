@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field private mClockContainer:Landroid/widget/RelativeLayout;
-
 .field private mBottomMargin:I
 
 .field private mBottomMarginWithHeader:I
@@ -1301,24 +1299,6 @@
     check-cast v0, Lcom/android/keyguard/KeyguardClockSwitch;
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/KeyguardClockSwitch;
-    
-    const-string v0, "keyguard_clock_container"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/RelativeLayout;
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
-    
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardStatusView;->setViewsVisibility()V
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/KeyguardClockSwitch;
 
@@ -1594,7 +1574,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "updateInfoViewVisibility, mInfoView == null"
+    const-string/jumbo v0, "updateInfoViewVisibility, mInfoView == null"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1605,7 +1585,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateInfoViewVisibility, mInfoView.getVisibility():"
+    const-string/jumbo v2, "updateInfoViewVisibility, mInfoView.getVisibility():"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1761,28 +1741,5 @@
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     :goto_3
-    return-void
-.end method
-
-.method public setViewsVisibility()V
-    .locals 4
-
-    .prologue    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
-    
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
-    
-    if-nez v0, :cond_hide
-    
-    const v2, 0x0
-    
-    goto :goto_vis    
-    
-    :cond_hide
-    const v2, 0x4
-    
-    :goto_vis
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-    
     return-void
 .end method

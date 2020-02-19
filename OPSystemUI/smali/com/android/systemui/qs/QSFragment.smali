@@ -10,7 +10,7 @@
 # instance fields
 .field private final mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
 
-.field public mContainer:Lcom/android/systemui/qs/QSContainerImpl;
+.field private mContainer:Lcom/android/systemui/qs/QSContainerImpl;
 
 .field private mDelay:J
 
@@ -849,12 +849,6 @@
     .locals 2
 
     invoke-super {p0}, Lcom/android/systemui/util/LifecycleFragment;->onDestroy()V
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_header
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
@@ -863,19 +857,7 @@
     if-eqz v0, :cond_0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setBrightnessListening(Z)V
-    
-    goto :goto_panel
-    
-    :cond_header
-    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBrightnessListening(Z)V
-
-    :goto_panel
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSFragment;->mListening:Z
 
@@ -1279,6 +1261,14 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSContainerImpl;->setExpansion(F)V
 
+    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSPanel;->updateWLBExpansion(F)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    invoke-virtual {v0, p2}, Lcom/android/systemui/qs/QSPanel;->updateWLBHeaderExpansion(F)V
+
     const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float v1, p1, v0
@@ -1495,15 +1485,5 @@
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/QSAnimator;->setPosition(F)V
 
     :cond_7
-    return-void
-.end method
-
-.method public updateBrightnessSliderViews()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSAnimator:Lcom/android/systemui/qs/QSAnimator;
-
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QSAnimator;->onRtlChanged()V
-
     return-void
 .end method

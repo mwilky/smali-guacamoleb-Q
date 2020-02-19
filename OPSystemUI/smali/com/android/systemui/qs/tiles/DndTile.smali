@@ -472,8 +472,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -630,7 +628,7 @@
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/plugins/qs/QSTile$BooleanState;Ljava/lang/Object;)V
-    .locals 8
+    .locals 7
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
@@ -694,7 +692,7 @@
     iput-object v4, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->slash:Lcom/android/systemui/plugins/qs/QSTile$SlashState;
 
     :cond_4
-    iput-boolean v2, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->dualTarget:Z
+    iput-boolean v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->dualTarget:Z
 
     iput-boolean v2, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
@@ -740,15 +738,6 @@
     move v5, v0
 
     :goto_4
-    sget-boolean v7, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-eqz v7, :cond_show
-    
-    const/4 v2, 0x0
-    
-    goto :goto_skip
-    
-    :cond_show
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v6}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getConfig()Landroid/service/notification/ZenModeConfig;
@@ -762,8 +751,7 @@
     invoke-static {v2}, Landroid/text/TextUtils;->emptyIfNull(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
-    
-    :goto_skip
+
     iput-object v2, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->secondaryLabel:Ljava/lang/CharSequence;
 
     const v2, 0x10804fd
@@ -1065,7 +1053,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "zen_duration"
+    const-string/jumbo v2, "zen_duration"
 
     invoke-static {p1, v2, v1, v0}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
@@ -1093,7 +1081,7 @@
 
     move-result-object v0
 
-    const-string v4, "zen_settings_updated"
+    const-string/jumbo v4, "zen_settings_updated"
 
     invoke-static {v0, v4, v1}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public mBatteryAnalogContainer:Landroid/widget/LinearLayout;
+.field private mBatteryAnalogContainer:Landroid/widget/LinearLayout;
 
-.field public mBatteryContainer:Landroid/widget/LinearLayout;
+.field private mBatteryContainer:Landroid/widget/LinearLayout;
 
-.field public mBatteryDefaultContainer:Landroid/widget/LinearLayout;
+.field private mBatteryDefaultContainer:Landroid/widget/LinearLayout;
 
-.field public mClockStyle:I
+.field private mClockStyle:I
 
-.field public mDateTimeView:Landroid/view/View;
+.field private mDateTimeView:Landroid/view/View;
 
-.field public mNotificationIconContainer:Landroid/widget/LinearLayout;
+.field private mNotificationIconContainer:Landroid/widget/LinearLayout;
 
 .field private mSliceInfoContainer:Landroid/widget/LinearLayout;
 

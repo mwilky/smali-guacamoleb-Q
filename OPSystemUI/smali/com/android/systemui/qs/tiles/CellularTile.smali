@@ -99,7 +99,7 @@
 
     sget-object p0, Lcom/android/systemui/qs/tiles/CellularTile;->CELLULAR_SETTINGS:Landroid/content/Intent;
 
-    const-string p1, "tracker_event"
+    const-string/jumbo p1, "tracker_event"
 
     const/4 p2, 0x2
 
@@ -459,8 +459,6 @@
 
 .method protected handleClick()V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->getState()Lcom/android/systemui/plugins/qs/QSTile$State;
 

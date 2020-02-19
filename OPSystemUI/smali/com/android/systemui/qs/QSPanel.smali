@@ -31,7 +31,7 @@
 
 .field private mCallback:Lcom/android/systemui/qs/QSDetail$Callback;
 
-.field public final mContext:Landroid/content/Context;
+.field protected final mContext:Landroid/content/Context;
 
 .field private mCustomizePanel:Lcom/android/systemui/qs/customize/QSCustomizer;
 
@@ -61,7 +61,7 @@
 
 .field private final mQsTileRevealController:Lcom/android/systemui/qs/QSTileRevealController;
 
-.field public final mRecords:Ljava/util/ArrayList;
+.field protected final mRecords:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -943,7 +943,7 @@
     return-object p0
 .end method
 
-.method public getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
+.method getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
     .locals 0
 
     iget-object p0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
@@ -1405,12 +1405,6 @@
 
     :cond_0
     if-eqz p1, :cond_1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
-
-    const/4 v1, 0x0
-
-    if-ne v0, v1, :cond_1
 
     iget-object p0, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessController:Lcom/android/systemui/settings/BrightnessController;
 
@@ -2094,13 +2088,11 @@
 .end method
 
 .method public updateResources()V
-    .locals 6
-    
-    move-object v5, p0
+    .locals 3
 
     const-string v0, "QSPanel"
 
-    const-string v1, "updateResources"
+    const-string/jumbo v1, "updateResources"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2111,23 +2103,11 @@
     move-result-object v0
 
     sget v1, Lcom/android/systemui/R$dimen;->qs_panel_padding_top:I
-    
+
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
-    
-    sget v3, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
 
-    const/4 v4, 0x1
-
-    if-eq v3, v4, :cond_mw
-    
-    goto :goto_0
-    
-    :cond_mw
-    const v1, 0x12d
-    
-    :goto_0
     sget v2, Lcom/android/systemui/R$dimen;->qs_panel_padding_bottom:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2153,7 +2133,7 @@
 .end method
 
 .method public updateThemeColor()V
-    .locals 9
+    .locals 8
 
     invoke-static {}, Lcom/oneplus/util/ThemeColorUtils;->getCurrentTheme()I
 
@@ -2188,21 +2168,11 @@
     move-result v2
 
     sget v3, Lcom/oneplus/util/ThemeColorUtils;->QS_PANEL_PRIMARY:I
-    
-    sget-boolean v8, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
-    
-    if-eqz v8, :cond_stock
-    
-	sget v3, Lcom/android/mwilky/Renovate;->mQsBackgroundColor:I
-	
-	goto :goto_custom
-    
-    :cond_stock
+
     invoke-static {v3}, Lcom/oneplus/util/ThemeColorUtils;->getColor(I)I
 
     move-result v3
-    
-    :goto_custom
+
     invoke-static {}, Lcom/oneplus/util/ThemeColorUtils;->getThumbBackground()I
 
     move-result v4
@@ -2377,409 +2347,50 @@
     return-void
 .end method
 
-.method public setSwipeAnimationTile(Lcom/android/systemui/plugins/qs/QSTileView;)V
-    .locals 8
-    .param p1, "v"    # Lcom/android/systemui/plugins/qs/QSTileView;
+.method public updateWLBExpansion(F)V
+    .locals 0
 
-    .prologue
-    const/4 v7, 0x0
+    const-class p0, Lcom/android/systemui/statusbar/phone/WLBSwitchController;
 
-    const/4 v6, 0x2
+    invoke-static {p0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    const/4 v5, -0x2
+    move-result-object p0
 
-    .line 790
-    const/4 v0, 0x0
+    check-cast p0, Lcom/android/systemui/statusbar/phone/WLBSwitchController;
 
-    check-cast v0, Landroid/animation/ObjectAnimator;
+    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/WLBSwitchController;->updateExpansionState(F)V
 
-    .line 791
-    sget v1, Lcom/android/mwilky/Renovate;->mQsAnimationStyle:I
-
-    .line 793
-    sget v2, Lcom/android/mwilky/Renovate;->mQsAnimationDuration:I
-
-    .line 795
-    sget v3, Lcom/android/mwilky/Renovate;->mQsAnimationInterpolator:I
-
-    .line 798
-    if-nez v1, :cond_0
-
-    .line 801
-    :cond_0
-    const/4 v4, 0x1
-
-    if-ne v1, v4, :cond_1
-
-    .line 802
-    const-string v4, "rotationX"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_0
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_1
-    const/4 v4, 0x2
-
-    if-ne v1, v4, :cond_2
-
-    .line 802
-    const-string v4, "rotationY"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_1
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_2
-    const/4 v4, 0x3
-
-    if-ne v1, v4, :cond_3
-
-    .line 802
-    const-string v4, "rotation"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_2
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_3
-    const/4 v4, 0x4
-
-    if-ne v1, v4, :cond_4
-
-    .line 802
-    const-string v4, "rotation"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_3
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_4
-    const/4 v4, 0x5
-
-    if-ne v1, v4, :cond_5
-
-    .line 802
-    const-string v4, "scaleX"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_4
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_5
-    const/4 v4, 0x6
-
-    if-ne v1, v4, :cond_6
-
-    .line 802
-    const-string v4, "scaleY"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_5
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_6
-    const/4 v4, 0x7
-
-    if-ne v1, v4, :cond_7
-
-    .line 802
-    const-string v4, "translationX"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_6
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_7
-    const/16 v4, 0x8
-
-    if-ne v1, v4, :cond_8
-
-    .line 802
-    const-string v4, "translationX"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_7
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_8
-    const/16 v4, 0x9
-
-    if-ne v1, v4, :cond_9
-
-    .line 802
-    const-string v4, "translationY"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_8
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_9
-    const/16 v4, 0xa
-
-    if-ne v1, v4, :cond_a
-
-    .line 802
-    const-string v4, "translationY"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_9
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 801
-    :cond_a
-    const/16 v4, 0xb
-
-    if-ne v1, v4, :cond_b
-
-    .line 802
-    const-string v4, "alpha"
-
-    new-array v5, v6, [F
-
-    fill-array-data v5, :array_a
-
-    invoke-static {p1, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    .line 807
-    :cond_b
-    if-eqz v0, :cond_c
-
-    .line 808
-    packed-switch v3, :pswitch_data_0
-
-    .line 836
-    :goto_0
-    int-to-long v1, v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    .line 837
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    :cond_c
     return-void
+.end method
 
-    .line 810
-    :pswitch_0
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
+.method public updateWLBHeaderExpansion(F)V
+    .locals 0
 
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    const-class p0, Lcom/android/systemui/statusbar/phone/WLBSwitchController;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-static {p0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object p0
 
-    .line 813
-    :pswitch_1
-    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
+    check-cast p0, Lcom/android/systemui/statusbar/phone/WLBSwitchController;
 
-    invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+    if-eqz p0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/WLBSwitchController;->updateHeaderExpansion(F)V
 
-    goto :goto_0
+    :cond_0
+    return-void
+.end method
 
-    .line 816
-    :pswitch_2
-    new-instance v1, Landroid/view/animation/DecelerateInterpolator;
+.method public updateWLBIndicators([Z)V
+    .locals 0
 
-    invoke-direct {v1}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    iget-object p0, p0, Lcom/android/systemui/qs/QSPanel;->mCallback:Lcom/android/systemui/qs/QSDetail$Callback;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    if-eqz p0, :cond_0
 
-    goto :goto_0
+    invoke-interface {p0, p1}, Lcom/android/systemui/qs/QSDetail$Callback;->updateWlbIndicators([Z)V
 
-    .line 819
-    :pswitch_3
-    new-instance v1, Landroid/view/animation/AccelerateDecelerateInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_0
-
-    .line 822
-    :pswitch_4
-    new-instance v1, Landroid/view/animation/BounceInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/BounceInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_0
-
-    .line 825
-    :pswitch_5
-    new-instance v1, Landroid/view/animation/OvershootInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/OvershootInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_0
-
-    .line 828
-    :pswitch_6
-    new-instance v1, Landroid/view/animation/AnticipateInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/AnticipateInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_0
-
-    .line 831
-    :pswitch_7
-    new-instance v1, Landroid/view/animation/AnticipateOvershootInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/AnticipateOvershootInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_0
-
-    nop
-
-    .line 802
-    :array_0
-    .array-data 4
-        0x0
-        0x43b40000    # 360.0f
-    .end array-data
-
-    .line 805
-    :array_1
-    .array-data 4
-        0x0
-        0x43b40000    # 360.0f
-    .end array-data
-
-    .line 806
-    :array_2
-    .array-data 4
-        0x0
-        0x43b40000    # 360.0f
-    .end array-data
-
-    .line 806
-    :array_3
-    .array-data 4
-        0x0
-        -0x3c4c0000    # -360.0f
-    .end array-data
-
-    .line 806
-    :array_4
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    .line 806
-    :array_5
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    .line 805
-    :array_6
-    .array-data 4
-        -0x3db80000    # -50.0f
-        0x0
-    .end array-data
-
-    .line 806
-    :array_7
-    .array-data 4
-        0x42480000    # 50.0f
-        0x0
-    .end array-data
-
-    .line 806
-    :array_8
-    .array-data 4
-        -0x3db80000    # -50.0f
-        0x0
-    .end array-data
-
-    .line 806
-    :array_9
-    .array-data 4
-        0x42480000    # 50.0f
-        0x0
-    .end array-data
-
-    .line 806
-    :array_a
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    .line 808
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-    .end packed-switch
+    :cond_0
+    return-void
 .end method

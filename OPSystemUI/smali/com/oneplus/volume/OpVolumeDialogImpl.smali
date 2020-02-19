@@ -526,16 +526,7 @@
 
 .method private isLandscape()Z
     .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mRightHandVolumeMenu:Z
-    
-    if-eqz v0, :cond_stock
-    
-    const/4 v0, 0x1
-    
-    return v0
 
-    :cond_stock
     iget-object p0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -886,7 +877,7 @@
 
     aput-object v3, v2, v6
 
-    const-string v3, "updateVolumeRowTintH"
+    const-string/jumbo v3, "updateVolumeRowTintH"
 
     invoke-static {v0, v3, v2}, Lcom/oneplus/util/OpReflectionUtils;->getMethodWithParams(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -1252,7 +1243,7 @@
 .end method
 
 .method protected loadOpDimens()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mContext:Landroid/content/Context;
 
@@ -1341,19 +1332,9 @@
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
-    
-    sget-boolean v3, Lcom/android/mwilky/Renovate;->mUnlinkVolume:Z
-    
-    if-eqz v3, :cond_stock
-    
-	mul-int/lit8 v1, v1, 0x4
-	
-	goto :goto_jump
-    
-    :cond_stock
+
     mul-int/lit8 v1, v1, 0x3
 
-    :goto_jump
     add-int/2addr v0, v1
 
     iput v0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mOpafterExpandWidth:I

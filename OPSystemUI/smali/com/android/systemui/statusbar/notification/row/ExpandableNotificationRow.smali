@@ -286,7 +286,7 @@
 
     new-instance v0, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow$2;
 
-    const-string v1, "translate"
+    const-string/jumbo v1, "translate"
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow$2;-><init>(Ljava/lang/String;)V
 
@@ -5577,15 +5577,8 @@
 .end method
 
 .method public isUserExpanded()Z
-    .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mExpandedNotifications:Z
-    
-    if-eqz v0, :cond_stock
-    
-    return v0
-    
-    :cond_stock
+    .locals 0
+
     iget-boolean p0, p0, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;->mUserExpanded:Z
 
     return p0
