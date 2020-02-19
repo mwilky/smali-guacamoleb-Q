@@ -2775,6 +2775,7 @@
     <string name="notification_content_block_summary">Να μην εμφανίζονται ποτέ ειδοποιήσεις στο πλαίσιο σκίασης ειδοποιήσεων ή σε περιφερειακές συσκευές</string>
     <string name="notification_content_block_title">Εμφάνιση ειδοποιήσεων</string>
     <string name="notification_for_work_life">Ειδοποιήσεις για τη λειτουργία «Εργασία και προσωπική ζωή»</string>
+    <string name="notification_for_work_life_disabled">Πατήστε τη δυνατότητα αυτή για να την απενεργοποιήσετε.</string>
     <string name="notification_group_title">Ομάδα κατηγοριών ειδοποιήσεων</string>
     <string name="notification_importance_blocked">Να μην εμφανίζονται ποτέ ειδοποιήσεις</string>
     <string name="notification_importance_default">Αναπαραγωγή ήχου</string>
@@ -5980,6 +5981,7 @@
     <string name="wizard_next">Επόμενο</string>
     <string name="work_alarm_ringtone_title">Προεπιλεγμένος ήχος ξυπνητηριού εργασίας</string>
     <string name="work_life_balance">Ισορροπία εργασίας-προσωπικής ζωής</string>
+    <string name="work_life_disabled_toast">Η δυνατότητα «Ισορροπία εργασίας-προσωπικής ζωής» είναι απενεργοποιημένη.</string>
     <string name="work_mode_label">Προφίλ εργασίας</string>
     <string name="work_mode_off_summary">Οι εφαρμογές και οι ειδοποιήσεις είναι απενεργοποιημένες</string>
     <string name="work_mode_on_summary">Διαχειριζόμενο από τον οργανισμό σας</string>

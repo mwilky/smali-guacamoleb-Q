@@ -2775,6 +2775,7 @@ L'app potrà anche attivare o disattivare la funzione Non disturbare e modificar
     <string name="notification_content_block_summary">Non mostrare mai notifiche nella relativa area o su dispositivi periferici</string>
     <string name="notification_content_block_title">Mostra notifiche</string>
     <string name="notification_for_work_life">Notifiche per la modalità Lavoro e vita privata</string>
+    <string name="notification_for_work_life_disabled">Tocca per attivare questa funzionalità.</string>
     <string name="notification_group_title">Gruppo di categorie di notifica</string>
     <string name="notification_importance_blocked">Non mostrare mai notifiche</string>
     <string name="notification_importance_default">Con suoneria</string>
@@ -5979,6 +5980,7 @@ Consetirlo a tutte le app che vogliono eseguire la ricerca?"</string>
     <string name="wizard_next">Avanti</string>
     <string name="work_alarm_ringtone_title">Suoneria della sveglia di lavoro predefinita</string>
     <string name="work_life_balance">Equilibrio vita privata/lavoro</string>
+    <string name="work_life_disabled_toast">La funzionalità Equilibrio vita privata/lavoro è disabilitata.</string>
     <string name="work_mode_label">Profilo di lavoro</string>
     <string name="work_mode_off_summary">Le app e le notifiche sono disattivate</string>
     <string name="work_mode_on_summary">Gestito dalla tua organizzazione</string>

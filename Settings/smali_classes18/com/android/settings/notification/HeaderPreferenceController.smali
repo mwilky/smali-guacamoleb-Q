@@ -255,11 +255,11 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mFragment:Lcom/android/settings/dashboard/DashboardFragment;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     const/4 v1, 0x0
 
@@ -299,16 +299,52 @@
 
     iget-object v4, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    iget-boolean v4, v4, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantApp:Z
+
+    if-eqz v4, :cond_2
+
+    iget-object v4, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantAppIcon:Landroid/graphics/drawable/Drawable;
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v4, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
     iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->icon:Landroid/graphics/drawable/Drawable;
 
+    :goto_0
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/EntityHeaderController;->setIcon(Landroid/graphics/drawable/Drawable;)Lcom/android/settings/widget/EntityHeaderController;
 
     move-result-object v2
 
+    iget-object v4, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    iget-boolean v4, v4, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantApp:Z
+
+    if-eqz v4, :cond_3
+
+    iget-object v4, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantAppName:Ljava/lang/String;
+
+    goto :goto_1
+
+    :cond_3
     invoke-virtual {p0}, Lcom/android/settings/notification/HeaderPreferenceController;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v4
 
+    :goto_1
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/EntityHeaderController;->setLabel(Ljava/lang/CharSequence;)Lcom/android/settings/widget/EntityHeaderController;
 
     move-result-object v2
@@ -377,6 +413,6 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_2
+    :cond_4
     return-void
 .end method

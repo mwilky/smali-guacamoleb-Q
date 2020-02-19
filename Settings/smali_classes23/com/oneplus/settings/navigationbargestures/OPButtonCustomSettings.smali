@@ -557,13 +557,13 @@
 
     if-eqz v15, :cond_4
 
-    const v1, 0x7f030142
+    const v1, 0x7f03009a
 
     invoke-virtual {v15, v1}, Landroidx/preference/ListPreference;->setEntries(I)V
 
     iget-object v15, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mMenuDoubleTapAction:Landroidx/preference/ListPreference;
 
-    const v1, 0x7f030143
+    const v1, 0x7f03009e
 
     invoke-virtual {v15, v1}, Landroidx/preference/ListPreference;->setEntryValues(I)V
 

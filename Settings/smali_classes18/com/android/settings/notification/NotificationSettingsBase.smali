@@ -66,6 +66,8 @@
 
 .field protected mImportanceListener:Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;
 
+.field protected mInstantAppPKG:Ljava/lang/String;
+
 .field protected mIntent:Landroid/content/Intent;
 
 .field protected mListeningToPackageRemove:Z
@@ -163,6 +165,14 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/settings/notification/NotificationSettingsBase;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettingsBase;->updatePreferenceStates()V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/android/settings/notification/NotificationSettingsBase;)V
     .locals 0
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettingsBase;->updatePreferenceStates()V
@@ -1122,9 +1132,52 @@
     :goto_1
     iput v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mUid:I
 
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mArgs:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_2
+
+    const-string v1, "arg_instant_package_name"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mArgs:Landroid/os/Bundle;
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_2
+
+    :cond_2
+    const-string v0, ""
+
+    :goto_2
+    iput-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mInstantAppPKG:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    new-instance v0, Lcom/android/settings/notification/NotificationBackend;
+
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Lcom/android/settings/notification/NotificationBackend;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mBackend:Lcom/android/settings/notification/NotificationBackend;
+
+    :cond_3
     iget v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mUid:I
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_4
 
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mPm:Landroid/content/pm/PackageManager;
@@ -1141,13 +1194,13 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_0
     move-exception v0
 
-    :cond_2
-    :goto_2
+    :cond_4
+    :goto_3
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mPkg:Ljava/lang/String;
 
     iget v1, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mUid:I
@@ -1160,7 +1213,7 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mPkgInfo:Landroid/content/pm/PackageInfo;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     iget v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mUid:I
 
@@ -1210,12 +1263,12 @@
 
     move-result-object v0
 
-    :goto_3
+    :goto_4
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_5
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1233,9 +1286,9 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/settings/notification/NotificationPreferenceController;->onResume(Lcom/android/settings/notification/NotificationBackend$AppRow;Landroid/app/NotificationChannel;Landroid/app/NotificationChannelGroup;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_3
+    :cond_5
     return-void
 .end method
 

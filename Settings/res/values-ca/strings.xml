@@ -2775,6 +2775,7 @@ L'aplicació també podrà activar i desactivar el mode No molestis i canviar la
     <string name="notification_content_block_summary">"No mostris mai notificacions a l'àrea de notificacions ni en dispositius perifèrics"</string>
     <string name="notification_content_block_title">Mostra notificacions</string>
     <string name="notification_for_work_life">Notificacions per al Mode de treball i de vida</string>
+    <string name="notification_for_work_life_disabled">Toqueu per habilitar aquesta funció.</string>
     <string name="notification_group_title">Grup de categories de notificacions</string>
     <string name="notification_importance_blocked">No mostris mai notificacions</string>
     <string name="notification_importance_default">Emet so</string>
@@ -5980,6 +5981,7 @@ Vols permetre-ho per a totes les aplicacions que vulguin cercar xarxes?"</string
     <string name="wizard_next">Següent</string>
     <string name="work_alarm_ringtone_title">"So d'alarma de la feina predeterminat"</string>
     <string name="work_life_balance">Balanç treball-vida</string>
+    <string name="work_life_disabled_toast">"La funció d'Equilibri treball-vida està inhabilitada."</string>
     <string name="work_mode_label">Perfil professional</string>
     <string name="work_mode_off_summary">Les aplicacions i les notificacions estan desactivades</string>
     <string name="work_mode_on_summary">Gestionat per la teva organització</string>

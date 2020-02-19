@@ -23,6 +23,14 @@
 
 .field public blocked:Z
 
+.field public instantApp:Z
+
+.field public instantAppIcon:Landroid/graphics/drawable/Drawable;
+
+.field public instantAppName:Ljava/lang/String;
+
+.field public instantAppPKG:Ljava/lang/String;
+
 .field public lastSent:J
 
 .field public sentCount:I

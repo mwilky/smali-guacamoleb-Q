@@ -2775,6 +2775,7 @@ Dette gir også appen muligheten til å slå Ikke forstyrr av eller på samt end
     <string name="notification_content_block_summary">Vis aldri varlser i panelet eller på eksterne enheter</string>
     <string name="notification_content_block_title">Vis varsler</string>
     <string name="notification_for_work_life">Varsler for arbeids- og livsmodus</string>
+    <string name="notification_for_work_life_disabled">Trykk for å aktivere denne funksjonen.</string>
     <string name="notification_group_title">Varselkategorigruppe</string>
     <string name="notification_importance_blocked">Vis aldri varsler</string>
     <string name="notification_importance_default">Lag lyd</string>
@@ -5978,6 +5979,7 @@ Vil du tillate dette for alle apper som prøver å skanne?"</string>
     <string name="wizard_next">Neste</string>
     <string name="work_alarm_ringtone_title">Standard alarmlyd for jobb</string>
     <string name="work_life_balance">Arbeids liv Balanse</string>
+    <string name="work_life_disabled_toast">Funksjonen Arbeidslivsbalanse er deaktivert.</string>
     <string name="work_mode_label">Jobbprofil</string>
     <string name="work_mode_off_summary">Apper og varsler er slått av</string>
     <string name="work_mode_on_summary">Administreres av organisasjonen din</string>

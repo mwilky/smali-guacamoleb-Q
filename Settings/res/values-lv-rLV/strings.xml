@@ -198,6 +198,7 @@ Vai tiešām vēlaties iespējot šo funkciju?"</string>
     <string name="not_optimize_summery">Var ietekmēt akumulatora veiktspēju</string>
     <string name="not_optimized_apps">Neoptimizētās lietotnes</string>
     <string name="notification_for_work_life">Darba un privātās dzīves režīmu paziņojumi</string>
+    <string name="notification_for_work_life_disabled">Pieskarieties, lai aktivizētu šo funkciju.</string>
     <string name="nxp_non_std_card">Nestandarta NFC atzīmes atbalsts</string>
     <string name="nxp_non_std_card_summary">Atbalsts dažu nestandarta NFC atzīmju nolasīšanai</string>
     <string name="oneplus_adaptive_model">Adaptīvais režīms</string>
@@ -1401,6 +1402,7 @@ Iestatot tīkla paslēpšanu, netiks mainīti jūsu maršrutētāja iestatījumi
     <string name="wifi_wapi_certification_dont_exist">Jūsu ievadītā tīkla parole nav pareiza. Lūdzu, mēģiniet vēlreiz.</string>
     <string name="wifi_wapi_user_cert">Lietotāja sertifikāts</string>
     <string name="work_life_balance">Darba un privātās dzīves līdzsvarošanas režīmi</string>
+    <string name="work_life_disabled_toast">Darba un privātās dzīves līdzsvara funkcija ir atspējota.</string>
     <string name="zen_mode_alarm_info_new">Modinātāji vienmēr tiks atskaņoti ar pārtraukumiem</string>
     <string name="zen_mode_alarms_summary">Iespējot skaņu modinātājiem</string>
     <string name="zen_mode_media_sound">Multivide</string>

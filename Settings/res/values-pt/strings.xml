@@ -2775,6 +2775,7 @@ Isso também autoriza o app a ativar ou desativar o modo \"Não perturbe\" e alt
     <string name="notification_content_block_summary">Nunca mostrar notificações na aba ou em dispositivos periféricos</string>
     <string name="notification_content_block_title">Mostrar notificações</string>
     <string name="notification_for_work_life">Notificações para o Modo Vida e Trabalho</string>
+    <string name="notification_for_work_life_disabled">Tocar para ativar esta funcionalidade.</string>
     <string name="notification_group_title">Grupo de categoria de notificações</string>
     <string name="notification_importance_blocked">Nunca mostrar notificações</string>
     <string name="notification_importance_default">Emitir som</string>
@@ -5982,6 +5983,7 @@ Permitir isto para todos os apps que quiserem verificar?"</string>
     <string name="wizard_next">Próxima</string>
     <string name="work_alarm_ringtone_title">Som de alarme de trabalho padrão</string>
     <string name="work_life_balance">Equilíbrio entre a vida social e o trabalho</string>
+    <string name="work_life_disabled_toast">A funcionalidade de Equilíbrio entre a vida social e o trabalho está desativada.</string>
     <string name="work_mode_label">Perfil de trabalho</string>
     <string name="work_mode_off_summary">Os apps e as notificações estão desativados</string>
     <string name="work_mode_on_summary">Gerenciados pela sua organização</string>

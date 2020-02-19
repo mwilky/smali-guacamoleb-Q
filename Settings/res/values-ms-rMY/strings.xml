@@ -198,6 +198,7 @@ Adakah anda benar-benar mahu membolehkan fungsi ini?"</string>
     <string name="not_optimize_summery">Mungkin menjejaskan prestasi bateri</string>
     <string name="not_optimized_apps">Aplikasi tidak dioptimumkan</string>
     <string name="notification_for_work_life">Pemberitahuan untuk Mod Kerja dan Kehidupan</string>
+    <string name="notification_for_work_life_disabled">Ketik untuk dayakan ciri ini.</string>
     <string name="nxp_non_std_card">Sokongan untuk Tag NFC Bukan Standard</string>
     <string name="nxp_non_std_card_summary">Sokongan untuk membaca sesetengah tag NFC bukan standard</string>
     <string name="oneplus_adaptive_model">Model mudah suai</string>
@@ -1396,6 +1397,7 @@ Menetapkan rangkaian sebagai tersembunyi tidak akan mengubah tetapan penghala an
     <string name="wifi_wapi_certification_dont_exist">Kata laluan rangkaian yang anda taip adalah tidak betul. Sila cuba sekali lagi.</string>
     <string name="wifi_wapi_user_cert">Sijil Pengguna</string>
     <string name="work_life_balance">Keseimbangan Kerja-Kehidupan</string>
+    <string name="work_life_disabled_toast">Ciri Keseimbangan Kerja-Kehidupan dinyahdayakan.</string>
     <string name="zen_mode_alarm_info_new">Penggera akan sentiasa mengganggu</string>
     <string name="zen_mode_alarms_summary">Bolehkan bunyi untuk penggera</string>
     <string name="zen_mode_media_sound">Media</string>

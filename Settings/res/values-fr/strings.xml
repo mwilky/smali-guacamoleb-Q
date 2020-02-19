@@ -2775,6 +2775,7 @@ L'application pourra aussi activer ou désactiver le mode Ne pas déranger, et m
     <string name="notification_content_block_summary">Ne jamais afficher les notifications dans le volet ou sur les périphériques</string>
     <string name="notification_content_block_title">Afficher les notifications</string>
     <string name="notification_for_work_life">Notifications pour les modes Travail et Vie</string>
+    <string name="notification_for_work_life_disabled">"Appuyez afin d'activer cette fonctionnalité."</string>
     <string name="notification_group_title">Groupe de notifications</string>
     <string name="notification_importance_blocked">Ne jamais afficher les notifications</string>
     <string name="notification_importance_default">Alerte sonore</string>
@@ -5980,6 +5981,7 @@ Donner cette autorisation à toutes les applications souhaitant activer la reche
     <string name="wizard_next">Suivant</string>
     <string name="work_alarm_ringtone_title">"Son de l'alarme professionnelle par défaut"</string>
     <string name="work_life_balance">Équilibre Travail - Vie</string>
+    <string name="work_life_disabled_toast">La fonctionnalité Équilibre Travail - Vie est désactivée.</string>
     <string name="work_mode_label">Profil professionnel</string>
     <string name="work_mode_off_summary">Les applications et les notifications sont désactivées</string>
     <string name="work_mode_on_summary">Géré par votre organisation</string>

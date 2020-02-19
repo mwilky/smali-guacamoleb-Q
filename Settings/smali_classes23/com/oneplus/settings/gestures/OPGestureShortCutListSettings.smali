@@ -240,9 +240,9 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/gestures/OPGestureShortCutListSettings;->mGestureShortcutListView:Landroid/widget/ListView;
 
-    const v2, 0x7f080546
+    const v2, 0x7f080547
 
-    const v3, 0x7f080545
+    const v3, 0x7f080546
 
     const v4, 0x7f07037c
 

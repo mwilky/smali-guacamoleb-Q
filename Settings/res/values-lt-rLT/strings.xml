@@ -198,6 +198,7 @@ Ar tikrai norite įjungti šią funkciją?"</string>
     <string name="not_optimize_summery">Gali turėti įtakos baterijos veikimui</string>
     <string name="not_optimized_apps">Neoptimizuotos programėlės</string>
     <string name="notification_for_work_life">Darbo ir laisvalaikio režimo pranešimai</string>
+    <string name="notification_for_work_life_disabled">Bakstelėkite ir įjunkite šią funkciją.</string>
     <string name="nxp_non_std_card">Nestandartinių NFC žymų palaikymas</string>
     <string name="nxp_non_std_card_summary">Kai kurių nestandartinių NFC žymų nuskaitymo palaikymas</string>
     <string name="oneplus_adaptive_model">Adaptyvusis režimas</string>
@@ -1401,6 +1402,7 @@ Nustačius tinklą kaip paslėptą, jūsų nustatyti maršrutizatoriaus parametr
     <string name="wifi_wapi_certification_dont_exist">Įvestas tinklo slaptažodis klaidingas. Bandykite dar kartą.</string>
     <string name="wifi_wapi_user_cert">Naudotojo sertifikatas</string>
     <string name="work_life_balance">Darbo ir laisvalaikio balansas</string>
+    <string name="work_life_disabled_toast">Darbo ir laisvalaikio balanso funkcija išjungta.</string>
     <string name="zen_mode_alarm_info_new">Aliarmai visada pertrauks</string>
     <string name="zen_mode_alarms_summary">Įjungti aliarmų garsą</string>
     <string name="zen_mode_media_sound">Medija</string>

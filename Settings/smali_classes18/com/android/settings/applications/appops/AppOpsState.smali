@@ -711,7 +711,7 @@
 
     move-object v15, v0
 
-    const/16 v0, 0x5a
+    const/16 v0, 0x5b
 
     new-array v7, v0, [I
 

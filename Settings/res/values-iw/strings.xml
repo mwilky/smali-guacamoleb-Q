@@ -2774,6 +2774,7 @@
     <string name="notification_content_block_summary">לעולם אל תציג את ההתראות בלוח ההתראות או במכשירים היקפיים</string>
     <string name="notification_content_block_title">הצגת התראות</string>
     <string name="notification_for_work_life">התראות למצב עבודה וחיים</string>
+    <string name="notification_for_work_life_disabled">הקש כדי לאפשר תכונה זאת.</string>
     <string name="notification_group_title">קבוצת קטגוריות של התראות</string>
     <string name="notification_importance_blocked">לעולם אל תציג התראות</string>
     <string name="notification_importance_default">עם צליל</string>
@@ -5975,6 +5976,7 @@ Voice over Wi-Fi:‏ %3$s
     <string name="wizard_next">הבא</string>
     <string name="work_alarm_ringtone_title">צליל ברירת המחדל להתראת עבודה</string>
     <string name="work_life_balance">איזון חיים/עבודה</string>
+    <string name="work_life_disabled_toast">תכונת האיזון בין החיים לעבודה מושבתת.</string>
     <string name="work_mode_label">פרופיל עבודה</string>
     <string name="work_mode_off_summary">אפליקציות והתראות מושבתות</string>
     <string name="work_mode_on_summary">מנוהל בידי הארגון</string>

@@ -198,6 +198,7 @@
     <string name="not_optimize_summery">बॅटरीच्या कामगिरीवर परिणाम होऊ शकतो</string>
     <string name="not_optimized_apps">अनुकूल अॅप्स नाहीत</string>
     <string name="notification_for_work_life">कार्यालयीन आणि लाइफ मोडसाठी सूचना</string>
+    <string name="notification_for_work_life_disabled">हे वैशिष्ट्य सक्षम करण्यासाठी टॅप करा.</string>
     <string name="nxp_non_std_card">मानक-नसलेले NFC टॅग समर्थन</string>
     <string name="nxp_non_std_card_summary">काही मानक- नसलेल्या NFC टॅग्ज वाचण्यासाठी समर्थन</string>
     <string name="oneplus_adaptive_model">जुळवून घेणारे स्वरूप</string>
@@ -1396,6 +1397,7 @@
     <string name="wifi_wapi_certification_dont_exist">आपण टाइप केलेला नेटवर्क पासवर्ड चुकीचा आहे. कृपया पुन्हा प्रयत्न करा.</string>
     <string name="wifi_wapi_user_cert">वापरकर्ता प्रमाणपत्र</string>
     <string name="work_life_balance">कार्य-जीवनातील संतुलन</string>
+    <string name="work_life_disabled_toast">कार्य-जीवनातील संतुलन वैशिष्ट्य अक्षम केले आहे.</string>
     <string name="zen_mode_alarm_info_new">गजर नेहमीच हस्तक्षेप करतील</string>
     <string name="zen_mode_alarms_summary">गजरांसाठी आवाज सक्रिय करा</string>
     <string name="zen_mode_media_sound">मीडिया</string>

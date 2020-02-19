@@ -2775,6 +2775,7 @@
     <string name="notification_content_block_summary">Ніколи не показувати сповіщення на панелі та периферійних пристроях</string>
     <string name="notification_content_block_title">Показувати сповіщення</string>
     <string name="notification_for_work_life">Сповіщення для режиму роботи й особистого життя</string>
+    <string name="notification_for_work_life_disabled">Торкніться, щоб увімкнути цю функцію.</string>
     <string name="notification_group_title">Група категорій сповіщень</string>
     <string name="notification_importance_blocked">Ніколи не показувати сповіщення</string>
     <string name="notification_importance_default">Зі звуком</string>
@@ -5980,6 +5981,7 @@
     <string name="wizard_next">Далі</string>
     <string name="work_alarm_ringtone_title">Стандартний сигнал робочого будильника</string>
     <string name="work_life_balance">Баланс роботи й особистого життя</string>
+    <string name="work_life_disabled_toast">Функцію балансу роботи та особистого життя вимкнено.</string>
     <string name="work_mode_label">Робочий профіль</string>
     <string name="work_mode_off_summary">Додатки й сповіщення вимкнено</string>
     <string name="work_mode_on_summary">Профілем керує ваша організація</string>

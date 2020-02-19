@@ -198,6 +198,7 @@
     <string name="not_optimize_summery">ব্যাটারির কার্যক্ষমতা প্রভাবিত হতে পারে</string>
     <string name="not_optimized_apps">অপ্টিমাইজ করা নেই এমন অ্যাপগুলি</string>
     <string name="notification_for_work_life">ওয়ার্ক ও লাইফ মোডের জন্য বিজ্ঞপ্তিগুলি</string>
+    <string name="notification_for_work_life_disabled">এই ফিচারটিকে চালু করতে আলতো চাপুন।</string>
     <string name="nxp_non_std_card">নন স্ট্যান্ডার্ড NFC ট্যাগ সাপোর্ট</string>
     <string name="nxp_non_std_card_summary">কিছু নন স্ট্যান্ডার্ড NFC ট্যাগ পড়ার সাপোর্ট</string>
     <string name="oneplus_adaptive_model">অ্যাডাপ্টিভ মোড</string>
@@ -1401,6 +1402,7 @@
     <string name="wifi_wapi_certification_dont_exist">আপনার দেওয়া নেটওয়ার্ক পাসওয়ার্ডটি ভুল। অনুগ্রহ করে আবার চেষ্টা করুন।</string>
     <string name="wifi_wapi_user_cert">ব্যবহারকারীর সার্টিফিকেট</string>
     <string name="work_life_balance">ওয়ার্ক-লাইফ ব্যালেন্স</string>
+    <string name="work_life_disabled_toast">ওয়ার্ক লাইফ ব্যালান্স ফিচার বন্ধ আছে।</string>
     <string name="zen_mode_alarm_info_new">অ্যালার্ম সর্বদা বিঘ্ন হবে</string>
     <string name="zen_mode_alarms_summary">অ্যালার্মের জন্য শব্দ সক্ষম করুন</string>
     <string name="zen_mode_media_sound">মিডিয়া</string>

@@ -1961,7 +1961,7 @@
 .method public static getQuickPayIconByType(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    const v0, 0x7f080618
+    const v0, 0x7f080619
 
     if-eqz p1, :cond_3
 
@@ -1990,12 +1990,12 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f080619
+    const v0, 0x7f08061a
 
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f080618
+    const v0, 0x7f080619
 
     nop
 

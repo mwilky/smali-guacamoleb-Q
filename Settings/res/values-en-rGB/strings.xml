@@ -2775,6 +2775,7 @@ This will also give the app the ability to turn Do Not Disturb on or off and cha
     <string name="notification_content_block_summary">Never show notifications in the shade or on peripheral devices</string>
     <string name="notification_content_block_title">Show notifications</string>
     <string name="notification_for_work_life">Notifications for Work and Life Mode</string>
+    <string name="notification_for_work_life_disabled">Tap to enable this feature.</string>
     <string name="notification_group_title">Notification category group</string>
     <string name="notification_importance_blocked">Never show notifications</string>
     <string name="notification_importance_default">Make sound</string>
@@ -5978,6 +5979,7 @@ Allow this for all apps that want to scan?"</string>
     <string name="wizard_next">Next</string>
     <string name="work_alarm_ringtone_title">Default work alarm sound</string>
     <string name="work_life_balance">Work-Life Balance</string>
+    <string name="work_life_disabled_toast">Work-Life Balance feature is disabled.</string>
     <string name="work_mode_label">Work profile</string>
     <string name="work_mode_off_summary">Apps and notifications are off</string>
     <string name="work_mode_on_summary">Managed by your organisation</string>

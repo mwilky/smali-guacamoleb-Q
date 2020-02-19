@@ -130,6 +130,8 @@
 
 .field private mBatteryHelper:Lcom/android/internal/os/BatteryStatsHelper;
 
+.field private mCurrentNotificationsSentState:Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
 .field private mCurrentPkgName:Ljava/lang/String;
 
 .field private mCurrentUid:I
@@ -512,6 +514,108 @@
     return-void
 .end method
 
+.method private startAppInfoFragmentForNotification(Ljava/lang/Class;ILcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;I",
+            "Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;",
+            ")V"
+        }
+    .end annotation
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mCurrentPkgName:Ljava/lang/String;
+
+    const-string v2, "package"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mCurrentUid:I
+
+    const-string v2, "uid"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    if-eqz p3, :cond_0
+
+    iget-object v1, p3, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppPKG:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p3, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppPKG:Ljava/lang/String;
+
+    const-string v2, "arg_instant_package_name"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    new-instance v1, Lcom/android/settings/core/SubSettingLauncher;
+
+    invoke-virtual {p0}, Lcom/android/settings/applications/manageapplications/ManageApplications;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setDestination(Ljava/lang/String;)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/android/settings/applications/manageapplications/ManageApplications;->getMetricsCategory()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setSourceMetricsCategory(I)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Lcom/android/settings/core/SubSettingLauncher;->setTitleRes(I)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/android/settings/core/SubSettingLauncher;->setArguments(Landroid/os/Bundle;)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/os/UserHandle;
+
+    iget v3, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mCurrentUid:I
+
+    invoke-static {v3}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Landroid/os/UserHandle;-><init>(I)V
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setUserHandle(Landroid/os/UserHandle;)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, p0, v2}, Lcom/android/settings/core/SubSettingLauncher;->setResultListener(Landroidx/fragment/app/Fragment;I)Lcom/android/settings/core/SubSettingLauncher;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/settings/core/SubSettingLauncher;->launch()V
+
+    return-void
+.end method
+
 .method private startApplicationDetailsActivity()V
     .locals 18
 
@@ -801,7 +905,9 @@
 
     const v2, 0x7f120b8d
 
-    invoke-direct {v0, v1, v2}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
+    iget-object v3, v0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mCurrentNotificationsSentState:Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragmentForNotification(Ljava/lang/Class;ILcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
 
     nop
 
@@ -1437,7 +1543,7 @@
 
     move-result v1
 
-    if-le v1, v0, :cond_2
+    if-le v1, v0, :cond_3
 
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mApplications:Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;
 
@@ -1445,6 +1551,19 @@
 
     move-result-object v1
 
+    iget-object v2, v1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    instance-of v2, v2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    check-cast v2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    iput-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mCurrentNotificationsSentState:Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    :cond_2
     iget-object v2, v1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-object v2, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -1461,7 +1580,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mApplications:Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;
 
     invoke-static {v1}, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->access$300(Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;)Lcom/android/settings/applications/manageapplications/FileViewHolderController;

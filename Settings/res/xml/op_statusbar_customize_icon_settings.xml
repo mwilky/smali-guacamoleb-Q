@@ -18,4 +18,5 @@
     <com.oneplus.settings.statusbar.StatusBarSwitch android:title="@string/status_bar_settings_volte_title" android:key="volte" />
     <com.oneplus.settings.statusbar.StatusBarSwitch android:title="@string/status_bar_settings_vowifi_title" android:key="vowifi" />
     <com.oneplus.settings.statusbar.StatusBarSwitch android:title="@string/nfc_quick_toggle_title" android:key="nfc" />
+    <com.oneplus.settings.statusbar.StatusBarSwitch android:title="@string/work_life_balance" android:key="wlb" />
 </PreferenceScreen>

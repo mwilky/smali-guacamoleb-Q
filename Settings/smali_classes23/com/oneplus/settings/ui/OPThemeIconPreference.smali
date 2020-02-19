@@ -193,32 +193,32 @@
 
     if-eq v0, v1, :cond_0
 
-    const v1, 0x7f080532
-
-    goto :goto_0
-
-    :cond_0
-    const v1, 0x7f080535
-
-    goto :goto_0
-
-    :cond_1
-    const v1, 0x7f080536
-
-    goto :goto_0
-
-    :cond_2
-    const v1, 0x7f080534
-
-    goto :goto_0
-
-    :cond_3
     const v1, 0x7f080533
 
     goto :goto_0
 
+    :cond_0
+    const v1, 0x7f080536
+
+    goto :goto_0
+
+    :cond_1
+    const v1, 0x7f080537
+
+    goto :goto_0
+
+    :cond_2
+    const v1, 0x7f080535
+
+    goto :goto_0
+
+    :cond_3
+    const v1, 0x7f080534
+
+    goto :goto_0
+
     :cond_4
-    const v1, 0x7f080532
+    const v1, 0x7f080533
 
     nop
 

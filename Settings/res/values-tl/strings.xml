@@ -2775,6 +2775,7 @@ Dahil dito, mabibigyan din ng kakayahan ang app na i-on o i-off ang Huwag Istorb
     <string name="notification_content_block_summary">Huwag kailanman magpakita ng mga notification sa shade o sa mga peripheral na device</string>
     <string name="notification_content_block_title">Magpakita ng mga notification</string>
     <string name="notification_for_work_life">Mga Notification para sa Work at Life Mode</string>
+    <string name="notification_for_work_life_disabled">I-tap para i-enable ang feature na ito.</string>
     <string name="notification_group_title">Grupo ng kategorya ng notification</string>
     <string name="notification_importance_blocked">Huwag kailanman magpakita ng mga notification</string>
     <string name="notification_importance_default">Tumunog</string>
@@ -5978,6 +5979,7 @@ Payagan ito para sa lahat ng apps na gustong mag-scan?"</string>
     <string name="wizard_next">Susunod</string>
     <string name="work_alarm_ringtone_title">Default na tunog ng alarm para sa trabaho</string>
     <string name="work_life_balance">Work-Life Balance</string>
+    <string name="work_life_disabled_toast">Naka-disable ang feature na Work Life Balance.</string>
     <string name="work_mode_label">Profile sa trabaho</string>
     <string name="work_mode_off_summary">Naka-off ang mga app at notification</string>
     <string name="work_mode_on_summary">Pinamamahalaan ng iyong organisasyon</string>

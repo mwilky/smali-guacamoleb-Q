@@ -6,12 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+        Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;,
+        Lcom/android/settings/applications/AppStateNotificationBridge$CourseColumn;
     }
 .end annotation
 
 
 # static fields
+.field public static final ARG_INSTANT_PACKAGE_NAME:Ljava/lang/String; = "arg_instant_package_name"
+
+.field public static final ARG_IS_INSTANT:Ljava/lang/String; = "arg_is_instant"
+
+.field public static final BASE_URI:Landroid/net/Uri;
+
 .field private static final DAYS_TO_CHECK:I = 0x7
 
 .field public static final FILTER_APP_NOTIFICATION_BLOCKED:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
@@ -29,6 +36,8 @@
         }
     .end annotation
 .end field
+
+.field public static final INSTANT_SUFFIX:Ljava/lang/String; = "instant_suffix"
 
 .field public static final RECENT_NOTIFICATION_COMPARATOR:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
@@ -70,6 +79,14 @@
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
+
+    const-string v0, "content://com.nearme.instant.setting/notification"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/settings/applications/AppStateNotificationBridge;->BASE_URI:Landroid/net/Uri;
 
     new-instance v0, Lcom/android/settings/applications/AppStateNotificationBridge$1;
 
@@ -199,7 +216,16 @@
 .method private addBlockStatus(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
     .locals 3
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_0
+
+    iget-boolean v0, p2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    if-eqz p2, :cond_3
 
     iget-object v0, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mBackend:Lcom/android/settings/notification/NotificationBackend;
 
@@ -231,31 +257,27 @@
 
     iget-boolean v0, p2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->systemApp:Z
 
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, p2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->systemApp:Z
-
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     iget-boolean v0, p2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blocked:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     :goto_0
     const/4 v0, 0x1
 
     :goto_1
     iput-boolean v0, p2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blockable:Z
 
-    :cond_2
+    :cond_3
     return-void
 .end method
 
@@ -263,6 +285,15 @@
     .locals 2
 
     if-eqz p1, :cond_0
+
+    iget-boolean v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    if-eqz p1, :cond_1
 
     iget v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->sentCount:I
 
@@ -282,13 +313,13 @@
 
     const/4 v1, 0x7
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_1
 
     iget v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->sentCount:I
 
     iput v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentWeekly:I
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -330,6 +361,47 @@
     iget-boolean v1, v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blockable:Z
 
     return v1
+.end method
+
+.method private static getAppName(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v1
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    goto :goto_1
+
+    :cond_0
+    const-string v2, "(unknown)"
+
+    :goto_1
+    check-cast v2, Ljava/lang/String;
+
+    return-object v2
 .end method
 
 .method protected static getKey(ILjava/lang/String;)Ljava/lang/String;
@@ -391,19 +463,32 @@
 .method public static getSummary(Landroid/content/Context;Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;I)Ljava/lang/CharSequence;
     .locals 6
 
-    const/4 v0, 0x1
+    iget-boolean v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
 
-    const v1, 0x7f0a0645
+    if-eqz v0, :cond_0
 
-    if-ne p2, v1, :cond_1
+    const-string v0, "com.nearme.instant.platform"
 
-    iget-wide v1, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
+    invoke-static {p0, v0}, Lcom/android/settings/applications/AppStateNotificationBridge;->getAppName(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    const-wide/16 v3, 0x0
+    move-result-object v0
 
-    cmp-long v1, v1, v3
+    return-object v0
 
-    if-nez v1, :cond_0
+    :cond_0
+    const v0, 0x7f0a0645
+
+    const/4 v1, 0x1
+
+    if-ne p2, v0, :cond_2
+
+    iget-wide v2, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v2, v4
+
+    if-nez v0, :cond_1
 
     const v0, 0x7f120b8a
 
@@ -413,45 +498,45 @@
 
     return-object v0
 
-    :cond_0
+    :cond_1
     nop
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iget-wide v3, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
+    iget-wide v4, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
 
-    sub-long/2addr v1, v3
+    sub-long/2addr v2, v4
 
-    long-to-double v1, v1
+    long-to-double v2, v2
 
-    invoke-static {p0, v1, v2, v0}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
+    invoke-static {p0, v2, v3, v1}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_1
-    const v1, 0x7f0a0644
+    :cond_2
+    const v0, 0x7f0a0644
 
-    if-ne p2, v1, :cond_3
+    if-ne p2, v0, :cond_4
 
-    iget v1, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
+    iget v0, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
 
     const/4 v2, 0x0
 
-    if-lez v1, :cond_2
+    if-lez v0, :cond_3
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
     const v3, 0x7f100033
 
     iget v4, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
 
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     iget v5, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
 
@@ -459,24 +544,24 @@
 
     move-result-object v5
 
-    aput-object v5, v0, v2
+    aput-object v5, v1, v2
 
-    invoke-virtual {v1, v3, v4, v0}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v3, v4, v1}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
     const v3, 0x7f100034
 
     iget v4, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentWeekly:I
 
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     iget v5, p1, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentWeekly:I
 
@@ -484,15 +569,15 @@
 
     move-result-object v5
 
-    aput-object v5, v0, v2
+    aput-object v5, v1, v2
 
-    invoke-virtual {v1, v3, v4, v0}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v3, v4, v1}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_3
+    :cond_4
     const-string v0, ""
 
     return-object v0
@@ -801,7 +886,7 @@
 .end method
 
 .method public synthetic lambda$getSwitchOnClickListener$0$AppStateNotificationBridge(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Landroid/view/View;)V
-    .locals 6
+    .locals 7
 
     move-object v0, p2
 
@@ -815,7 +900,7 @@
 
     check-cast v1, Landroid/widget/Switch;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Landroid/widget/Switch;->isEnabled()Z
 
@@ -828,27 +913,71 @@
     :cond_0
     invoke-virtual {v1}, Landroid/widget/Switch;->toggle()V
 
-    iget-object v2, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mBackend:Lcom/android/settings/notification/NotificationBackend;
-
-    iget-object v3, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    iget-object v4, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
-
-    invoke-virtual {v1}, Landroid/widget/Switch;->isChecked()Z
-
-    move-result v5
-
-    invoke-virtual {v2, v3, v4, v5}, Lcom/android/settings/notification/NotificationBackend;->setNotificationsEnabledForPackage(Ljava/lang/String;IZ)Z
-
     invoke-static {p1}, Lcom/android/settings/applications/AppStateNotificationBridge;->getNotificationsSentState(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
+
+    iget-boolean v3, v2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
+
+    if-eqz v3, :cond_1
+
+    new-instance v3, Landroid/content/ContentValues;
+
+    invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
+
+    invoke-virtual {v1}, Landroid/widget/Switch;->isChecked()Z
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    const-string v5, "notify"
+
+    invoke-virtual {v3, v5, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-object v4, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/android/settings/applications/AppStateNotificationBridge;->BASE_URI:Landroid/net/Uri;
+
+    iget-object v6, v2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppPKG:Ljava/lang/String;
+
+    invoke-static {v5, v6}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v4, v5, v3, v6, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v3, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mBackend:Lcom/android/settings/notification/NotificationBackend;
+
+    iget-object v4, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    iget-object v5, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v1}, Landroid/widget/Switch;->isChecked()Z
+
+    move-result v6
+
+    invoke-virtual {v3, v4, v5, v6}, Lcom/android/settings/notification/NotificationBackend;->setNotificationsEnabledForPackage(Ljava/lang/String;IZ)Z
+
+    :goto_0
+    if-eqz v2, :cond_2
 
     invoke-virtual {v1}, Landroid/widget/Switch;->isChecked()Z
 
@@ -858,14 +987,14 @@
 
     iput-boolean v3, v2, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blocked:Z
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Landroidx/preference/VibratorSceneUtils;->systemVibrateEnabled(Landroid/content/Context;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Lcom/android/settings/applications/AppStateNotificationBridge;->mContext:Landroid/content/Context;
 
@@ -885,7 +1014,7 @@
 
     invoke-static {v2, v3}, Landroidx/preference/VibratorSceneUtils;->vibrateIfNeeded([JLandroid/os/Vibrator;)V
 
-    :cond_2
+    :cond_3
     return-void
 .end method
 

@@ -2775,6 +2775,7 @@ Ngoài ra, tính năng này có thể bật hoặc tắt chế độ Không làm
     <string name="notification_content_block_summary">Không bao giờ hiển thị thông báo trong ngăn thông báo hoặc trên thiết bị ngoại vi</string>
     <string name="notification_content_block_title">Hiển thị thông báo</string>
     <string name="notification_for_work_life">Thông báo cho Chế độ Công việc và Cuộc sống</string>
+    <string name="notification_for_work_life_disabled">Nhấn để bật tính năng này.</string>
     <string name="notification_group_title">Nhóm các loại thông báo</string>
     <string name="notification_importance_blocked">Không bao giờ hiển thị thông báo</string>
     <string name="notification_importance_default">Phát âm báo</string>
@@ -5978,6 +5979,7 @@ Cho phép cài đặt này đối với tất cả ứng dụng muốn quét?"</
     <string name="wizard_next">Tiếp theo</string>
     <string name="work_alarm_ringtone_title">Âm thanh báo thức công việc mặc định</string>
     <string name="work_life_balance">Cân bằng Công việc-Cuộc sống</string>
+    <string name="work_life_disabled_toast">Tính năng Cân bằng Công việc và Cuộc sống đã tắt.</string>
     <string name="work_mode_label">Hồ sơ công việc</string>
     <string name="work_mode_off_summary">Ứng dụng và thông báo đã tắt</string>
     <string name="work_mode_on_summary">Do tổ chức của bạn quản lý</string>

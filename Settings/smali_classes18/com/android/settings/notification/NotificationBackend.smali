@@ -23,6 +23,10 @@
 .field static sUsageStatsManager:Landroid/app/usage/IUsageStatsManager;
 
 
+# instance fields
+.field protected mInstantAppPKG:Ljava/lang/String;
+
+
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
@@ -62,6 +66,16 @@
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/settings/notification/NotificationBackend;->mInstantAppPKG:Ljava/lang/String;
 
     return-void
 .end method
@@ -870,7 +884,7 @@
 .end method
 
 .method public loadAppRow(Landroid/content/Context;Landroid/content/pm/PackageManager;Landroid/content/pm/ApplicationInfo;)Lcom/android/settings/notification/NotificationBackend$AppRow;
-    .locals 4
+    .locals 10
 
     new-instance v0, Lcom/android/settings/notification/NotificationBackend$AppRow;
 
@@ -993,6 +1007,141 @@
 
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/notification/NotificationBackend;->recordAggregatedUsageEvents(Landroid/content/Context;Lcom/android/settings/notification/NotificationBackend$AppRow;)V
 
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationBackend;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    sget-object v1, Lcom/android/settings/applications/AppStateNotificationBridge;->BASE_URI:Landroid/net/Uri;
+
+    iget-object v3, p0, Lcom/android/settings/notification/NotificationBackend;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const-string v2, "name"
+
+    invoke-interface {v1, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "icon"
+
+    invoke-interface {v1, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-interface {v1, v3}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    const/4 v5, 0x0
+
+    invoke-static {v3, v5, v4}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
+
+    move-result-object v4
+
+    iget-object v6, v0, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    const/4 v7, 0x1
+
+    iput-boolean v7, v6, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantApp:Z
+
+    iget-object v6, v0, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    iput-object v2, v6, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantAppName:Ljava/lang/String;
+
+    iget-object v6, v0, Lcom/android/settings/notification/NotificationBackend$AppRow;->sentByApp:Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;
+
+    new-instance v8, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9, v4}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    iput-object v8, v6, Lcom/android/settings/notification/NotificationBackend$NotificationsSentState;->instantAppIcon:Landroid/graphics/drawable/Drawable;
+
+    const-string v6, "notify"
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    move v6, v7
+
+    goto :goto_1
+
+    :cond_0
+    move v6, v5
+
+    :goto_1
+    iput-boolean v6, v0, Lcom/android/settings/notification/NotificationBackend$AppRow;->banned:Z
+
+    const-string v6, "badge"
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v6
+
+    if-ne v6, v7, :cond_1
+
+    move v5, v7
+
+    :cond_1
+    iput-boolean v5, v0, Lcom/android/settings/notification/NotificationBackend$AppRow;->showBadge:Z
+
+    :cond_2
+    if-eqz v1, :cond_3
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    :cond_3
     return-object v0
 .end method
 

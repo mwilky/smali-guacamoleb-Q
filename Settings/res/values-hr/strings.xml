@@ -2775,6 +2775,7 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne uznemirava
     <string name="notification_content_block_summary">Nikad ne prikazuj obavijesti na zaslonu obavijesti ili na perifernim uređajima</string>
     <string name="notification_content_block_title">Prikaži obavijesti</string>
     <string name="notification_for_work_life">Obavijesti za način posla i života</string>
+    <string name="notification_for_work_life_disabled">Dodirnite da biste omogućili ovu značajku.</string>
     <string name="notification_group_title">Grupa kategorija obavijesti</string>
     <string name="notification_importance_blocked">Nikad ne prikazuj obavijesti</string>
     <string name="notification_importance_default">Reproduciraj zvuk</string>
@@ -5980,6 +5981,7 @@ Postavljanjem mreže kao skrivene neće se promijeniti postavke usmjerivača."</
     <string name="wizard_next">Dalje</string>
     <string name="work_alarm_ringtone_title">Zadani zvuk radnog alarma</string>
     <string name="work_life_balance">Ravnoteža života i posla</string>
+    <string name="work_life_disabled_toast">Značajka Ravnoteža života i posla je onemogućena.</string>
     <string name="work_mode_label">Radni profil</string>
     <string name="work_mode_off_summary">Isključene su aplikacije i obavijesti</string>
     <string name="work_mode_on_summary">Pod upravljanjem vaše organizacije</string>

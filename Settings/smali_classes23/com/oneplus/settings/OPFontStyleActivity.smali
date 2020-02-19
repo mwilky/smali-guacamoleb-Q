@@ -155,9 +155,9 @@
 
     move-result v0
 
-    const v1, 0x7f080671
+    const v1, 0x7f080672
 
-    const v2, 0x7f080674
+    const v2, 0x7f080675
 
     const v3, 0x7f0a044b
 
@@ -511,9 +511,9 @@
 
     iget v2, p0, Lcom/oneplus/settings/OPFontStyleActivity;->mFontValue:I
 
-    const v3, 0x7f080671
+    const v3, 0x7f080672
 
-    const v4, 0x7f080674
+    const v4, 0x7f080675
 
     if-ne v2, v1, :cond_0
 

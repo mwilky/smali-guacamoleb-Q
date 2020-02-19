@@ -601,7 +601,7 @@
 
     const/4 v5, -0x1
 
-    invoke-static {v1, v2, v5, v14, v13}, Landroid/content/PermissionChecker;->checkPermission(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I
+    invoke-static {v1, v2, v5, v14, v13}, Landroid/content/PermissionChecker;->checkPermissionForPreflight(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I
 
     move-result v1
 

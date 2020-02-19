@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,23 +46,27 @@
 
     move-result v1
 
-    const-string v2, "oneplus_laboratory_settings"
+    const-string v2, "worklifebalance"
 
-    const-string v3, "anti_misoperation_of_the_screen_touch_enable"
+    const-string v3, "oneplus_laboratory_settings"
+
+    const-string v4, "anti_misoperation_of_the_screen_touch_enable"
 
     if-eqz v1, :cond_0
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const-string v1, "oneplus_app_locker"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const-string v1, "oneplus_multi_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_0
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportPocketMode()Z
@@ -71,7 +75,7 @@
 
     if-nez v1, :cond_1
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isLaboratoryFeatureExist()Z
@@ -80,25 +84,25 @@
 
     if-nez v1, :cond_2
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportQuickLaunch()Z
 
     move-result v1
 
-    const-string v2, "oneplus_quick_pay"
+    const-string v3, "oneplus_quick_pay"
 
-    const-string v3, "oneplus_quick_launch"
+    const-string v4, "oneplus_quick_launch"
 
     if-eqz v1, :cond_3
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_3
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_0
     invoke-static {p1}, Lcom/oneplus/settings/quickpay/QuickPaySettings;->canShowQuickPay(Landroid/content/Context;)Z
@@ -114,7 +118,7 @@
     if-eqz v1, :cond_5
 
     :cond_4
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_5
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
@@ -123,7 +127,7 @@
 
     if-eqz v1, :cond_6
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_6
     const-string v1, "com.oneplus.clipboard"
@@ -182,7 +186,7 @@
 
     if-eqz v1, :cond_b
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_b
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportQuickReply()Z
@@ -203,6 +207,15 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_d
+    invoke-static {p1}, Lcom/oneplus/settings/others/OPToolsSettings;->access$100(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_e
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_e
     return-object v0
 .end method
 

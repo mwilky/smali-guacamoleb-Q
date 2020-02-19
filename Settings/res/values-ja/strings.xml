@@ -2775,6 +2775,7 @@ Googleアカウントなど、アカウントによっては、スマートフ�
     <string name="notification_content_block_summary">シェードにも周辺デバイスにも通知を表示しない</string>
     <string name="notification_content_block_title">通知の表示</string>
     <string name="notification_for_work_life">仕事/プライベートモードの通知</string>
+    <string name="notification_for_work_life_disabled">この機能を有効にするには、タップしてください。</string>
     <string name="notification_group_title">通知のカテゴリ グループ</string>
     <string name="notification_importance_blocked">通知を表示しない</string>
     <string name="notification_importance_default">音で知らせる</string>
@@ -5980,6 +5981,7 @@ PINが正しくない可能性があります。"</string>
     <string name="wizard_next">次へ</string>
     <string name="work_alarm_ringtone_title">デフォルトの仕事用アラーム音</string>
     <string name="work_life_balance">仕事とプライベートのバランス</string>
+    <string name="work_life_disabled_toast">「仕事とプライベートのバランス」機能は無効です。</string>
     <string name="work_mode_label">仕事用プロファイル</string>
     <string name="work_mode_off_summary">アプリと通知は OFF です</string>
     <string name="work_mode_on_summary">組織によって管理されています</string>

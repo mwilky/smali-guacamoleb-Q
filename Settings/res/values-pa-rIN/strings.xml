@@ -198,6 +198,7 @@
     <string name="not_optimize_summery">ਬੈਟਰੀ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰ ਸਕਦਾ ਹੈ</string>
     <string name="not_optimized_apps">ਅਨੁਕੂਲਿਤ ਐਪਾਂ ਨਹੀਂ ਹਨ</string>
     <string name="notification_for_work_life">ਕਾਰਜ ਅਤੇ ਜੀਵਨ ਮੋਡ ਲਈ ਸੂਚਨਾਵਾਂ</string>
+    <string name="notification_for_work_life_disabled">ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
     <string name="nxp_non_std_card">ਗ਼ੈਰ-ਮਿਆਰੀ NFC ਟੈਗ ਸਮਰਥਨ</string>
     <string name="nxp_non_std_card_summary">ਕੁਝ ਗ਼ੈਰ-ਮਿਆਰੀ NFC ਟੈਗਾਂ ਨੂੰ ਪੜ੍ਹਨ ਲਈ ਸਮਰਥਨ</string>
     <string name="oneplus_adaptive_model">ਢਲਨਹਾਰ ਮੋਡ</string>
@@ -1401,6 +1402,7 @@
     <string name="wifi_wapi_certification_dont_exist">ਤੁਹਾਡੇ ਵੱਲੋਂ ਟਾਈਪ ਕੀਤਾ ਗਿਆ ਨੈੱਟਵਰਕ ਪਾਸਵਰਡ ਗਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="wifi_wapi_user_cert">ਵਰਤੋਂਕਾਰ ਪ੍ਰਮਾਣਪੱਤਰ</string>
     <string name="work_life_balance">ਕਾਰਜ-ਜੀਵਨ ਦਾ ਸੰਤੁਲਨ</string>
+    <string name="work_life_disabled_toast">ਕਾਰਜ ਜੀਵਨ ਸੰਤੁਲਨ ਵਿਸ਼ੇਸ਼ਤਾ ਅਸਮਰੱਥ ਕੀਤਾ ਗਿਆ ਹੈ।</string>
     <string name="zen_mode_alarm_info_new">ਅਲਾਰਮ ਹਮੇਸ਼ਾ ਵੱਜੇਗਾ</string>
     <string name="zen_mode_alarms_summary">ਅਲਾਰਮਾਂ ਲਈ ਸਾਊਂਡ ਸਮਰੱਥ ਕਰੋ</string>
     <string name="zen_mode_media_sound">ਮੀਡੀਆ</string>

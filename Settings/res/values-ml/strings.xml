@@ -2775,6 +2775,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="notification_content_block_summary">ഷെയ്‌ഡിലോ പെരിഫെറൽ ഉപകരണങ്ങളിലോ ഒരിക്കലും അറിയിപ്പുകൾ കാണിക്കരുത്</string>
     <string name="notification_content_block_title">അറിയിപ്പുകൾ കാണിക്കുക</string>
     <string name="notification_for_work_life">വർക്ക് ആൻഡ് ലൈഫ് മോഡിനുള്ള അറിയിപ്പുകൾ</string>
+    <string name="notification_for_work_life_disabled">ഈ ഫീച്ചർ പ്രാപ്‌തമാക്കുന്നതിന് ടാപ്പുചെയ്യുക.</string>
     <string name="notification_group_title">അറിയിപ്പ് വിഭാഗ ഗ്രൂപ്പ്</string>
     <string name="notification_importance_blocked">അറിയിപ്പുകൾ ഒരിക്കലും കാണിക്കരുത്</string>
     <string name="notification_importance_default">ശബ്ദമുണ്ടാക്കുക</string>
@@ -5980,6 +5981,7 @@ UT ഇന്റര്‍ഫേസ്: %5$s"</string>
     <string name="wizard_next">അടുത്തത്</string>
     <string name="work_alarm_ringtone_title">ഡിഫോൾട്ട് ഔദ്യോഗിക അലാറം ശബ്‌ദം</string>
     <string name="work_life_balance">വർക്ക്-ലൈഫ് ബാലൻസ്</string>
+    <string name="work_life_disabled_toast">വർക്ക് ലൈഫ് ബാലൻസ് ഫീച്ചർ അപ്രാപ്തമാക്കിയിരിക്കുന്നു.</string>
     <string name="work_mode_label">ഔദ്യോഗിക പ്രൊഫൈൽ</string>
     <string name="work_mode_off_summary">ആപ്പുകളും അറിയിപ്പുകളും ഓഫാണ്</string>
     <string name="work_mode_on_summary">നിങ്ങളുടെ സ്ഥാപനം നിയന്ത്രിക്കുന്നത്</string>

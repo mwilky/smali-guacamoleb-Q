@@ -2775,6 +2775,7 @@
     <string name="notification_content_block_summary">Не показывать уведомления на фоне или на периферийных устройствах</string>
     <string name="notification_content_block_title">Включить уведомления</string>
     <string name="notification_for_work_life">Уведомления для режима работы и личной жизни</string>
+    <string name="notification_for_work_life_disabled">Нажмите, чтобы включить эту функцию.</string>
     <string name="notification_group_title">Группа категорий уведомлений</string>
     <string name="notification_importance_blocked">Отключить уведомления</string>
     <string name="notification_importance_default">Звук</string>
@@ -5980,6 +5981,7 @@ UT-интерфейс: %5$s"</string>
     <string name="wizard_next">Далее</string>
     <string name="work_alarm_ringtone_title">Звук будильника по умолчанию</string>
     <string name="work_life_balance">Баланс работы и личной жизни</string>
+    <string name="work_life_disabled_toast">Функция баланса работы и личной жизни отключена.</string>
     <string name="work_mode_label">Рабочий профиль</string>
     <string name="work_mode_off_summary">Приложения и уведомления отключены.</string>
     <string name="work_mode_on_summary">Управляется вашей организацией.</string>

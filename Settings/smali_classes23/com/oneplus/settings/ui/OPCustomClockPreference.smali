@@ -592,7 +592,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomClockPreference;->mPreView:Landroid/widget/ImageView;
 
-    const v9, 0x7f0805ec
+    const v9, 0x7f0805ed
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -609,7 +609,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomClockPreference;->mPreView:Landroid/widget/ImageView;
 
-    const v9, 0x7f0805eb
+    const v9, 0x7f0805ec
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -628,7 +628,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomClockPreference;->mPreView:Landroid/widget/ImageView;
 
-    const v9, 0x7f0805ee
+    const v9, 0x7f0805ef
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -647,7 +647,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomClockPreference;->mPreView:Landroid/widget/ImageView;
 
-    const v9, 0x7f0805ef
+    const v9, 0x7f0805f0
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -664,7 +664,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomClockPreference;->mPreView:Landroid/widget/ImageView;
 
-    const v9, 0x7f0805ed
+    const v9, 0x7f0805ee
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 

@@ -2775,6 +2775,7 @@ Aplikácia tým získa aj možnosť vypnúť alebo zapnúť režim bez vyrušen�
     <string name="notification_content_block_summary">Nikdy nezobrazovať upozornenia na paneli ani v periférnych zariadeniach</string>
     <string name="notification_content_block_title">Zobrazovať upozornenia</string>
     <string name="notification_for_work_life">Oznámenia pre režim práce a súkromia</string>
+    <string name="notification_for_work_life_disabled">Ťuknutím zapnite túto funkciu.</string>
     <string name="notification_group_title">Skupina kategórií upozornení</string>
     <string name="notification_importance_blocked">Nikdy nezobrazovať upozornenia</string>
     <string name="notification_importance_default">Vydať zvukový signál</string>
@@ -5980,6 +5981,7 @@ Chcete túto možnosť povoliť všetkým aplikáciám, ktoré chcú vyhľadáva
     <string name="wizard_next">Ďalej</string>
     <string name="work_alarm_ringtone_title">Predvolený zvuk pracovného budíka</string>
     <string name="work_life_balance">Rovnováha medzi prácou a súkromím</string>
+    <string name="work_life_disabled_toast">Funkcia rovnováhy medzi prácou a súkromím je vypnutá.</string>
     <string name="work_mode_label">Pracovný profil</string>
     <string name="work_mode_off_summary">Aplikácie a upozornenia sú vypnuté</string>
     <string name="work_mode_on_summary">Spravované vašou organizáciou</string>

@@ -2775,6 +2775,7 @@
     <string name="notification_content_block_summary">ไม่ต้องแสดงการแจ้งเตือนในแว่นตาหรืออุปกรณ์ต่อพ่วง</string>
     <string name="notification_content_block_title">แสดงการแจ้งเตือน</string>
     <string name="notification_for_work_life">การแจ้งเตือนสำหรับสมดุลงานและการใช้ชีวิต</string>
+    <string name="notification_for_work_life_disabled">แตะเพื่อเปิดใช้งานฟีเจอร์นี้</string>
     <string name="notification_group_title">กลุ่มหมวดหมู่การแจ้งเตือน</string>
     <string name="notification_importance_blocked">ไม่ต้องแสดงการแจ้งเตือน</string>
     <string name="notification_importance_default">ส่งเสียง</string>
@@ -5980,6 +5981,7 @@ PIN อาจไม่ถูกต้อง"</string>
     <string name="wizard_next">ถัดไป</string>
     <string name="work_alarm_ringtone_title">เสียงปลุกเริ่มต้นของงาน</string>
     <string name="work_life_balance">สมดุลงานและการใช้ชีวิต</string>
+    <string name="work_life_disabled_toast">ฟีเจอร์สมดุลงานและการใช้ชีวิตถูกปิดใช้งาน</string>
     <string name="work_mode_label">โปรไฟล์งาน</string>
     <string name="work_mode_off_summary">แอปและการแจ้งเตือนปิดอยู่</string>
     <string name="work_mode_on_summary">จัดการโดยองค์กร</string>

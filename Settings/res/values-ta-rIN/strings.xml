@@ -198,6 +198,7 @@
     <string name="not_optimize_summery">பேட்டரி செயல்திறனை பாதிக்கக்கூடும்</string>
     <string name="not_optimized_apps">உகந்ததாக்கப்படாத பயன்பாடுகள்</string>
     <string name="notification_for_work_life">வேலை மற்றும் லைஃப் பயன்முறைக்கான அறிவிப்புகள்</string>
+    <string name="notification_for_work_life_disabled">இந்த அம்சத்தை இயக்க, தட்டவும்.</string>
     <string name="nxp_non_std_card">இயல்பற்ற NFC டேக் ஆதரவு</string>
     <string name="nxp_non_std_card_summary">சில இயல்பற்ற NFC டேக்குகளை படிப்பதற்கான ஆதரவு</string>
     <string name="oneplus_adaptive_model">அடாப்டிவ் மாடல்</string>
@@ -1401,6 +1402,7 @@
     <string name="wifi_wapi_certification_dont_exist">நீங்கள் தட்டச்சு செய்த கடவுச்சொல் தவறானது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.</string>
     <string name="wifi_wapi_user_cert">பயனர் சான்றிதழ்</string>
     <string name="work_life_balance">வேலை-லைஃப் பேலன்ஸ்</string>
+    <string name="work_life_disabled_toast">பணி-லைஃப் பேலன்ஸ் அம்சம் முடக்கப்பட்டுள்ளது.</string>
     <string name="zen_mode_alarm_info_new">அலாரங்கள் எப்பொழுதும் குறுக்கிடும்</string>
     <string name="zen_mode_alarms_summary">அலாரங்களுக்கு ஒலியை செயல்படுத்தவும்</string>
     <string name="zen_mode_media_sound">மீடியா</string>

@@ -58,27 +58,44 @@
 .end method
 
 .method public getAvailabilityStatus()I
-    .locals 2
+    .locals 4
 
-    iget-object v0, p0, Lcom/oneplus/settings/others/OPServiceMessageSwitchPreferenceController;->mContext:Landroid/content/Context;
+    const/4 v0, 0x1
 
-    const-string v1, "com.heytap.mcs"
+    new-array v0, v0, [I
 
-    invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
+    const/4 v1, 0x0
+
+    aput v1, v0, v1
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
 
+    const/4 v2, 0x2
+
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    return v2
+
+    :cond_0
+    iget-object v0, p0, Lcom/oneplus/settings/others/OPServiceMessageSwitchPreferenceController;->mContext:Landroid/content/Context;
+
+    const-string v3, "com.heytap.mcs"
+
+    invoke-static {v0, v3}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x2
+    :cond_1
+    move v1, v2
 
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method public getPreferenceKey()Ljava/lang/String;

@@ -188,3 +188,83 @@
     :cond_7
     return-void
 .end method
+
+.method protected onImportanceChangedForInstant()V
+    .locals 6
+
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSettingsBase;->getPreferenceScreen()Landroidx/preference/PreferenceScreen;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    iget-object v1, v1, Lcom/android/settings/notification/NotificationSettingsBase;->mControllers:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/settings/notification/NotificationPreferenceController;
+
+    invoke-virtual {v2, v0}, Lcom/android/settings/notification/NotificationPreferenceController;->displayPreference(Landroidx/preference/PreferenceScreen;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    invoke-static {v1}, Lcom/android/settings/notification/NotificationSettingsBase;->access$200(Lcom/android/settings/notification/NotificationSettingsBase;)V
+
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    iget-object v1, v1, Lcom/android/settings/notification/NotificationSettingsBase;->mDynamicPreferences:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroidx/preference/Preference;
+
+    iget-object v3, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    invoke-virtual {v3}, Lcom/android/settings/notification/NotificationSettingsBase;->getPreferenceScreen()Landroidx/preference/PreferenceScreen;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
+
+    iget-object v5, v5, Lcom/android/settings/notification/NotificationSettingsBase;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
+    iget-boolean v5, v5, Lcom/android/settings/notification/NotificationBackend$AppRow;->banned:Z
+
+    invoke-virtual {v3, v4, v2, v5}, Lcom/android/settings/notification/NotificationSettingsBase;->setVisible(Landroidx/preference/PreferenceGroup;Landroidx/preference/Preference;Z)V
+
+    goto :goto_1
+
+    :cond_1
+    return-void
+.end method

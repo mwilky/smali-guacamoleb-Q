@@ -2775,6 +2775,7 @@ Appen kan också aktivera eller inaktivera Stör ej och ändra relaterade instä
     <string name="notification_content_block_summary">Visa aldrig aviseringar i panelen eller på perifera enheter</string>
     <string name="notification_content_block_title">Visa aviseringar</string>
     <string name="notification_for_work_life">Aviseringar för läget Arbete och privatliv</string>
+    <string name="notification_for_work_life_disabled">Tryck för att aktivera den här funktionen.</string>
     <string name="notification_group_title">Grupp av aviseringskategorier</string>
     <string name="notification_importance_blocked">Visa aldrig aviseringar</string>
     <string name="notification_importance_default">Spela upp ljud</string>
@@ -5980,6 +5981,7 @@ Vill du tillåta detta för alla appar som vill söka efter nätverk?"</string>
     <string name="wizard_next">Nästa</string>
     <string name="work_alarm_ringtone_title">Standardljud för jobbalarm</string>
     <string name="work_life_balance">Balans mellan arbete och privatliv</string>
+    <string name="work_life_disabled_toast">Funktionen Balans mellan arbete och privatliv är aktiverad.</string>
     <string name="work_mode_label">Jobbprofil</string>
     <string name="work_mode_off_summary">Appar och aviseringar är inaktiverade</string>
     <string name="work_mode_on_summary">Hanteras av organisationen</string>

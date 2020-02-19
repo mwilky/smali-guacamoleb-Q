@@ -5725,6 +5725,8 @@
 
 .field public static final notification_for_work_life:I = 0x7f120b37
 
+.field public static final notification_for_work_life_disabled:I = 0x7f120b38
+
 .field public static final notification_group_title:I = 0x7f120b39
 
 .field public static final notification_header_divider_symbol_with_spaces:I = 0x7f120b3a
@@ -12728,6 +12730,8 @@
 .field public static final work_alarm_ringtone_title:I = 0x7f121903
 
 .field public static final work_life_balance:I = 0x7f121904
+
+.field public static final work_life_disabled_toast:I = 0x7f121905
 
 .field public static final work_mode_label:I = 0x7f121906
 

@@ -2775,6 +2775,7 @@ Astfel, aplicația va putea să activeze sau să dezactiveze starea Nu deranja �
     <string name="notification_content_block_summary">Nu afișați niciodată notificările în umbră sau pe dispozitive periferice</string>
     <string name="notification_content_block_title">Afișați notificările</string>
     <string name="notification_for_work_life">Notificări pentru modul Muncă și viață</string>
+    <string name="notification_for_work_life_disabled">Atingeți pentru a activa funcția.</string>
     <string name="notification_group_title">Grupul categoriei de notificări</string>
     <string name="notification_importance_blocked">Nu afișați niciodată notificările</string>
     <string name="notification_importance_default">Se emite un sunet</string>
@@ -5980,6 +5981,7 @@ Permiteți acest lucru pentru toate aplicațiile care solicită scanarea?"</stri
     <string name="wizard_next">Înainte</string>
     <string name="work_alarm_ringtone_title">Sunet prestabilit pentru alarma de serviciu</string>
     <string name="work_life_balance">Echilibrul muncă-viață</string>
+    <string name="work_life_disabled_toast">Funcția Echilibrul muncă-viață este dezactivată.</string>
     <string name="work_mode_label">Profil de serviciu</string>
     <string name="work_mode_off_summary">Aplicațiile și notificările sunt dezactivate</string>
     <string name="work_mode_on_summary">Gestionat de organizația dvs.</string>

@@ -371,7 +371,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v3, 0x1040791
+    const v3, 0x1040792
 
     iget-object v4, p0, Lcom/android/settings/network/telephony/WifiCallingPreferenceController;->mImsManager:Lcom/android/ims/ImsManager;
 
@@ -432,17 +432,17 @@
     goto :goto_2
 
     :cond_4
-    const v3, 0x104076b
+    const v3, 0x104076c
 
     goto :goto_2
 
     :cond_5
-    const v3, 0x1040769
+    const v3, 0x104076a
 
     goto :goto_2
 
     :cond_6
-    const v3, 0x104076a
+    const v3, 0x104076b
 
     :cond_7
     :goto_2

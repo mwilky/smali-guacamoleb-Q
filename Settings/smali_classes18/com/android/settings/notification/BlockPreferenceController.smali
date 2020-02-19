@@ -58,13 +58,74 @@
 
     xor-int/lit8 v0, p2, 0x1
 
-    iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannel:Landroid/app/NotificationChannel;
+    iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mBackend:Lcom/android/settings/notification/NotificationBackend;
+
+    iget-object v1, v1, Lcom/android/settings/notification/NotificationBackend;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
 
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_6
+    if-nez v1, :cond_1
+
+    new-instance v1, Landroid/content/ContentValues;
+
+    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v3
+
+    :goto_0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const-string v3, "notify"
+
+    invoke-virtual {v1, v3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-object v2, p0, Lcom/android/settings/notification/BlockPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/android/settings/applications/AppStateNotificationBridge;->BASE_URI:Landroid/net/Uri;
+
+    iget-object v4, p0, Lcom/android/settings/notification/BlockPreferenceController;->mBackend:Lcom/android/settings/notification/NotificationBackend;
+
+    iget-object v4, v4, Lcom/android/settings/notification/NotificationBackend;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v3, v4}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v1, v4, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+
+    iput-boolean v0, v2, Lcom/android/settings/notification/NotificationBackend$AppRow;->banned:Z
+
+    iget-object v2, p0, Lcom/android/settings/notification/BlockPreferenceController;->mImportanceListener:Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;
+
+    invoke-virtual {v2}, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->onImportanceChangedForInstant()V
+
+    return-void
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannel:Landroid/app/NotificationChannel;
+
+    if-eqz v1, :cond_8
 
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
@@ -72,32 +133,32 @@
 
     move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_5
 
-    :cond_0
-    if-eqz v0, :cond_1
+    :cond_2
+    if-eqz v0, :cond_3
 
     move v4, v2
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_3
     invoke-virtual {p0}, Lcom/android/settings/notification/BlockPreferenceController;->isDefaultChannel()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_4
 
     const/16 v4, -0x3e8
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_2
+    :cond_4
     const/4 v4, 0x3
 
-    :goto_0
+    :goto_1
     nop
 
     iget-object v5, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannel:Landroid/app/NotificationChannel;
@@ -106,7 +167,7 @@
 
     invoke-virtual {p0}, Lcom/android/settings/notification/BlockPreferenceController;->saveChannel()V
 
-    :cond_3
+    :cond_5
     iget-object v4, p0, Lcom/android/settings/notification/BlockPreferenceController;->mBackend:Lcom/android/settings/notification/NotificationBackend;
 
     iget-object v5, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
@@ -121,13 +182,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_7
 
     iget-object v4, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
     iget-boolean v4, v4, Lcom/android/settings/notification/NotificationBackend$AppRow;->banned:Z
 
-    if-eq v4, v0, :cond_5
+    if-eq v4, v0, :cond_7
 
     iget-object v4, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
@@ -143,20 +204,20 @@
 
     iget v6, v6, Lcom/android/settings/notification/NotificationBackend$AppRow;->uid:I
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_6
 
     move v2, v3
 
-    :cond_4
+    :cond_6
     invoke-virtual {v4, v5, v6, v2}, Lcom/android/settings/notification/NotificationBackend;->setNotificationsEnabledForPackage(Ljava/lang/String;IZ)Z
 
-    :cond_5
-    goto :goto_1
+    :cond_7
+    goto :goto_2
 
-    :cond_6
+    :cond_8
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannelGroup:Landroid/app/NotificationChannelGroup;
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mChannelGroup:Landroid/app/NotificationChannelGroup;
 
@@ -176,12 +237,12 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/settings/notification/NotificationBackend;->updateChannelGroup(Ljava/lang/String;ILandroid/app/NotificationChannelGroup;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_7
+    :cond_9
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_b
 
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
@@ -197,15 +258,15 @@
 
     iget v5, v5, Lcom/android/settings/notification/NotificationBackend$AppRow;->uid:I
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_a
 
     move v2, v3
 
-    :cond_8
+    :cond_a
     invoke-virtual {v1, v4, v5, v2}, Lcom/android/settings/notification/NotificationBackend;->setNotificationsEnabledForPackage(Ljava/lang/String;IZ)Z
 
-    :cond_9
-    :goto_1
+    :cond_b
+    :goto_2
     iget-object v1, p0, Lcom/android/settings/notification/BlockPreferenceController;->mImportanceListener:Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;
 
     invoke-virtual {v1}, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->onImportanceChanged()V

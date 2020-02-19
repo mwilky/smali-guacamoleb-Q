@@ -2775,6 +2775,7 @@ Ezzel az alkalmazás egyúttal képes lesz a „Ne zavarjanak” funkció be- é
     <string name="notification_content_block_summary">Soha ne jelenjen meg értesítés az értesítési felületen és a perifériás eszközökön</string>
     <string name="notification_content_block_title">Értesítések megjelenítése</string>
     <string name="notification_for_work_life">A Munka és Élet mód értesítései</string>
+    <string name="notification_for_work_life_disabled">Koppintson a funkció engedélyezéséhez.</string>
     <string name="notification_group_title">Értesítési kategória csoportja</string>
     <string name="notification_importance_blocked">Soha ne jelenjen meg értesítés</string>
     <string name="notification_importance_default">Hangjelzés</string>
@@ -5980,6 +5981,7 @@ Engedélyezi ezt az összes olyan alkalmazásnál, amely keresést akar végezni
     <string name="wizard_next">Tovább</string>
     <string name="work_alarm_ringtone_title">Munkaprofil alapértelmezett ébresztőhangja</string>
     <string name="work_life_balance">Munka-Élet egyensúly</string>
+    <string name="work_life_disabled_toast">Munka-Magánélet egyensúly funkció kikapcsolva.</string>
     <string name="work_mode_label">Munkaprofil</string>
     <string name="work_mode_off_summary">Az alkalmazások és az értesítések ki vannak kapcsolva</string>
     <string name="work_mode_on_summary">Az Ön szervezete kezeli</string>

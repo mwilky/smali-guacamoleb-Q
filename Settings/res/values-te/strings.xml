@@ -2775,6 +2775,7 @@
     <string name="notification_content_block_summary">నోటిఫికేషన్‌లను ఎన్నడూ షేడ్‌లో లేదా అనుబంధ పరికరాల్లో చూపవద్దు</string>
     <string name="notification_content_block_title">నోటిఫికేషన్‌లను చూపు</string>
     <string name="notification_for_work_life">పని మరియు జీవితం మోడ్‌కి సంబంధించి నోటిఫికేషన్‌లు</string>
+    <string name="notification_for_work_life_disabled">ఈ విశేషాంశాన్ని ప్రారంభించడానికి నొక్కండి.</string>
     <string name="notification_group_title">నోటిఫికేషన్ వర్గం సమూహం</string>
     <string name="notification_importance_blocked">ఎన్నడూ నోటిఫికేషన్‌లను చూపవద్దు</string>
     <string name="notification_importance_default">శబ్దం చేయి</string>
@@ -5980,6 +5981,7 @@ UT ఇంటర్‌ఫేస్: %5$s"</string>
     <string name="wizard_next">తర్వాత</string>
     <string name="work_alarm_ringtone_title">డిఫాల్ట్ కార్యాలయ అలారం ధ్వని</string>
     <string name="work_life_balance">పని-జీవితం సమతుల్యత</string>
+    <string name="work_life_disabled_toast">వర్క్ లైఫ్ బ్యాలెన్స్ విశేషాంశం నిలిపివేయబడింది.</string>
     <string name="work_mode_label">కార్యాలయ ప్రొఫైల్</string>
     <string name="work_mode_off_summary">యాప్‌లు మరియు నోటిఫికేషన్‌లు ఆఫ్ చేయబడ్డాయి</string>
     <string name="work_mode_on_summary">మీ సంస్థ ద్వారా నిర్వహించబడుతుంది</string>

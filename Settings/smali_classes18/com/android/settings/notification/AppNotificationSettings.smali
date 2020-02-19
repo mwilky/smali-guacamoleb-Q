@@ -323,13 +323,24 @@
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     :cond_1
+    iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mInstantAppPKG:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    return-void
+
+    :cond_2
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mChannelGroupList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     new-instance v0, Landroidx/preference/PreferenceCategory;
 
@@ -377,7 +388,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     invoke-direct {p0}, Lcom/android/settings/notification/AppNotificationSettings;->populateGroupList()V
 
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mImportanceListener:Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;
@@ -843,7 +854,7 @@
 .end method
 
 .method public onResume()V
-    .locals 6
+    .locals 8
 
     invoke-super {p0}, Lcom/android/settings/notification/NotificationSettingsBase;->onResume()V
 
@@ -900,15 +911,19 @@
 
     check-cast v1, Lcom/android/settings/notification/NotificationPreferenceController;
 
-    iget-object v2, p0, Lcom/android/settings/notification/AppNotificationSettings;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
+    iget-object v3, p0, Lcom/android/settings/notification/AppNotificationSettings;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
 
-    iget-object v3, p0, Lcom/android/settings/notification/AppNotificationSettings;->mChannel:Landroid/app/NotificationChannel;
+    iget-object v4, p0, Lcom/android/settings/notification/AppNotificationSettings;->mChannel:Landroid/app/NotificationChannel;
 
-    iget-object v4, p0, Lcom/android/settings/notification/AppNotificationSettings;->mChannelGroup:Landroid/app/NotificationChannelGroup;
+    iget-object v5, p0, Lcom/android/settings/notification/AppNotificationSettings;->mChannelGroup:Landroid/app/NotificationChannelGroup;
 
-    iget-object v5, p0, Lcom/android/settings/notification/AppNotificationSettings;->mSuspendedAppsAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
+    iget-object v6, p0, Lcom/android/settings/notification/AppNotificationSettings;->mSuspendedAppsAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/settings/notification/NotificationPreferenceController;->onResume(Lcom/android/settings/notification/NotificationBackend$AppRow;Landroid/app/NotificationChannel;Landroid/app/NotificationChannelGroup;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
+    iget-object v7, p0, Lcom/android/settings/notification/AppNotificationSettings;->mInstantAppPKG:Ljava/lang/String;
+
+    move-object v2, v1
+
+    invoke-virtual/range {v2 .. v7}, Lcom/android/settings/notification/NotificationPreferenceController;->onResume(Lcom/android/settings/notification/NotificationBackend$AppRow;Landroid/app/NotificationChannel;Landroid/app/NotificationChannelGroup;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/settings/notification/AppNotificationSettings;->getPreferenceScreen()Landroidx/preference/PreferenceScreen;
 

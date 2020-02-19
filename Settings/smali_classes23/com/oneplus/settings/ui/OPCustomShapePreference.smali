@@ -192,7 +192,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPCustomShapePreference;->mQuicklySettingsGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080600
+    const v1, 0x7f080601
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -237,7 +237,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPCustomShapePreference;->mQuicklySettingsGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080601
+    const v1, 0x7f080602
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -282,7 +282,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPCustomShapePreference;->mQuicklySettingsGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080602
+    const v1, 0x7f080603
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -327,7 +327,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPCustomShapePreference;->mQuicklySettingsGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0805ff
+    const v1, 0x7f080600
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -385,9 +385,9 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f08066f
+    const v0, 0x7f080670
 
-    const v1, 0x7f08066d
+    const v1, 0x7f08066e
 
     if-nez p1, :cond_0
 
@@ -413,9 +413,9 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f080670
+    const v0, 0x7f080671
 
-    const v1, 0x7f08066e
+    const v1, 0x7f08066f
 
     if-nez p1, :cond_2
 

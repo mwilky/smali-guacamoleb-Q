@@ -466,6 +466,244 @@
     return-object v0
 .end method
 
+.method private addInstantAppIgnoringUser(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    .locals 16
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "VisibleForTests"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Lcom/android/settingslib/applications/ApplicationsState$AppEntry;",
+            ">;)",
+            "Ljava/util/ArrayList<",
+            "Lcom/android/settingslib/applications/ApplicationsState$AppEntry;",
+            ">;"
+        }
+    .end annotation
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    iget-object v0, v1, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/android/settings/applications/AppStateNotificationBridge;->BASE_URI:Landroid/net/Uri;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    invoke-virtual/range {v3 .. v8}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v3
+
+    if-nez v3, :cond_0
+
+    return-object v2
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    move-object v4, v0
+
+    iget-object v0, v1, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
+
+    const-string v5, "com.nearme.instant.platform"
+
+    invoke-static {v0, v5}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, v1, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    :try_start_0
+    invoke-virtual {v6, v5, v8}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v7, v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    move-object v5, v0
+
+    move-object v0, v5
+
+    invoke-virtual {v0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    if-eqz v7, :cond_2
+
+    new-instance v5, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    iget-object v9, v1, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
+
+    add-int/lit8 v10, v0, 0x1
+
+    int-to-long v11, v0
+
+    invoke-direct {v5, v9, v7, v11, v12}, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;-><init>(Landroid/content/Context;Landroid/content/pm/ApplicationInfo;J)V
+
+    move-object v0, v5
+
+    new-instance v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    invoke-direct {v5}, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;-><init>()V
+
+    const/4 v9, 0x1
+
+    iput v9, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
+
+    iput v9, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentWeekly:I
+
+    iput-boolean v9, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
+
+    iput-boolean v8, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->systemApp:Z
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v11
+
+    const-wide/16 v13, 0x3e8
+
+    sub-long/2addr v11, v13
+
+    iput-wide v11, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
+
+    iput v9, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->sentCount:I
+
+    const-string v11, "name"
+
+    invoke-interface {v3, v11}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v11
+
+    invoke-interface {v3, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    const-string v12, "pkg"
+
+    invoke-interface {v3, v12}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v12
+
+    invoke-interface {v3, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, "icon"
+
+    invoke-interface {v3, v13}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v13
+
+    invoke-interface {v3, v13}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v13
+
+    array-length v14, v13
+
+    invoke-static {v13, v8, v14}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
+
+    move-result-object v14
+
+    iput-object v12, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppPKG:Ljava/lang/String;
+
+    iput-object v11, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppName:Ljava/lang/String;
+
+    new-instance v15, Landroid/graphics/drawable/BitmapDrawable;
+
+    iget-object v8, v1, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v8
+
+    invoke-direct {v15, v8, v14}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    iput-object v15, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppIcon:Landroid/graphics/drawable/Drawable;
+
+    const-string v8, "notify"
+
+    invoke-interface {v3, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v3, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    if-nez v8, :cond_1
+
+    move v8, v9
+
+    goto :goto_2
+
+    :cond_1
+    const/4 v8, 0x0
+
+    :goto_2
+    iput-boolean v8, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blocked:Z
+
+    iput-boolean v9, v5, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->blockable:Z
+
+    iput-object v5, v0, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v0, v10
+
+    const/4 v8, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {v3}, Landroid/database/Cursor;->close()V
+
+    :cond_3
+    return-object v4
+.end method
+
 .method private hasExtraView()Z
     .locals 1
 
@@ -661,7 +899,7 @@
 
     invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :pswitch_4
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
@@ -672,7 +910,7 @@
 
     invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :pswitch_5
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mContext:Landroid/content/Context;
@@ -748,10 +986,6 @@
     :cond_2
     iget-object v0, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
 
-    if-eqz v0, :cond_3
-
-    iget-object v0, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
-
     instance-of v0, v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
 
     if-eqz v0, :cond_3
@@ -770,6 +1004,30 @@
 
     invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setSummary(Ljava/lang/CharSequence;)V
 
+    iget-object v0, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    iget-boolean v0, v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantApp:Z
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    iget-object v0, v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppIcon:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    iget-object v0, v0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->instantAppName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setTitle(Ljava/lang/CharSequence;)V
+
     goto :goto_2
 
     :cond_3
@@ -777,6 +1035,7 @@
 
     nop
 
+    :cond_4
     :goto_2
     return-void
 
@@ -1693,6 +1952,17 @@
     move-result-object p1
 
     :cond_1
+    iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
+
+    iget v2, v2, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
+
+    if-ne v2, v1, :cond_2
+
+    invoke-direct {p0, p1}, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->addInstantAppIgnoringUser(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    :cond_2
     iput-object p1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mEntries:Ljava/util/ArrayList;
 
     iput-object p1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mOriginalEntries:Ljava/util/ArrayList;
@@ -1707,7 +1977,7 @@
 
     const/4 v4, 0x0
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1725,7 +1995,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
     invoke-static {v2}, Lcom/android/settings/applications/manageapplications/ManageApplications;->access$1400(Lcom/android/settings/applications/manageapplications/ManageApplications;)Landroid/view/View;
@@ -1746,7 +2016,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1758,7 +2028,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1774,7 +2044,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_4
 
     invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -1782,13 +2052,13 @@
 
     invoke-virtual {p0, v3}, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->filterSearch(Ljava/lang/String;)V
 
-    :cond_3
+    :cond_4
     :goto_0
     iget v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_4
+    if-eq v2, v3, :cond_5
 
     invoke-virtual {p0}, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->getItemCount()I
 
@@ -1796,7 +2066,7 @@
 
     iget v5, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
-    if-le v2, v5, :cond_4
+    if-le v2, v5, :cond_5
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1812,7 +2082,7 @@
 
     iput v3, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
-    :cond_4
+    :cond_5
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1847,11 +2117,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     move v4, v1
 
-    :cond_5
+    :cond_6
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1872,7 +2142,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1884,24 +2154,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLoadingViewController:Lcom/android/settings/widget/LoadingViewController;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/widget/LoadingViewController;->showContent(Z)V
 
-    :cond_6
+    :cond_7
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
     iget v1, v1, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
     const/4 v2, 0x4
 
-    if-ne v1, v2, :cond_7
+    if-ne v1, v2, :cond_8
 
     return-void
 
-    :cond_7
+    :cond_8
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mState:Lcom/android/settingslib/applications/ApplicationsState;

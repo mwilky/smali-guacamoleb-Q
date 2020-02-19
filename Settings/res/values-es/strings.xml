@@ -2775,6 +2775,7 @@ Además, concede a la aplicación la capacidad de activar o desactivar el modo N
     <string name="notification_content_block_summary">No mostrar nunca notificaciones en el panel de notificaciones ni en dispositivos periféricos</string>
     <string name="notification_content_block_title">Mostrar notificaciones</string>
     <string name="notification_for_work_life">Notificaciones del modo Trabajo y vida personal</string>
+    <string name="notification_for_work_life_disabled">Toca para activar esta función.</string>
     <string name="notification_group_title">Grupo de categoría de notificaciones</string>
     <string name="notification_importance_blocked">No mostrar notificaciones nunca</string>
     <string name="notification_importance_default">Emitir sonido</string>
@@ -5980,6 +5981,7 @@ Configurar la red como oculta no cambiará la configuración del router."</strin
     <string name="wizard_next">Siguiente</string>
     <string name="work_alarm_ringtone_title">Sonido de alarma de trabajo predeterminado</string>
     <string name="work_life_balance">Equilibrio entre el trabajo y la vida personal</string>
+    <string name="work_life_disabled_toast">La función Equilibrio entre trabajo y vida personal está desactivada.</string>
     <string name="work_mode_label">Perfil de trabajo</string>
     <string name="work_mode_off_summary">Las aplicaciones y las notificaciones están desactivadas</string>
     <string name="work_mode_on_summary">Administrado por tu organización</string>

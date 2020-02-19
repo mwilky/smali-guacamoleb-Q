@@ -2775,6 +2775,7 @@ Tämä antaa sovellukselle myös oikeuden ottaa Älä häiritse ‑tilan käytt�
     <string name="notification_content_block_summary">Älä näytä ilmoituksia ilmoitusalueella tai lisälaitteissa</string>
     <string name="notification_content_block_title">Näytä ilmoitukset</string>
     <string name="notification_for_work_life">Ilmoitukset työ- ja vapaa-aika-tiloille</string>
+    <string name="notification_for_work_life_disabled">Ota tämä ominaisuus käyttöön napauttamalla tätä.</string>
     <string name="notification_group_title">Ilmoitusluokka</string>
     <string name="notification_importance_blocked">Älä näytä ilmoituksia</string>
     <string name="notification_importance_default">Ääni</string>
@@ -5980,6 +5981,7 @@ Annetaanko tämä lupa kaikille sovelluksille, jotka haluavat etsiä verkkoja?"<
     <string name="wizard_next">Seuraava</string>
     <string name="work_alarm_ringtone_title">Työherätyksen oletusääni</string>
     <string name="work_life_balance">Työn ja vapaa-ajan tasapaino</string>
+    <string name="work_life_disabled_toast">Työn ja yksityiselämän tasapainotustoiminto on pois käytöstä.</string>
     <string name="work_mode_label">Työprofiili</string>
     <string name="work_mode_off_summary">Sovellukset ja ilmoitukset ovat poissa käytöstä</string>
     <string name="work_mode_on_summary">Organisaatiosi hallinnoima</string>
