@@ -140,6 +140,22 @@
     iget-object v5, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneHardWareController;->mScreenMessage:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneHardWareController;->mHardWareInfoView:Landroid/view/View;
+
+    const v4, 0x7f0a07b1
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/TextView;
+    
+    invoke-static {}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneHardWareController;->getRenovateVersion()Ljava/lang/String;
+    
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v5, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneHardWareController;->mHardWareInfoView:Landroid/view/View;
 
@@ -185,3 +201,19 @@
 
     return-object p0
 .end method
+
+.method public static getRenovateVersion()Ljava/lang/String;
+    .registers 1
+
+    .line 20
+    const-string v0, "rice.version"
+
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 21
+    .local v0, "version":Ljava/lang/String;
+    return-object v0
+.end method
+
