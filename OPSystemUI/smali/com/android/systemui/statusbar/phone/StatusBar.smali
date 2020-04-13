@@ -18097,6 +18097,8 @@
     .prologue
     .line 3915
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+    
+    invoke-virtual {v1}, Lcom/android/systemui/qs/QSPanel;->updateCustomizer()V
 
     invoke-virtual {v1}, Lcom/android/systemui/qs/QSPanel;->getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 

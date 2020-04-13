@@ -2869,3 +2869,13 @@
     :cond_mw
     return-void
 .end method
+
+.method public updateCustomizer()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizePanel:Lcom/android/systemui/qs/customize/QSCustomizer;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/customize/QSCustomizer;->updateCustomizer()V
+    
+    return-void
+.end method
