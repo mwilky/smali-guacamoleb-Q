@@ -582,7 +582,7 @@
     .line 29
     new-instance v0, Ljava/lang/String;
 
-    const/16 v1, 0xe
+    const/16 v1, 0x13
 
     new-array v1, v1, [C
 
@@ -602,7 +602,7 @@
 
     new-array v2, v2, [C
 
-    fill-array-data v2, :array_52
+    fill-array-data v2, :array_58
 
     invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
 
@@ -628,7 +628,7 @@
 
     new-array v4, v4, [C
 
-    fill-array-data v4, :array_6a
+    fill-array-data v4, :array_70
 
     invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
 
@@ -658,20 +658,27 @@
         0x72s
         0x6fs
         0x2es
-        0x72s
-        0x6fs
-        0x6ds
-        0x2es
-        0x76s
-        0x65s
-        0x72s
-        0x73s
+        0x62s
+        0x75s
         0x69s
-        0x6fs
-        0x6es
+        0x6cs
+        0x64s
+        0x2es
+        0x64s
+        0x69s
+        0x73s
+        0x70s
+        0x6cs
+        0x61s
+        0x79s
+        0x2es
+        0x69s
+        0x64s
     .end array-data
 
-    :array_52
+    nop
+
+    :array_58
     .array-data 2
         0x2fs
         0x73s
@@ -695,7 +702,7 @@
         0x65s
     .end array-data
 
-    :array_6a
+    :array_70
     .array-data 2
         0x52s
         0x45s
