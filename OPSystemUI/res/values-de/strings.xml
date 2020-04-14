@@ -1750,4 +1750,18 @@ Jeder Nutzer kann Apps für alle anderen Nutzer aktualisieren."</string>
     <string name="zen_priority_introduction">Klingeltöne und die Vibration werden deaktiviert, außer für Weckrufe, Erinnerungen, Termine sowie Anrufe von zuvor von dir festgelegten Personen. Du hörst jedoch weiterhin Sound, wenn du dir Musik anhörst, Videos ansiehst oder Spiele spielst.</string>
     <string name="zen_silence_introduction">Hierdurch werden alle Klingeltöne und Vibrationsalarme stummgeschaltet, auch für Weckrufe, Musik, Videos und Spiele.</string>
     <string name="zen_silence_introduction_voice">Hierdurch werden ALLE Klingeltöne und die Vibration deaktiviert, auch für Weckrufe, Musik, Videos und Spiele. Du kannst aber weiterhin selbst anrufen.</string>
+    <string name="short_sunday">So.</string>
+	<string name="short_monday">Mo.</string>
+	<string name="short_tuesday">Di.</string>
+	<string name="short_wednesday">Mi.</string>
+	<string name="short_thursday">Do.</string>
+	<string name="short_friday">Fr.</string>
+	<string name="short_saturday">Sa.</string>
+	<string name="long_sunday">Sonntag</string>
+	<string name="long_monday">Montag</string>
+	<string name="long_tuesday">Dienstag</string>
+	<string name="long_wednesday">Mittwoch</string>
+	<string name="long_thursday">Donnerstag</string>
+	<string name="long_friday">Freitag</string>
+	<string name="long_saturday">Samstag</string>
 </resources>

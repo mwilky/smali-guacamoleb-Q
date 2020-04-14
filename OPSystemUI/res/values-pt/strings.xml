@@ -1752,4 +1752,18 @@ Qualquer usuário pode atualizar apps para os demais usuários."</string>
     <string name="zen_priority_introduction">Você não será perturbado por sons e vibrações, exceto alarmes, lembretes, eventos e chamadas de pessoas especificadas. No entanto, você ouvirá tudo o que decidir reproduzir, como músicas, vídeos e jogos.</string>
     <string name="zen_silence_introduction">Isso bloqueia TODOS os sons e vibrações, incluindo alarmes, músicas, vídeos e jogos.</string>
     <string name="zen_silence_introduction_voice">Isso bloqueia TODOS os sons e vibrações, incluindo alarmes, músicas, vídeos e jogos. Você ainda poderá fazer chamadas telefônicas.</string>
+    <string name="short_sunday">Dom.</string>
+	<string name="short_monday">Seg.</string>
+	<string name="short_tuesday">Ter.</string>
+	<string name="short_wednesday">Qua.</string>
+	<string name="short_thursday">Qui.</string>
+	<string name="short_friday">Sex.</string>
+	<string name="short_saturday">Sab.</string>
+	<string name="long_sunday">Domingo </string>
+	<string name="long_monday">Segunda</string>
+	<string name="long_tuesday">Terça</string>
+	<string name="long_wednesday">Quarta</string>
+	<string name="long_thursday">Quinta</string>
+	<string name="long_friday">Sexta</string>
+	<string name="long_saturday">Sábado</string>
 </resources>

@@ -1752,4 +1752,18 @@
     <string name="zen_priority_introduction">Δεν θα ενοχλείστε από ήχους και δονήσεις, παρά μόνο από ξυπνητήρια, υπενθυμίσεις, συμβάντα και καλούντες που έχετε καθορίσει. Θα εξακολουθείτε να ακούτε όλο το περιεχόμενο που επιλέγετε να αναπαραγάγετε, συμπεριλαμβανομένης της μουσικής, των βίντεο και των παιχνιδιών.</string>
     <string name="zen_silence_introduction">Αυτή η επιλογή αποκλείει όλους τους ήχους και τις δονήσεις, μεταξύ των οποίων των ξυπνητηριών, της μουσικής, των βίντεο και των παιχνιδιών.</string>
     <string name="zen_silence_introduction_voice">Αυτή η επιλογή αποκλείει όλους τους ήχους και τις δονήσεις, όπως είναι οι ήχοι και οι δονήσεις από ξυπνητήρια, μουσική, βίντεο και παιχνίδια. Θα μπορείτε ακόμη να κάνετε τηλεφωνικές κλήσεις.</string>
+    <string name="short_sunday">Κυρ.</string>
+	<string name="short_monday">Δευ.</string>
+	<string name="short_tuesday">Τρι.</string>
+	<string name="short_wednesday">Τετ.</string>
+	<string name="short_thursday">Πεμ.</string>
+	<string name="short_friday">Παρ.</string>
+	<string name="short_saturday">Σαβ.</string>
+	<string name="long_sunday">Κυριακή</string>
+	<string name="long_monday">Δευτέρα</string>
+	<string name="long_tuesday">Τρίτη</string>
+	<string name="long_wednesday">Τετάρτη</string>
+	<string name="long_thursday">Πέμπτη</string>
+	<string name="long_friday">Παρασκευή</string>
+	<string name="long_saturday">Σάββατο</string>
 </resources>

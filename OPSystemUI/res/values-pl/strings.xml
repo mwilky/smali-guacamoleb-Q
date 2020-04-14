@@ -1751,4 +1751,18 @@ Każdy użytkownik może aktualizować aplikacje wszystkich innych użytkownikó
     <string name="zen_priority_introduction">Nie będą Cię niepokoić żadne dźwięki ani wibracje z wyjątkiem alarmów, przypomnień, wydarzeń i połączeń od wybranych osób. Będziesz słyszeć wszystkie odtwarzane treści, takie jak muzyka, filmy czy gry.</string>
     <string name="zen_silence_introduction">To zablokuje WSZYSTKIE dźwięki i wibracje – w tym alarmy, muzykę, filmy i gry.</string>
     <string name="zen_silence_introduction_voice">To zablokuje WSZYSTKIE dźwięki i wibracje, w tym alarmy, muzykę, filmy i gry. Nadal będzie można wykonywać połączenia.</string>
+    <string name="short_sunday">Ndz.</string>
+	<string name="short_monday">Pon.</string>
+	<string name="short_tuesday">Wt.</string>
+	<string name="short_wednesday">Śr.</string>
+	<string name="short_thursday">Czw.</string>
+	<string name="short_friday">Pią.</string>
+	<string name="short_saturday">Sob.</string>
+	<string name="long_sunday">Niedziela</string>
+	<string name="long_monday">Poniedziałek</string>
+	<string name="long_tuesday">Wtorek</string>
+	<string name="long_wednesday">Środa</string>
+	<string name="long_thursday">Czwartek</string>
+	<string name="long_friday">Piątek</string>
+	<string name="long_saturday">Sobota</string>
 </resources>

@@ -1752,4 +1752,18 @@ N'importe quel utilisateur peut mettre à jour les applications pour tous les au
     <string name="zen_priority_introduction">Vous ne serez dérangé par aucun son ni aucune vibration, hormis ceux des alarmes, des rappels, des événements et des appels des contacts de votre choix. Le son continuera de fonctionner notamment pour la musique, les vidéos et les jeux.</string>
     <string name="zen_silence_introduction">Cette option permet de bloquer TOUS les sons et les vibrations, y compris pour les alarmes, la musique, les vidéos et les jeux.</string>
     <string name="zen_silence_introduction_voice">Cette option permet de bloquer TOUS les sons et les vibrations, y compris pour les alarmes, la musique, les vidéos et les jeux. Vous pourrez encore passer des appels téléphoniques.</string>
+    <string name="short_sunday">Dim..</string>
+	<string name="short_monday">Lun.</string>
+	<string name="short_tuesday">Mar.</string>
+	<string name="short_wednesday">Mer..</string>
+	<string name="short_thursday">Jeu.</string>
+	<string name="short_friday">Ven.</string>
+	<string name="short_saturday">Sam.</string>
+	<string name="long_sunday">Dimanche</string>
+	<string name="long_monday">Lundi</string>
+	<string name="long_tuesday">Mardi</string>
+	<string name="long_wednesday">Mercredi</string>
+	<string name="long_thursday">Jeudi</string>
+	<string name="long_friday">Vendredi</string>
+	<string name="long_saturday">Samedi</string>
 </resources>
