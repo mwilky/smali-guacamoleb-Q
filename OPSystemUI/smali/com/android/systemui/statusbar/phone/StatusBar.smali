@@ -17322,7 +17322,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
 
     :cond_121
-    const-string v0, "tweaks_qs_ram_free_text_color"
+    const-string v0, "tweaks_qs_ram_bar_free_text_color"
     
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
