@@ -2030,4 +2030,6 @@ Credential storage might not enable"</string>
 	<string name="long_thursday">Thursday</string>
 	<string name="long_friday">Friday</string>
 	<string name="long_saturday">Saturday</string>
+    <string name="service_background_processes">%1$s free</string>
+    <string name="service_foreground_processes">%1$s used</string>
 </resources>

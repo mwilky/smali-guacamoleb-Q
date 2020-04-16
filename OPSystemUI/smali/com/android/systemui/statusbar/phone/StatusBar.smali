@@ -13518,6 +13518,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsExpansionVibration(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsBlur(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -16021,6 +16023,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsBackgroundColor(Landroid/content/Context;)V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsBackground()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
 
     :cond_38
     const-string v0, "tweaks_qs_background_color"
@@ -17243,6 +17247,96 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
 
     :cond_116
+    const-string v0, "tweaks_qs_ram_bar"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_117
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_117
+    const-string v0, "tweaks_qs_ram_bar_height"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_118
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_118
+    const-string v0, "tweaks_qs_ram_bar_used_background_color"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_119
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_119
+    const-string v0, "tweaks_qs_ram_bar_used_text_color"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_120
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_120
+    const-string v0, "tweaks_qs_ram_bar_free_background_color"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_121
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_121
+    const-string v0, "tweaks_qs_ram_free_text_color"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_122
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsRamBar(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsRamBar()V
+
+    :cond_122
 	return-void
 .end method
 
@@ -17800,6 +17894,30 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v1, "tweaks_qs_anim_expand"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar_height"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar_used_background_color"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar_free_background_color"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar_used_text_color"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_ram_bar_free_text_color"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -19205,6 +19323,18 @@
     iget-object p0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSBlurView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    return-void
+.end method
+
+.method public updateQsRamBar()V
+    .locals 1
+
+    .prologue
+    .line 3915
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->updateRamBarMode()V
 
     return-void
 .end method
