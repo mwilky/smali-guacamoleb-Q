@@ -32,7 +32,7 @@
 
 .field final mPaint:Landroid/graphics/Paint;
 
-.field final mRect:Landroid/graphics/Rect;
+.field final mRect:Landroid/graphics/RectF;
 
 .field private mRedRatio:F
 
@@ -49,75 +49,68 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 54
+    .line 55
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 40
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
     .line 41
+    new-instance v0, Landroid/graphics/RectF;
+
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    .line 42
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    .line 42
+    .line 43
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/mwilky/LinearColorBar;->mLeftColor:I
 
-    .line 43
+    .line 44
     const v0, -0x777778
 
     iput v0, p0, Lcom/android/mwilky/LinearColorBar;->mRightColor:I
-
-    .line 48
-    new-instance v0, Landroid/graphics/Path;
-
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
-
-    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
     .line 49
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
     .line 50
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v0, Landroid/graphics/Path;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
     .line 51
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
+    iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+
+    .line 52
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
     iput-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
-    .line 55
+    .line 56
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/mwilky/LinearColorBar;->setWillNotDraw(Z)V
 
-    .line 56
-    iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
     .line 57
-    iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
@@ -126,18 +119,25 @@
     .line 58
     iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
 
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 59
+    iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 59
+    .line 60
     iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 60
+    .line 61
     invoke-virtual {p0}, Lcom/android/mwilky/LinearColorBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -162,7 +162,7 @@
     :goto_65
     iput v0, p0, Lcom/android/mwilky/LinearColorBar;->mLineWidth:I
 
-    .line 62
+    .line 63
     iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
     iget v2, p0, Lcom/android/mwilky/LinearColorBar;->mLineWidth:I
@@ -171,19 +171,19 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 63
+    .line 64
     iget-object v0, p0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 64
+    .line 65
     return-void
 .end method
 
 .method private updateIndicator()V
     .registers 12
 
-    .line 90
+    .line 91
     invoke-virtual {p0}, Lcom/android/mwilky/LinearColorBar;->getPaddingTop()I
 
     move-result v0
@@ -194,31 +194,35 @@
 
     sub-int/2addr v0, v1
 
-    .line 91
+    .line 92
     .local v0, "off":I
     if-gez v0, :cond_c
 
     const/4 v0, 0x0
 
-    .line 92
-    :cond_c
-    iget-object v1, p0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
     .line 93
+    :cond_c
+    iget-object v1, p0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    int-to-float v2, v0
+
+    iput v2, v1, Landroid/graphics/RectF;->top:F
+
+    .line 94
     invoke-virtual {p0}, Lcom/android/mwilky/LinearColorBar;->getHeight()I
 
     move-result v2
 
-    iput v2, v1, Landroid/graphics/Rect;->bottom:I
+    int-to-float v2, v2
 
-    .line 94
-    iget-boolean v1, p0, Lcom/android/mwilky/LinearColorBar;->mShowingGreen:Z
-
-    if-eqz v1, :cond_35
+    iput v2, v1, Landroid/graphics/RectF;->bottom:F
 
     .line 95
+    iget-boolean v1, p0, Lcom/android/mwilky/LinearColorBar;->mShowingGreen:Z
+
+    if-eqz v1, :cond_37
+
+    .line 96
     iget-object v1, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
 
     new-instance v10, Landroid/graphics/LinearGradient;
@@ -247,10 +251,10 @@
 
     invoke-virtual {v1, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    goto :goto_4c
+    goto :goto_4e
 
-    .line 98
-    :cond_35
+    .line 99
+    :cond_37
     iget-object v1, p0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
 
     new-instance v10, Landroid/graphics/LinearGradient;
@@ -277,8 +281,8 @@
 
     invoke-virtual {v1, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 101
-    :goto_4c
+    .line 102
+    :goto_4e
     iget-object v1, p0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
     new-instance v10, Landroid/graphics/LinearGradient;
@@ -305,33 +309,33 @@
 
     invoke-virtual {v1, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 103
+    .line 104
     return-void
 .end method
 
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .registers 26
+    .registers 23
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 113
+    .line 114
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     invoke-super/range {p0 .. p1}, Landroid/widget/LinearLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 115
+    .line 116
     invoke-virtual/range {p0 .. p0}, Lcom/android/mwilky/LinearColorBar;->getWidth()I
 
     move-result v2
 
-    .line 117
+    .line 118
     .local v2, "width":I
     const/4 v3, 0x0
 
-    .line 119
+    .line 120
     .local v3, "left":I
     int-to-float v4, v2
 
@@ -343,7 +347,7 @@
 
     add-int/2addr v4, v3
 
-    .line 120
+    .line 121
     .local v4, "right":I
     int-to-float v5, v2
 
@@ -355,7 +359,7 @@
 
     add-int/2addr v5, v4
 
-    .line 121
+    .line 122
     .local v5, "right2":I
     int-to-float v6, v2
 
@@ -367,418 +371,362 @@
 
     add-int/2addr v6, v5
 
-    .line 124
+    .line 125
     .local v6, "right3":I
     iget-boolean v7, v0, Lcom/android/mwilky/LinearColorBar;->mShowingGreen:Z
 
     if-eqz v7, :cond_25
 
-    .line 125
+    .line 126
     move v7, v5
 
-    .line 126
+    .line 127
     .local v7, "indicatorLeft":I
     move v8, v6
 
     .local v8, "indicatorRight":I
     goto :goto_27
 
-    .line 128
+    .line 129
     .end local v7    # "indicatorLeft":I
     .end local v8    # "indicatorRight":I
     :cond_25
     move v7, v4
 
-    .line 129
+    .line 130
     .restart local v7    # "indicatorLeft":I
     move v8, v5
 
-    .line 132
+    .line 133
     .restart local v8    # "indicatorRight":I
     :goto_27
     iget v9, v0, Lcom/android/mwilky/LinearColorBar;->mLastInterestingLeft:I
 
-    if-ne v9, v7, :cond_34
+    if-ne v9, v7, :cond_2f
 
     iget v9, v0, Lcom/android/mwilky/LinearColorBar;->mLastInterestingRight:I
 
-    if-eq v9, v8, :cond_30
+    if-eq v9, v8, :cond_d6
 
-    goto :goto_34
-
-    :cond_30
-    move/from16 v22, v6
-
-    goto/16 :goto_ee
-
-    .line 133
-    :cond_34
-    :goto_34
+    .line 134
+    :cond_2f
     iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/Path;->reset()V
 
-    .line 134
+    .line 135
     iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/Path;->reset()V
 
-    .line 135
-    if-ge v7, v8, :cond_e8
-
     .line 136
-    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iget v9, v9, Landroid/graphics/Rect;->top:I
+    if-ge v7, v8, :cond_d2
 
     .line 137
-    .local v9, "midTopY":I
-    const/4 v10, 0x0
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    iget v9, v9, Landroid/graphics/RectF;->top:F
 
     .line 138
-    .local v10, "midBottomY":I
-    const/4 v11, 0x2
-
-    .line 139
-    .local v11, "xoff":I
-    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
-
-    int-to-float v13, v7
-
-    iget-object v14, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iget v14, v14, Landroid/graphics/Rect;->top:I
-
-    int-to-float v14, v14
-
-    invoke-virtual {v12, v13, v14}, Landroid/graphics/Path;->moveTo(FF)V
-
-    .line 140
-    iget-object v15, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
-
-    int-to-float v12, v7
-
+    .local v9, "midTopY":F
     const/16 v17, 0x0
 
-    const/high16 v18, -0x40000000    # -2.0f
+    .line 139
+    .local v17, "midBottomY":I
+    const/16 v18, 0x2
 
-    int-to-float v13, v9
+    .line 140
+    .local v18, "xoff":I
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
-    const/high16 v20, -0x40000000    # -2.0f
+    int-to-float v11, v7
 
-    const/16 v21, 0x0
+    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
 
-    move/from16 v16, v12
+    iget v12, v12, Landroid/graphics/RectF;->top:F
 
-    move/from16 v19, v13
+    invoke-virtual {v10, v11, v12}, Landroid/graphics/Path;->moveTo(FF)V
 
-    invoke-virtual/range {v15 .. v21}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
+    .line 141
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
-    .line 143
-    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
+    int-to-float v11, v7
 
-    add-int/lit8 v13, v2, 0x2
+    const/4 v12, 0x0
 
-    add-int/lit8 v13, v13, -0x1
+    const/high16 v13, -0x40000000    # -2.0f
 
-    int-to-float v13, v13
+    const/high16 v15, -0x40000000    # -2.0f
 
-    const/4 v14, 0x0
+    const/16 v16, 0x0
 
-    invoke-virtual {v12, v13, v14}, Landroid/graphics/Path;->lineTo(FF)V
+    move v14, v9
+
+    invoke-virtual/range {v10 .. v16}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
     .line 144
-    iget-object v15, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
-    add-int/lit8 v12, v2, 0x2
+    add-int/lit8 v11, v2, 0x2
 
-    add-int/lit8 v12, v12, -0x1
+    add-int/lit8 v11, v11, -0x1
 
-    int-to-float v12, v12
+    int-to-float v11, v11
 
-    int-to-float v13, v9
+    const/4 v15, 0x0
 
-    int-to-float v14, v8
+    invoke-virtual {v10, v11, v15}, Landroid/graphics/Path;->lineTo(FF)V
 
-    const/16 v19, 0x0
+    .line 145
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
-    move/from16 v22, v6
+    add-int/lit8 v11, v2, 0x2
 
-    .end local v6    # "right3":I
-    .local v22, "right3":I
-    int-to-float v6, v8
+    add-int/lit8 v11, v11, -0x1
 
-    move/from16 v23, v10
+    int-to-float v11, v11
 
-    .end local v10    # "midBottomY":I
-    .local v23, "midBottomY":I
-    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iget v10, v10, Landroid/graphics/Rect;->top:I
-
-    int-to-float v10, v10
-
-    move/from16 v16, v12
-
-    move/from16 v17, v13
-
-    move/from16 v18, v14
-
-    move/from16 v20, v6
-
-    move/from16 v21, v10
-
-    invoke-virtual/range {v15 .. v21}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
-
-    .line 147
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
-
-    invoke-virtual {v6}, Landroid/graphics/Path;->close()V
-
-    .line 148
-    iget v6, v0, Lcom/android/mwilky/LinearColorBar;->mLineWidth:I
-
-    int-to-float v6, v6
-
-    const/high16 v10, 0x3f000000    # 0.5f
-
-    add-float/2addr v6, v10
-
-    .line 149
-    .local v6, "lineOffset":F
-    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
-
-    const/high16 v12, -0x40000000    # -2.0f
-
-    add-float v13, v6, v12
+    int-to-float v13, v8
 
     const/4 v14, 0x0
 
-    invoke-virtual {v10, v13, v14}, Landroid/graphics/Path;->moveTo(FF)V
+    int-to-float v12, v8
 
-    .line 150
-    iget-object v15, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
+    iget-object v15, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
 
-    add-float v16, v6, v12
+    iget v15, v15, Landroid/graphics/RectF;->top:F
 
-    int-to-float v10, v9
+    move/from16 v19, v12
 
-    int-to-float v12, v7
+    move v12, v9
 
-    add-float v18, v12, v6
+    move/from16 v16, v15
 
-    int-to-float v12, v7
+    move/from16 v15, v19
 
-    add-float v20, v12, v6
+    invoke-virtual/range {v10 .. v16}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
+    .line 148
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
 
-    iget v12, v12, Landroid/graphics/Rect;->top:I
+    invoke-virtual {v10}, Landroid/graphics/Path;->close()V
 
-    int-to-float v12, v12
-
-    move/from16 v17, v10
-
-    move/from16 v21, v12
-
-    invoke-virtual/range {v15 .. v21}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
-
-    .line 153
-    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
-
-    add-int/lit8 v12, v2, 0x2
-
-    add-int/lit8 v12, v12, -0x1
-
-    int-to-float v12, v12
-
-    sub-float/2addr v12, v6
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v10, v12, v13}, Landroid/graphics/Path;->moveTo(FF)V
-
-    .line 154
-    iget-object v14, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
-
-    add-int/lit8 v10, v2, 0x2
-
-    add-int/lit8 v10, v10, -0x1
+    .line 149
+    iget v10, v0, Lcom/android/mwilky/LinearColorBar;->mLineWidth:I
 
     int-to-float v10, v10
 
-    sub-float v15, v10, v6
+    const/high16 v11, 0x3f000000    # 0.5f
 
-    int-to-float v10, v9
+    add-float v19, v10, v11
 
-    int-to-float v12, v8
+    .line 150
+    .local v19, "lineOffset":F
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    sub-float v17, v12, v6
+    const/high16 v11, -0x40000000    # -2.0f
 
-    const/16 v18, 0x0
+    add-float v12, v19, v11
 
-    int-to-float v12, v8
+    const/4 v15, 0x0
 
-    sub-float v19, v12, v6
+    invoke-virtual {v10, v12, v15}, Landroid/graphics/Path;->moveTo(FF)V
 
-    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
+    .line 151
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    iget v12, v12, Landroid/graphics/Rect;->top:I
+    add-float v11, v19, v11
 
-    int-to-float v12, v12
+    int-to-float v12, v7
 
-    move/from16 v16, v10
+    add-float v13, v12, v19
+
+    int-to-float v12, v7
+
+    add-float v16, v12, v19
+
+    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    iget v12, v12, Landroid/graphics/RectF;->top:F
 
     move/from16 v20, v12
 
-    invoke-virtual/range {v14 .. v20}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
+    move v12, v9
 
-    goto :goto_ea
+    move/from16 v15, v16
 
-    .line 135
-    .end local v9    # "midTopY":I
-    .end local v11    # "xoff":I
-    .end local v22    # "right3":I
-    .end local v23    # "midBottomY":I
-    .local v6, "right3":I
-    :cond_e8
-    move/from16 v22, v6
+    move/from16 v16, v20
 
-    .line 158
-    .end local v6    # "right3":I
-    .restart local v22    # "right3":I
-    :goto_ea
-    iput v7, v0, Lcom/android/mwilky/LinearColorBar;->mLastInterestingLeft:I
+    invoke-virtual/range {v10 .. v16}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
+
+    .line 154
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
+
+    add-int/lit8 v11, v2, 0x2
+
+    add-int/lit8 v11, v11, -0x1
+
+    int-to-float v11, v11
+
+    sub-float v11, v11, v19
+
+    const/4 v12, 0x0
+
+    invoke-virtual {v10, v11, v12}, Landroid/graphics/Path;->moveTo(FF)V
+
+    .line 155
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
+
+    add-int/lit8 v11, v2, 0x2
+
+    add-int/lit8 v11, v11, -0x1
+
+    int-to-float v11, v11
+
+    sub-float v11, v11, v19
+
+    int-to-float v12, v8
+
+    sub-float v13, v12, v19
+
+    int-to-float v12, v8
+
+    sub-float v15, v12, v19
+
+    iget-object v12, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    iget v12, v12, Landroid/graphics/RectF;->top:F
+
+    move/from16 v16, v12
+
+    move v12, v9
+
+    invoke-virtual/range {v10 .. v16}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
     .line 159
+    .end local v9    # "midTopY":F
+    .end local v17    # "midBottomY":I
+    .end local v18    # "xoff":I
+    .end local v19    # "lineOffset":F
+    :cond_d2
+    iput v7, v0, Lcom/android/mwilky/LinearColorBar;->mLastInterestingLeft:I
+
+    .line 160
     iput v8, v0, Lcom/android/mwilky/LinearColorBar;->mLastInterestingRight:I
 
-    .line 162
-    :goto_ee
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
-
-    invoke-virtual {v6}, Landroid/graphics/Path;->isEmpty()Z
-
-    move-result v6
-
-    if-nez v6, :cond_104
-
     .line 163
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
+    :cond_d6
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
+    invoke-virtual {v9}, Landroid/graphics/Path;->isEmpty()Z
 
-    invoke-virtual {v1, v6, v9}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    move-result v9
+
+    if-nez v9, :cond_ec
 
     .line 164
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mEdgeGradientPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v6, v9}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v1, v9, v10}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 167
-    :cond_104
-    if-ge v3, v4, :cond_11e
+    .line 165
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mColorPath:Landroid/graphics/Path;
+
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mColorGradientPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v9, v10}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 168
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iput v3, v6, Landroid/graphics/Rect;->left:I
+    :cond_ec
+    if-ge v3, v4, :cond_10c
 
     .line 169
-    iput v4, v6, Landroid/graphics/Rect;->right:I
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    int-to-float v10, v3
+
+    iput v10, v9, Landroid/graphics/RectF;->left:F
 
     .line 170
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
+    int-to-float v10, v4
 
-    iget v9, v0, Lcom/android/mwilky/LinearColorBar;->mLeftColor:I
-
-    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setColor(I)V
+    iput v10, v9, Landroid/graphics/RectF;->right:F
 
     .line 171
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
     iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v6, v9}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    iget v10, v0, Lcom/android/mwilky/LinearColorBar;->mLeftColor:I
+
+    invoke-virtual {v9, v10}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 172
-    sub-int v6, v4, v3
-
-    sub-int/2addr v2, v6
+    sget v9, Lcom/android/mwilky/Renovate;->mQsRamBarCornerRadius:I
 
     .line 173
-    move v3, v4
+    .local v9, "mCornerRadius":I
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
 
-    .line 176
-    :cond_11e
-    move v4, v5
+    int-to-float v11, v9
+
+    int-to-float v12, v9
+
+    iget-object v13, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v10, v11, v12, v13}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 174
+    sub-int v10, v4, v3
+
+    sub-int/2addr v2, v10
+
+    .line 175
+    move v3, v4
 
     .line 178
-    if-ge v3, v4, :cond_138
-
-    .line 179
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iput v3, v6, Landroid/graphics/Rect;->left:I
-
-    .line 180
-    iput v4, v6, Landroid/graphics/Rect;->right:I
-
-    .line 181
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
-
-    const/4 v9, -0x1
-
-    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 182
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
-    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v1, v6, v9}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 183
-    sub-int v6, v4, v3
-
-    sub-int/2addr v2, v6
-
-    .line 184
-    move v3, v4
-
-    .line 188
-    :cond_138
+    .end local v9    # "mCornerRadius":I
+    :cond_10c
     add-int v4, v3, v2
 
-    .line 189
-    if-ge v3, v4, :cond_150
+    .line 179
+    if-ge v3, v4, :cond_129
 
-    .line 190
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
+    .line 180
+    iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
 
-    iput v3, v6, Landroid/graphics/Rect;->left:I
+    int-to-float v10, v3
 
-    .line 191
-    iput v4, v6, Landroid/graphics/Rect;->right:I
+    iput v10, v9, Landroid/graphics/RectF;->left:F
 
-    .line 192
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
+    .line 181
+    int-to-float v10, v4
 
-    iget v9, v0, Lcom/android/mwilky/LinearColorBar;->mRightColor:I
+    iput v10, v9, Landroid/graphics/RectF;->right:F
 
-    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 193
-    iget-object v6, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/Rect;
-
+    .line 182
     iget-object v9, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v6, v9}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    iget v10, v0, Lcom/android/mwilky/LinearColorBar;->mRightColor:I
 
-    .line 195
-    :cond_150
+    invoke-virtual {v9, v10}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 183
+    sget v9, Lcom/android/mwilky/Renovate;->mQsRamBarCornerRadius:I
+
+    int-to-float v9, v9
+
+    .line 184
+    .local v9, "mCornerRadius":F
+    iget-object v10, v0, Lcom/android/mwilky/LinearColorBar;->mRect:Landroid/graphics/RectF;
+
+    iget-object v11, v0, Lcom/android/mwilky/LinearColorBar;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v10, v9, v9, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 186
+    .end local v9    # "mCornerRadius":F
+    :cond_129
     return-void
 .end method
 
@@ -789,13 +737,13 @@
     .param p3, "oldw"    # I
     .param p4, "oldh"    # I
 
-    .line 107
+    .line 108
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->onSizeChanged(IIII)V
 
-    .line 108
+    .line 109
     invoke-direct {p0}, Lcom/android/mwilky/LinearColorBar;->updateIndicator()V
 
-    .line 109
+    .line 110
     return-void
 .end method
 
@@ -803,10 +751,10 @@
     .registers 2
     .param p1, "color"    # I
 
-    .line 74
+    .line 75
     iput p1, p0, Lcom/android/mwilky/LinearColorBar;->mLeftColor:I
 
-    .line 75
+    .line 76
     return-void
 .end method
 
@@ -816,19 +764,19 @@
     .param p2, "yellow"    # F
     .param p3, "green"    # F
 
-    .line 67
+    .line 68
     iput p1, p0, Lcom/android/mwilky/LinearColorBar;->mRedRatio:F
 
-    .line 68
+    .line 69
     iput p2, p0, Lcom/android/mwilky/LinearColorBar;->mYellowRatio:F
 
-    .line 69
+    .line 70
     iput p3, p0, Lcom/android/mwilky/LinearColorBar;->mGreenRatio:F
 
-    .line 70
+    .line 71
     invoke-virtual {p0}, Lcom/android/mwilky/LinearColorBar;->invalidate()V
 
-    .line 71
+    .line 72
     return-void
 .end method
 
@@ -836,10 +784,10 @@
     .registers 2
     .param p1, "color"    # I
 
-    .line 78
+    .line 79
     iput p1, p0, Lcom/android/mwilky/LinearColorBar;->mRightColor:I
 
-    .line 79
+    .line 80
     return-void
 .end method
 
@@ -847,21 +795,21 @@
     .registers 3
     .param p1, "showingGreen"    # Z
 
-    .line 82
+    .line 83
     iget-boolean v0, p0, Lcom/android/mwilky/LinearColorBar;->mShowingGreen:Z
 
     if-eq v0, p1, :cond_c
 
-    .line 83
+    .line 84
     iput-boolean p1, p0, Lcom/android/mwilky/LinearColorBar;->mShowingGreen:Z
 
-    .line 84
+    .line 85
     invoke-direct {p0}, Lcom/android/mwilky/LinearColorBar;->updateIndicator()V
 
-    .line 85
+    .line 86
     invoke-virtual {p0}, Lcom/android/mwilky/LinearColorBar;->invalidate()V
 
-    .line 87
+    .line 88
     :cond_c
     return-void
 .end method
