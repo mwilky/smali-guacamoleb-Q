@@ -3104,6 +3104,8 @@
 
     move-object/from16 v0, p0
     
+    invoke-virtual {v0}, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->setFpIconColors()V
+    
     sget v2, Lcom/oneplus/aod/OpAodDisplayViewManager;->mPulseStatus:I
 	
 	const v4, 0x2
@@ -6872,5 +6874,200 @@
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    return-void
+.end method
+
+.method public setFpIconColors()V
+    .registers 6
+
+    .line 42
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockFingerprintColors:Z
+
+    sget v1, Lcom/android/mwilky/Renovate;->mFingerprintNormalColor:I
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_a
+
+    move v1, v2
+
+    goto :goto_b
+
+    :cond_a
+    move v1, v3
+
+    :goto_b
+    and-int/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_22
+
+    .line 43
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconNormal:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintNormalColor:I
+
+    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 44
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconNormal:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_27
+
+    .line 46
+    :cond_22
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconNormal:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 48
+    :goto_27
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockFingerprintColors:Z
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintFlashColor:I
+
+    if-eqz v4, :cond_2f
+
+    move v4, v2
+
+    goto :goto_30
+
+    :cond_2f
+    move v4, v3
+
+    :goto_30
+    and-int/2addr v0, v4
+
+    if-eqz v0, :cond_46
+
+    .line 49
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconFlash:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintFlashColor:I
+
+    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 50
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconFlash:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_4b
+
+    .line 52
+    :cond_46
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconFlash:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 54
+    :goto_4b
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockFingerprintColors:Z
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintDimColor:I
+
+    if-eqz v4, :cond_53
+
+    move v4, v2
+
+    goto :goto_54
+
+    :cond_53
+    move v4, v3
+
+    :goto_54
+    and-int/2addr v0, v4
+
+    if-eqz v0, :cond_6a
+
+    .line 55
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDim:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintDimColor:I
+
+    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 56
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDim:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v4}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_6f
+
+    .line 58
+    :cond_6a
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDim:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 60
+    :goto_6f
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockFingerprintColors:Z
+
+    sget v4, Lcom/android/mwilky/Renovate;->mFingerprintDisabledColor:I
+
+    if-eqz v4, :cond_76
+
+    goto :goto_77
+
+    :cond_76
+    move v2, v3
+
+    :goto_77
+    and-int/2addr v0, v2
+
+    if-eqz v0, :cond_8d
+
+    .line 61
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDisable:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget v1, Lcom/android/mwilky/Renovate;->mFingerprintNormalColor:I
+
+    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 62
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDisable:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_92
+
+    .line 64
+    :cond_8d
+    iget-object v0, p0, Lcom/oneplus/systemui/biometrics/OpFingerprintDialogView;->mIconDisable:Lcom/oneplus/systemui/biometrics/OpCircleImageView;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/systemui/biometrics/OpCircleImageView;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 66
+    :goto_92
     return-void
 .end method
