@@ -19020,6 +19020,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationShelf:Lcom/android/systemui/statusbar/NotificationShelf;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/notification/row/ActivatableNotificationView;->updateBackgroundColors()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationChildren()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->sendTheme()V
 
@@ -19454,5 +19456,56 @@
     
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->updateRamBarMode()V
 
+    return-void
+.end method
+
+.method public updateNotificationChildren()V
+    .registers 5
+
+    .line 219
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout;->getChildCount()I
+
+    move-result v0
+
+    .line 220
+    .local v0, "childCount":I
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_7
+    if-ge v1, v0, :cond_1c
+
+    .line 221
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout;
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v2
+
+    .line 222
+    .local v2, "childAt":Landroid/view/View;
+    instance-of v3, v2, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;
+
+    if-eqz v3, :cond_19
+
+    .line 223
+    move-object v3, v2
+
+    check-cast v3, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;
+
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;->onUiModeChanged()V
+
+    .line 220
+    .end local v2    # "childAt":Landroid/view/View;
+    :cond_19
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_7
+
+    .line 226
+    .end local v1    # "i":I
+    :cond_1c
     return-void
 .end method
