@@ -421,10 +421,18 @@
     
     if-eqz v0, :cond_stock
     
-    if-nez v3, :cond_stock
+    if-eqz v3, :cond_nomedia
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media
+    
+    :cond_nomedia    
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock
@@ -444,10 +452,18 @@
     
     if-eqz v0, :cond_stock2
     
-    if-nez v3, :cond_stock2
+    if-eqz v3, :cond_nomedia2
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media2
+    
+    :cond_nomedia2
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media2
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock2
@@ -467,10 +483,18 @@
     
     if-eqz v0, :cond_stock3
     
-    if-nez v3, :cond_stock3
+    if-eqz v3, :cond_nomedia3
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media3
+    
+    :cond_nomedia3
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media3
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock3
@@ -515,10 +539,18 @@
     
     if-eqz v0, :cond_stock5
     
-    if-nez v3, :cond_stock5
+    if-eqz v3, :cond_nomedia5
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media5
+    
+    :cond_nomedia5    
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media5
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock5
@@ -538,10 +570,18 @@
     
     if-eqz v0, :cond_stock6
     
-    if-nez v3, :cond_stock6
+    if-eqz v3, :cond_nomedia6
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media6
+    
+    :cond_nomedia6
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media6
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock6
@@ -561,10 +601,18 @@
     
     if-eqz v0, :cond_stock7
     
-    if-nez v3, :cond_stock7
+    if-eqz v3, :cond_nomedia7
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media7
+    
+    :cond_nomedia7
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media7
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock7
@@ -584,10 +632,18 @@
     
     if-eqz v0, :cond_stock8
     
-    if-nez v3, :cond_stock8
+    if-eqz v3, :cond_nomedia8
     
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
+    
+    move-result v2
+    
+    goto :goto_media8
+    
+    :cond_nomedia8    
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
+    :goto_media8
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_stock8
@@ -628,7 +684,20 @@
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationHeaderViewWrapper;->mColor:I
+    
+    if-eqz v3, :cond_nomedia9
+    
+    invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationHeaderViewWrapper;->resolveMediaColors(I)I
+    
+    move-result v0
+    
+    iget-object v1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationHeaderViewWrapper;->mIcon:Landroid/widget/ImageView;
+    
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
+    invoke-virtual {v1, v0, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    :cond_nomedia9
     return-void
 .end method
 
@@ -757,4 +826,38 @@
 
     :cond_0
     return-void
+.end method
+
+.method public static resolveMediaColors(I)I
+    .registers 4
+    .param p0, "color"    # I
+
+    .line 14
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockNotificationColors:Z
+
+    if-eqz v0, :cond_13
+
+    .line 15
+    invoke-static {}, Lcom/android/systemui/SystemUIApplication;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 16
+    .local v0, "mContext":Landroid/content/Context;
+    sget v1, Lcom/android/mwilky/Renovate;->mNotificationbackgroundColor:I
+
+    invoke-static {v0}, Lcom/oneplus/util/OpUtils;->isGoogleDarkTheme(Landroid/content/Context;)Z
+
+    move-result v2
+
+    invoke-static {v0, p0, v1, v2}, Lcom/android/internal/util/ContrastColorUtil;->resolveContrastColor(Landroid/content/Context;IIZ)I
+
+    move-result v1
+
+    return v1
+
+    .line 18
+    .end local v0    # "mContext":Landroid/content/Context;
+    :cond_13
+    return p0
 .end method
