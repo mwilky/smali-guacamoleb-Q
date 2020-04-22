@@ -423,6 +423,10 @@
     
     if-eqz v3, :cond_nomedia
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia
+    
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -454,6 +458,10 @@
     
     if-eqz v3, :cond_nomedia2
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia2
+    
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -484,6 +492,10 @@
     if-eqz v0, :cond_stock3
     
     if-eqz v3, :cond_nomedia3
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia3
     
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
@@ -541,6 +553,10 @@
     
     if-eqz v3, :cond_nomedia5
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia5
+    
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -571,6 +587,10 @@
     if-eqz v0, :cond_stock6
     
     if-eqz v3, :cond_nomedia6
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia6
     
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
@@ -603,6 +623,10 @@
     
     if-eqz v3, :cond_nomedia7
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia7
+    
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -634,13 +658,17 @@
     
     if-eqz v3, :cond_nomedia8
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia8
+    
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
     
     goto :goto_media8
     
-    :cond_nomedia8    
+    :cond_nomedia8
     sget v2, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
     
     :goto_media8

@@ -345,6 +345,10 @@
     
     if-eqz v3, :cond_nomedia
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia
+    
     invoke-static {p1}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -376,6 +380,10 @@
     
     if-eqz v3, :cond_nomedia2
     
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia2
+    
     invoke-static {p1}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     
     move-result v2
@@ -406,6 +414,10 @@
     if-eqz p1, :cond_stock3
     
     if-eqz v3, :cond_nomedia3
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-nez v2, :cond_nomedia3
     
     invoke-static {p1}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationTemplateViewWrapper;->resolveMediaTextColors(Landroid/widget/TextView;)I
     

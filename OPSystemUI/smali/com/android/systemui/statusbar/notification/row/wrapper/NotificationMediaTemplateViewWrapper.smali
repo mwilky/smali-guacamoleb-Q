@@ -938,7 +938,14 @@
     invoke-static {p1}, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->resolveMediaColors(I)I
     
     move-result p1
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+    
+    if-eqz v0, :cond_stock
+    
+    sget p1, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
 
+    :cond_stock
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mSeekBarElapsedTime:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
@@ -1100,14 +1107,14 @@
 .method public setActionColors()V
     .registers 9
 
-    .line 40
+    .line 50
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
-    .line 41
+    .line 51
     .local v0, "view":Landroid/view/View;
-    if-eqz v0, :cond_86
+    if-eqz v0, :cond_c2
 
-    .line 42
+    .line 52
     iget-object v1, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
     const v2, 0x102017d
@@ -1118,7 +1125,7 @@
 
     check-cast v1, Landroid/widget/ImageButton;
 
-    .line 43
+    .line 53
     .local v1, "action0":Landroid/widget/ImageButton;
     iget-object v2, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
@@ -1130,7 +1137,7 @@
 
     check-cast v2, Landroid/widget/ImageButton;
 
-    .line 44
+    .line 54
     .local v2, "action1":Landroid/widget/ImageButton;
     iget-object v3, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
@@ -1142,7 +1149,7 @@
 
     check-cast v3, Landroid/widget/ImageButton;
 
-    .line 45
+    .line 55
     .local v3, "action2":Landroid/widget/ImageButton;
     iget-object v4, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
@@ -1154,7 +1161,7 @@
 
     check-cast v4, Landroid/widget/ImageButton;
 
-    .line 46
+    .line 56
     .local v4, "action3":Landroid/widget/ImageButton;
     iget-object v5, p0, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mActions:Landroid/view/View;
 
@@ -1166,110 +1173,189 @@
 
     check-cast v5, Landroid/widget/ImageButton;
 
-    .line 47
+    .line 57
     .local v5, "action4":Landroid/widget/ImageButton;
     sget-boolean v6, Lcom/android/mwilky/Renovate;->mUnlockNotificationColors:Z
 
-    if-eqz v6, :cond_6d
+    if-eqz v6, :cond_a9
 
-    .line 48
-    if-eqz v1, :cond_48
+    .line 58
+    if-eqz v1, :cond_54
 
-    .line 49
+    .line 59
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+
+    if-eqz v6, :cond_4d
+
+    .line 60
+    sget v6, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v1, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_54
+
+    .line 62
+    :cond_4d
     sget v6, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mResolvedColor:I
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v1, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 52
-    :cond_48
-    if-eqz v2, :cond_51
+    .line 66
+    :cond_54
+    :goto_54
+    if-eqz v2, :cond_69
 
-    .line 53
+    .line 67
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+
+    if-eqz v6, :cond_62
+
+    .line 68
+    sget v6, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v2, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_69
+
+    .line 70
+    :cond_62
     sget v6, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mResolvedColor:I
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v2, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 56
-    :cond_51
-    if-eqz v3, :cond_5a
+    .line 74
+    :cond_69
+    :goto_69
+    if-eqz v3, :cond_7e
 
-    .line 57
+    .line 75
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+
+    if-eqz v6, :cond_77
+
+    .line 76
+    sget v6, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v3, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_7e
+
+    .line 78
+    :cond_77
     sget v6, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mResolvedColor:I
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v3, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 60
-    :cond_5a
-    if-eqz v4, :cond_63
+    .line 82
+    :cond_7e
+    :goto_7e
+    if-eqz v4, :cond_93
 
-    .line 61
+    .line 83
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+
+    if-eqz v6, :cond_8c
+
+    .line 84
+    sget v6, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v4, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_93
+
+    .line 86
+    :cond_8c
     sget v6, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mResolvedColor:I
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 64
-    :cond_63
-    if-eqz v5, :cond_86
+    .line 90
+    :cond_93
+    :goto_93
+    if-eqz v5, :cond_c2
 
-    .line 65
+    .line 91
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mColorMediaNotificationText:Z
+
+    if-eqz v6, :cond_a1
+
+    .line 92
+    sget v6, Lcom/android/mwilky/Renovate;->mNotificationHeaderTextColor:I
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v5, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    goto :goto_c2
+
+    .line 94
+    :cond_a1
     sget v6, Lcom/android/systemui/statusbar/notification/row/wrapper/NotificationMediaTemplateViewWrapper;->mResolvedColor:I
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/ImageButton;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    goto :goto_86
+    goto :goto_c2
 
-    .line 68
-    :cond_6d
-    if-eqz v1, :cond_72
+    .line 98
+    :cond_a9
+    if-eqz v1, :cond_ae
 
-    .line 69
+    .line 99
     invoke-virtual {v1}, Landroid/widget/ImageButton;->clearColorFilter()V
 
-    .line 72
-    :cond_72
-    if-eqz v2, :cond_77
+    .line 102
+    :cond_ae
+    if-eqz v2, :cond_b3
 
-    .line 73
+    .line 103
     invoke-virtual {v2}, Landroid/widget/ImageButton;->clearColorFilter()V
 
-    .line 76
-    :cond_77
-    if-eqz v3, :cond_7c
+    .line 106
+    :cond_b3
+    if-eqz v3, :cond_b8
 
-    .line 77
+    .line 107
     invoke-virtual {v3}, Landroid/widget/ImageButton;->clearColorFilter()V
 
-    .line 80
-    :cond_7c
-    if-eqz v4, :cond_81
+    .line 110
+    :cond_b8
+    if-eqz v4, :cond_bd
 
-    .line 81
+    .line 111
     invoke-virtual {v4}, Landroid/widget/ImageButton;->clearColorFilter()V
 
-    .line 84
-    :cond_81
-    if-eqz v5, :cond_86
+    .line 114
+    :cond_bd
+    if-eqz v5, :cond_c2
 
-    .line 85
+    .line 115
     invoke-virtual {v5}, Landroid/widget/ImageButton;->clearColorFilter()V
 
-    .line 90
+    .line 120
     .end local v1    # "action0":Landroid/widget/ImageButton;
     .end local v2    # "action1":Landroid/widget/ImageButton;
     .end local v3    # "action2":Landroid/widget/ImageButton;
     .end local v4    # "action3":Landroid/widget/ImageButton;
     .end local v5    # "action4":Landroid/widget/ImageButton;
-    :cond_86
-    :goto_86
+    :cond_c2
+    :goto_c2
     return-void
 .end method

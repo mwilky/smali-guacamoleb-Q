@@ -17472,6 +17472,23 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsScrimColors(Landroid/content/Context;)V
 
     :cond_131
+    const-string v0, "tweaks_color_media_notif_text"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_132
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotificationColors(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationTextColors()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
+
+    :cond_132
 	return-void
 .end method
 
@@ -18089,6 +18106,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v1, "tweaks_disable_qs_scrim"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_color_media_notif_text"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
