@@ -1415,7 +1415,7 @@
 .end method
 
 .method private updateScrimColor(Landroid/view/View;FI)V
-    .locals 5
+    .locals 6
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1476,9 +1476,33 @@
     move-result v1
 
     invoke-static {v3, v4, p1, v1}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
+    
+    sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
+    
+    if-eqz v5, :cond_stock
+    
+    sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsScrimColors:Z
+    
+    if-eqz v5, :cond_stock
+    
+    sget p3, Lcom/android/mwilky/Renovate;->mQsScrimColor:I
 
+    :cond_stock
     invoke-virtual {v0, p3}, Lcom/android/systemui/statusbar/ScrimView;->setTint(I)V
+    
+    sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
+    
+    if-eqz v5, :cond_stock2
+    
+    sget-boolean v5, Lcom/android/mwilky/Renovate;->mDisableQsScrim:Z
+    
+    if-eqz v5, :cond_stock2
+    
+    const p2, 0x0
+    
+    int-to-float p2, p2
 
+    :cond_stock2
     invoke-virtual {v0, p2}, Lcom/android/systemui/statusbar/ScrimView;->setViewAlpha(F)V
 
     goto :goto_2
