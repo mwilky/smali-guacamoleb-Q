@@ -28,10 +28,6 @@
 
 .field protected final mBrightnessView:Landroid/view/View;
 
-.field private mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-
-.field private mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-
 .field private final mActivityStarter:Lcom/android/systemui/plugins/ActivityStarter;
 
 .field private final mAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
@@ -1187,20 +1183,6 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    if-ne p1, v0, :cond_mw
-    
-    goto :goto_mw
-    
-    :cond_mw
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-
-    if-ne p1, v0, :cond_mw2
-    
-    goto :goto_mw
-
-    :cond_mw2
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mNextAlarmContainer:Landroid/view/View;
 
     if-ne p1, v0, :cond_2
@@ -1571,46 +1553,6 @@
     
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const-string v0, "right_clock"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-    
-    const-string v0, "center_clock"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockCenter;
-
-    iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-    
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
     sget v0, Lcom/android/systemui/R$id;->date:I
 
     invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
@@ -1664,8 +1606,6 @@
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mNextAlarmTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setClockPosition()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateThemeColor()V
     
@@ -1990,33 +1930,6 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->post(Ljava/lang/Runnable;)Z
 
-    return-void
-.end method
-
-.method public setClockPosition()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
-    
-    if-eqz v0, :cond_right
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
-    
-    :cond_right
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    if-eqz v0, :cond_center
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
-    
-    :cond_center
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockCenter;->updateClockVisibility()V
-    
-    :cond_exit
     return-void
 .end method
 
@@ -2446,29 +2359,11 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
     
-    if-eqz v0, :cond_right
+    if-eqz v0, :cond_exit
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->printCustomClock()V
-    
-    :cond_right
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    if-eqz v0, :cond_center
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->readRenovateMods()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->printCustomClock()V
-    
-    :cond_center
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mCenterClockView:Lcom/android/systemui/statusbar/policy/ClockCenter;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockCenter;->readRenovateMods()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockCenter;->printCustomClock()V
     
     :cond_exit
     return-void
