@@ -45,6 +45,8 @@
 
 
 # instance fields
+.field private mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+
 .field private blurperformed:Z
 
 .field public mQSBlurView:Landroid/widget/ImageView;
@@ -8029,6 +8031,14 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateAreThereNotifications()V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkBarModes()V
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+   
+    new-instance v1, Lcom/android/systemui/statusbar/phone/ClockController;
+    
+    invoke-direct {v1, v0}, Lcom/android/systemui/statusbar/phone/ClockController;-><init>(Landroid/view/View;)V
+    
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
 
     return-void
 .end method
@@ -18213,23 +18223,15 @@
 .method updateClockView()V
     .locals 2
     
-    const-string v0, "clock"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
     
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->updateActiveClock()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
+    
     move-result-object v0
     
     if-eqz v0, :cond_header
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/Clock;
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
     
@@ -18253,6 +18255,8 @@
     if-eqz v0, :cond_exit
 
     check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateClockPosition()V
     
     invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateCustomClock()V
     

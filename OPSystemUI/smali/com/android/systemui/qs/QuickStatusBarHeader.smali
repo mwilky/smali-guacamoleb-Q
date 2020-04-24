@@ -18,6 +18,8 @@
 
 
 # instance fields
+.field public mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+
 .field private mQsIcons:Landroid/view/View;
 
 .field private mBrightnessController:Lcom/android/systemui/settings/BrightnessController;
@@ -1163,7 +1165,11 @@
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
+
+    move-result-object v0
 
     const-string v1, "android.intent.action.SHOW_ALARMS"
 
@@ -1310,9 +1316,13 @@
     const/4 p1, 0x0
 
     :goto_0
-    iget-object p0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
 
-    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->useWallpaperTextColor(Z)V
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->useWallpaperTextColor(Z)V
     
     invoke-virtual {v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateBrightnessMirror()V
 
@@ -1538,10 +1548,16 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+    
+    new-instance v0, Lcom/android/systemui/statusbar/phone/ClockController;
+    
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/ClockController;-><init>(Landroid/view/View;)V
+    
+    iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+    
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
 
-    sget v0, Lcom/android/systemui/R$id;->clock:I
-
-    invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
 
     move-result-object v0
 
@@ -1551,8 +1567,11 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
     
+    if-eqz v0, :no_clock
+    
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    :no_clock
     sget v0, Lcom/android/systemui/R$id;->date:I
 
     invoke-virtual {p0, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
@@ -1899,6 +1918,8 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/qs/QuickQSPanel;->setHost(Lcom/android/systemui/qs/QSTileHost;Lcom/android/systemui/qs/customize/QSCustomizer;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateClockPosition()V
 
     iget-object p0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryRemainingIcon:Lcom/android/systemui/BatteryMeterView;
 
@@ -2354,10 +2375,33 @@
     return-void
 .end method
 
+.method public updateClockPosition()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->updateActiveClock()V
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
+
+    move-result-object v0
+    
+    if-eqz v0, :no_clock
+    
+    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    
+    :no_clock
+    return-void
+.end method
+
 .method public updateCustomClock()V
     .locals 2
 
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
+
+    move-result-object v0
     
     if-eqz v0, :cond_exit
     
