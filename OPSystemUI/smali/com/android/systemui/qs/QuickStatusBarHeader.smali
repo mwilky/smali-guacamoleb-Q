@@ -1321,9 +1321,12 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ClockController;->getClock()Lcom/android/systemui/statusbar/policy/Clock;
 
     move-result-object v0
+    
+    if-eqz v0, :cond_mw
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->useWallpaperTextColor(Z)V
     
+    :cond_mw
     invoke-virtual {v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateBrightnessMirror()V
 
     return-void
