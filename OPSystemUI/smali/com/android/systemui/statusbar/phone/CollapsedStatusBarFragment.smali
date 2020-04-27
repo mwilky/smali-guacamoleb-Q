@@ -8,6 +8,8 @@
 
 
 # instance fields
+.field private mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
+
 .field private mCenteredIconArea:Landroid/view/View;
 
 .field private mClockView:Landroid/view/View;
@@ -1034,6 +1036,14 @@
     check-cast p2, Landroid/view/View;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mRightClockView:Landroid/view/View;
+    
+    iget-object p2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+    
+    new-instance v0, Lcom/android/systemui/statusbar/phone/ClockController;
+    
+    invoke-direct {v0, p2}, Lcom/android/systemui/statusbar/phone/ClockController;-><init>(Landroid/view/View;)V
+    
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockController:Lcom/android/systemui/statusbar/phone/ClockController;
 
     const/4 p2, 0x0
 
