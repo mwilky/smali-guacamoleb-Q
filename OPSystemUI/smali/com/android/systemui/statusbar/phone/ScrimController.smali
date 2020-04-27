@@ -1491,15 +1491,15 @@
 
     invoke-static {v3, v4, p1, v1}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
     
-    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mTracking:Z
-    
-    if-eqz v5, :cond_stock
-    
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mState:Lcom/android/systemui/statusbar/phone/ScrimState;
 
     sget-object v6, Lcom/android/systemui/statusbar/phone/ScrimState;->UNLOCKED:Lcom/android/systemui/statusbar/phone/ScrimState;
     
     if-ne v5, v6, :cond_stock
+    
+    sget-boolean v5, Lcom/android/systemui/statusbar/phone/StatusBarWindowController;->mIsExpanded:Z
+    
+    if-eqz v5, :cond_stock
     
     sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
     
