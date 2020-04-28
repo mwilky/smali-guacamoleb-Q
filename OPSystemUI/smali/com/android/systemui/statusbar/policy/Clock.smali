@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Lcom/android/systemui/DemoMode;
-.implements Lcom/android/systemui/tuner/TunerService$Tunable;
 .implements Lcom/android/systemui/statusbar/CommandQueue$Callbacks;
 .implements Lcom/android/systemui/plugins/DarkIconDispatcher$DarkReceiver;
 .implements Lcom/android/systemui/statusbar/policy/ConfigurationController$ConfigurationListener;
@@ -135,8 +134,6 @@
 .field private mSecondsHandler:Landroid/os/Handler;
 
 .field private final mShowDark:Z
-
-.field private mShowSeconds:Z
 
 .field private mUseWallpaperTextColor:Z
 
@@ -886,7 +883,7 @@
 .method private showSeconds()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
+    sget-boolean p0, Lcom/android/mwilky/Renovate;->mClockSeconds:Z
 
     if-eqz p0, :cond_0
 
@@ -937,7 +934,7 @@
     return-void
 .end method
 
-.method private updateShowSeconds()V
+.method public updateShowSeconds()V
     .locals 6
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->printCustomClock()V
@@ -1291,24 +1288,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    const-class v0, Lcom/android/systemui/tuner/TunerService;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/tuner/TunerService;
-
-    const-string v1, "clock_seconds"
-
-    const-string v2, "icon_blacklist"
-
-    filled-new-array {v1, v2}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Lcom/android/systemui/tuner/TunerService;->addTunable(Lcom/android/systemui/tuner/TunerService$Tunable;[Ljava/lang/String;)V
-
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1355,7 +1334,7 @@
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     const/4 v0, 0x0
     
@@ -1488,16 +1467,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
 
-    const-class v0, Lcom/android/systemui/tuner/TunerService;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/tuner/TunerService;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/tuner/TunerService;->removeTunable(Lcom/android/systemui/tuner/TunerService$Tunable;)V
-
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1556,7 +1525,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
 
     return-void
 .end method
@@ -1624,7 +1593,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
+    sput-boolean v0, Lcom/android/mwilky/Renovate;->mClockSeconds:Z
 
     const-string v0, "visibility"
 
@@ -1683,7 +1652,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mClockSeconds:Z
 
     const-string v2, "show_seconds"
 
@@ -1698,50 +1667,6 @@
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     return-object v0
-.end method
-
-.method public onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "clock_seconds"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-static {p2, p1}, Lcom/android/systemui/tuner/TunerService;->parseIntegerSwitch(Ljava/lang/String;Z)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getIconBlacklist(Ljava/lang/String;)Landroid/util/ArraySet;
-
-    move-result-object p1
-
-    const-string p2, "clock"
-
-    invoke-virtual {p1, p2}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    xor-int/lit8 p1, p1, 0x1
-
-    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->setClockVisibleByUser(Z)V
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
-
-    :goto_0
-    return-void
 .end method
 
 .method public setClockVisibilityByPolicy(Z)V
@@ -2752,7 +2677,7 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mClockSeconds:Z
 
     move/from16 v4, v0
 

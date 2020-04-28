@@ -2410,7 +2410,7 @@
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
     
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->printCustomClock()V
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     :cond_exit
     return-void
