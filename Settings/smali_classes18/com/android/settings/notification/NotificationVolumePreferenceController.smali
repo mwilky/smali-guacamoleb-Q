@@ -29,41 +29,48 @@
 .end method
 
 .method public getAvailabilityStatus()I
-    .registers 5
+    .locals 2
 
-    .line 18
     iget-object v0, p0, Lcom/android/settings/notification/NotificationVolumePreferenceController;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 19
-    .local v0, "ContentResolver":Landroid/content/ContentResolver;
-    const/4 v1, 0x0
+    const v1, 0x7f050032
 
-    const-string v2, "tweaks_unlink_volume"
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    invoke-static {v0, v2, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v0
 
-    move-result v2
+    if-eqz v0, :cond_0
 
-    .line 20
-    .local v2, "isUnlinked":I
-    const/4 v3, 0x1
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationVolumePreferenceController;->mContext:Landroid/content/Context;
 
-    if-ne v2, v3, :cond_11
+    invoke-static {v0}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
 
-    .line 21
-    return v1
+    move-result v0
 
-    .line 23
-    :cond_11
-    const/4 v1, 0x3
+    if-nez v0, :cond_0
 
-    return v1
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationVolumePreferenceController;->mHelper:Lcom/android/settings/notification/AudioHelper;
+
+    invoke-virtual {v0}, Lcom/android/settings/notification/AudioHelper;->isSingleVolume()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x3
+
+    :goto_0
+    return v0
 .end method
-
 
 .method public getMuteIcon()I
     .locals 1
