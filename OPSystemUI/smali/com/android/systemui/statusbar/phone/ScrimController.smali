@@ -1491,21 +1491,9 @@
 
     invoke-static {v3, v4, p1, v1}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
     
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mState:Lcom/android/systemui/statusbar/phone/ScrimState;
-
-    sget-object v6, Lcom/android/systemui/statusbar/phone/ScrimState;->UNLOCKED:Lcom/android/systemui/statusbar/phone/ScrimState;
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/ScrimController;->shouldDoCustomScrim()Z
     
-    if-ne v5, v6, :cond_stock
-    
-    sget-boolean v5, Lcom/android/systemui/statusbar/phone/StatusBarWindowController;->mIsExpanded:Z
-    
-    if-eqz v5, :cond_stock
-    
-    sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
-    
-    if-eqz v5, :cond_stock
-    
-    sget-boolean v5, Lcom/android/mwilky/Renovate;->mUnlockQsScrimColors:Z
+    move-result v5
     
     if-eqz v5, :cond_stock
     
@@ -3068,4 +3056,75 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/ScrimController;->dispatchScrimsVisible()V
 
     return-void
+.end method
+
+.method private shouldDoCustomScrim()Z
+    .registers 6
+
+    .line 13
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
+
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mUnlockQsScrimColors:Z
+
+    and-int/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_29
+
+    .line 14
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mState:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    sget-object v2, Lcom/android/systemui/statusbar/phone/ScrimState;->UNLOCKED:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    if-ne v0, v2, :cond_11
+
+    .line 15
+    sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBarWindowController;->mIsExpanded:Z
+
+    return v0
+
+    .line 16
+    :cond_11
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mQsScrimLockscreen:Z
+
+    if-eqz v0, :cond_28
+
+    .line 17
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mState:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    sget-object v2, Lcom/android/systemui/statusbar/phone/ScrimState;->KEYGUARD:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    const/4 v3, 0x1
+
+    if-ne v0, v2, :cond_1e
+
+    move v0, v3
+
+    goto :goto_1f
+
+    :cond_1e
+    move v0, v1
+
+    :goto_1f
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mState:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    sget-object v4, Lcom/android/systemui/statusbar/phone/ScrimState;->BOUNCER:Lcom/android/systemui/statusbar/phone/ScrimState;
+
+    if-ne v2, v4, :cond_26
+
+    move v1, v3
+
+    :cond_26
+    or-int/2addr v0, v1
+
+    return v0
+
+    .line 19
+    :cond_28
+    return v1
+
+    .line 22
+    :cond_29
+    return v1
 .end method
