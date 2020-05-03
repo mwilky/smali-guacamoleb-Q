@@ -13536,6 +13536,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsScrimColors(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockSeconds(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setMergeNotifications(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -17529,6 +17531,23 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsScrimColors(Landroid/content/Context;)V
 
     :cond_134
+    const-string v0, "tweaks_merge_notifications"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_135
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setMergeNotifications(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationTextColors()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
+
+    :cond_135
 	return-void
 .end method
 
@@ -18158,6 +18177,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v1, "tweaks_qs_scrim_lockscreen"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_merge_notifications"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -19087,6 +19110,10 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/notification/row/ActivatableNotificationView;->updateBackgroundColors()V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationChildren()V
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateNotificationViews()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->sendTheme()V
 
