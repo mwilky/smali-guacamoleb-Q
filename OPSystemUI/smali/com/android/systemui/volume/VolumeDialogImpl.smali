@@ -2121,16 +2121,7 @@
 
 .method private isLandscape()Z
     .locals 1
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mRightHandVolumeMenu:Z
-    
-    if-eqz v0, :cond_stock
-    
-    const/4 v0, 0x1
-    
-    return v0
 
-    :cond_stock
     iget-object p0, p0, Lcom/oneplus/volume/OpVolumeDialogImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2148,12 +2139,25 @@
     if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mRightHandVolumeMenuLandscape:Z
+    
+    if-nez v0, :cond_stock
+    
+    const/4 p0, 0x0
 
     goto :goto_0
 
     :cond_0
     const/4 p0, 0x0
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mRightHandVolumeMenu:Z
+    
+    if-eqz v0, :cond_stock
+    
+    const/4 p0, 0x1
 
+    :cond_stock
     :goto_0
     return p0
 .end method
