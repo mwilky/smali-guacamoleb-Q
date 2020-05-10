@@ -15,6 +15,10 @@
 
 
 # instance fields
+.field private mClockDayColor:I
+
+.field private mClockDateColor:I
+
 .field private mAmPmCustomFont:Landroid/graphics/Typeface; 
 
 .field private mAmPmFloat:F 
@@ -1356,33 +1360,73 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 2
-    
+    .registers 8
+    .param p1, "rect"    # Landroid/graphics/Rect;
+    .param p2, "f"    # F
+    .param p3, "i"    # I
+
+    .line 217
     float-to-int v0, p2
 
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
+    .line 218
+    .local v0, "i2":I
+    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
 
-    if-nez v0, :cond_0 #set to grey if dark intensity is 1
+    .line 219
+    .local v1, "clock":I
+    if-nez v0, :cond_7
 
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
+    .line 220
+    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
 
-    :cond_0    
+    .line 222
+    :cond_7
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
+
+    .line 223
+    .local v2, "date":I
+    if-nez v0, :cond_d
+
+    .line 224
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDateColor:I
+
+    .line 226
+    :cond_d
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
+
+    .line 227
+    .local v3, "day":I
+    if-nez v0, :cond_13
+
+    .line 228
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDayColor:I
+
+    .line 230
+    :cond_13
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
-    
+
+    .line 231
+    iput v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
+
+    .line 232
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
+
+    .line 233
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourTint:I
-    
+
+    .line 234
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecTint:I
-    
+
+    .line 235
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mMinTint:I
-    
+
+    .line 236
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSeparatorTint:I
-    
+
+    .line 237
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->printCustomClock()V
 
+    .line 238
     return-void
 .end method
 
@@ -1811,143 +1855,220 @@
 .end method
 
 .method public updateViews(F)V
-    .locals 2
-    
+    .registers 6
+    .param p1, "f"    # F
+
+    .line 161
     float-to-int v0, p1
-    
+
+    .line 162
+    .local v0, "i":I
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
 
-    if-nez v0, :cond_dark #set to grey if dark intensity is 1
+    .line 163
+    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
 
-    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
+    .line 164
+    .local v1, "clock":I
+    if-nez v0, :cond_a
 
-    :cond_dark    
+    .line 165
+    iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
+
+    .line 167
+    :cond_a
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
+
+    .line 168
+    .local v2, "date":I
+    if-nez v0, :cond_10
+
+    .line 169
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDateColor:I
+
+    .line 171
+    :cond_10
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
+
+    .line 172
+    .local v3, "day":I
+    if-nez v0, :cond_16
+
+    .line 173
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDayColor:I
+
+    .line 175
+    :cond_16
     iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mMinTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSeparatorTint:I
-    
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
 
+    .line 176
+    iput v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
+
+    .line 177
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
+
+    .line 178
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourTint:I
+
+    .line 179
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecTint:I
+
+    .line 180
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mMinTint:I
+
+    .line 181
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSeparatorTint:I
+
+    .line 182
     return-void
 .end method
 
 .method public readRenovateMods()V
-    .locals 2
-    
+    .registers 6
+
+    .line 185
     sget v0, Lcom/android/mwilky/Renovate;->mClockColorOP:I
-    
+
+    .line 186
+    .local v0, "i":I
     iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
-    
+
+    .line 187
     iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmTint:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourTint:I
-    
+
+    .line 188
     iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSecTint:I
-    
+
+    .line 189
     iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mMinTint:I
-    
+
+    .line 190
+    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourTint:I
+
+    .line 191
     iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mSeparatorTint:I
-	
-    sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
-	
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mShowStatusbarDate:Z
-    
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowDate:Z
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mShowStatusbarDay:Z
-    
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowDay:Z
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDayStyle:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayStyle:I
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarYearStyle:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mYearStyle:I
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDateLayout:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateLayout:I
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDateFormat:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateFormat:I
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarClockAmPmStyle:I
-    
-    iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockAmPmStyle:I
-    
-    sget-object v0, Lcom/android/mwilky/Renovate;->mStatusbarDateDividerStyle:Ljava/lang/String;
-    
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateDividerStyle:Ljava/lang/String;
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDaySize:I
-    
-    const/4 v1, 0x1
-    
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarHourSize:I
-    
-    const/4 v1, 0x2
-    
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDateSize:I
-    
-    const/4 v1, 0x3
-    
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarClockDividerSize:I
-    
-    const/4 v1, 0x4
-    
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarClockHourFont:I
 
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+    .line 192
+    sget v1, Lcom/android/mwilky/Renovate;->mClockDateColorOP:I
 
-    move-result-object v0 
+    .line 193
+    .local v1, "i2":I
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDateColor:I
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourCustomFont:Landroid/graphics/Typeface;
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDateFont:I
+    .line 194
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateTint:I
 
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+    .line 195
+    sget v2, Lcom/android/mwilky/Renovate;->mClockDayColorOP:I
 
-    move-result-object v0 
+    .line 196
+    .local v2, "i3":I
+    iput v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockDayColor:I
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateCustomFont:Landroid/graphics/Typeface;
-    
-     sget v0, Lcom/android/mwilky/Renovate;->mStatusbarDayFont:I
+    .line 197
+    iput v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayTint:I
 
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+    .line 198
+    sget v3, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
 
-    move-result-object v0 
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayCustomFont:Landroid/graphics/Typeface;
-	
+    .line 199
+    sget-boolean v3, Lcom/android/mwilky/Renovate;->mShowStatusbarDate:Z
+
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowDate:Z
+
+    .line 200
+    sget-boolean v3, Lcom/android/mwilky/Renovate;->mShowStatusbarDay:Z
+
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowDay:Z
+
+    .line 201
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDayStyle:I
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayStyle:I
+
+    .line 202
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarYearStyle:I
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mYearStyle:I
+
+    .line 203
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDateLayout:I
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateLayout:I
+
+    .line 204
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDateFormat:I
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateFormat:I
+
+    .line 205
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarClockAmPmStyle:I
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockAmPmStyle:I
+
+    .line 206
+    sget-object v3, Lcom/android/mwilky/Renovate;->mStatusbarDateDividerStyle:Ljava/lang/String;
+
+    iput-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateDividerStyle:Ljava/lang/String;
+
+    .line 207
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDaySize:I
+
+    const/4 v4, 0x1
+
+    invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
+
+    .line 208
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarHourSize:I
+
+    const/4 v4, 0x2
+
+    invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
+
+    .line 209
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDateSize:I
+
+    const/4 v4, 0x3
+
+    invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
+
+    .line 210
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarClockDividerSize:I
+
+    const/4 v4, 0x4
+
+    invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/policy/Clock;->sizeSetter(II)V
+
+    .line 211
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarClockHourFont:I
+
+    invoke-static {v3}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mHourCustomFont:Landroid/graphics/Typeface;
+
+    .line 212
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDateFont:I
+
+    invoke-static {v3}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDateCustomFont:Landroid/graphics/Typeface;
+
+    .line 213
+    sget v3, Lcom/android/mwilky/Renovate;->mStatusbarDayFont:I
+
+    invoke-static {v3}, Lcom/android/mwilky/Renovate;->getFontStyle(I)Landroid/graphics/Typeface;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDayCustomFont:Landroid/graphics/Typeface;
+
+    .line 214
     return-void
 .end method
 
