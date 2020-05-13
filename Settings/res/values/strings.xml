@@ -4011,6 +4011,7 @@ Note:
     <string name="oneplus_select_fingerprint_animation_effect_2">Wave</string>
     <string name="oneplus_select_fingerprint_animation_effect_3">Stripe</string>
     <string name="oneplus_select_fingerprint_animation_effect_4">Ripple</string>
+    <string name="oneplus_select_fingerprint_animation_effect_6">Energy</string>
     <string name="oneplus_select_fingerprint_animation_effect_mcl">McLaren</string>
     <string name="oneplus_select_fingerprint_animation_effect_none">None</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Select fingerprint animation effect</string>

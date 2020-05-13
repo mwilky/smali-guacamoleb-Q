@@ -157,9 +157,12 @@
 .end method
 
 .method private getFodAnimStyleImage()I
-    .locals 4
+    .registers 5
 
-    iget-object v0, p0, Lcom/oneplus/settings/ui/OPThemeIconPreference;->mContext:Landroid/content/Context;
+    .line 11
+    invoke-static {}, Lcom/oneplus/settings/SettingsBaseApplication;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -168,61 +171,109 @@
     const-string v1, "op_custom_unlock_animation_style"
 
     const/4 v2, 0x0
-
+    
     const/4 v3, -0x2
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    .line 12
+    .local v0, "style":I
+    const-string v1, "op_img_fod_01"
 
-    const/4 v1, 0x1
+    const-string v2, "drawable"
 
-    if-eq v0, v1, :cond_3
+    if-nez v0, :cond_1a
 
-    const/4 v1, 0x2
+    .line 13
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eq v0, v1, :cond_2
+    move-result v1
 
-    const/4 v1, 0x3
+    return v1
 
-    if-eq v0, v1, :cond_1
+    .line 15
+    :cond_1a
+    const/4 v3, 0x1
 
-    const/16 v1, 0x9
+    if-ne v0, v3, :cond_24
 
-    if-eq v0, v1, :cond_0
+    .line 16
+    const-string v1, "op_img_fod_02"
 
-    const v1, 0x7f080533
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    move-result v1
 
-    :cond_0
-    const v1, 0x7f080536
+    return v1
 
-    goto :goto_0
+    .line 18
+    :cond_24
+    const/4 v3, 0x2
 
-    :cond_1
-    const v1, 0x7f080537
+    if-ne v0, v3, :cond_2e
 
-    goto :goto_0
+    .line 19
+    const-string v1, "op_img_fod_03"
 
-    :cond_2
-    const v1, 0x7f080535
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    move-result v1
 
-    :cond_3
-    const v1, 0x7f080534
+    return v1
 
-    goto :goto_0
+    .line 21
+    :cond_2e
+    const/4 v3, 0x3
 
-    :cond_4
-    const v1, 0x7f080533
+    if-ne v0, v3, :cond_38
 
-    nop
+    .line 22
+    const-string v1, "op_img_fod_05"
 
-    :goto_0
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 24
+    :cond_38
+    const/4 v3, 0x4
+
+    if-ne v0, v3, :cond_42
+
+    .line 25
+    const-string v1, "op_img_fod_06"
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 27
+    :cond_42
+    const/16 v3, 0x9
+
+    if-eq v0, v3, :cond_4b
+
+    .line 28
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 30
+    :cond_4b
+    const-string v1, "op_img_fod_04"
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
     return v1
 .end method
 

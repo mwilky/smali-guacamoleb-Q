@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final ANIM_STYLE_ENERGY:I = 0x4
+
 .field public static final ANIM_STYLE_0:I = 0x3
 
 .field public static final ANIM_STYLE_4:I = 0x9
@@ -357,58 +359,67 @@
 .end method
 
 .method private getCustomAnimationId(I)I
-    .locals 2
+    .registers 6
+    .param p1, "i"    # I
 
-    const v0, 0x7f11001f
+    .line 85
+    const-string v0, "op_custom_fingerprint_anim_1"
 
-    if-eqz p1, :cond_4
+    const-string v1, "raw"
 
-    const/4 v1, 0x1
+    if-eqz p1, :cond_26
 
-    if-eq p1, v1, :cond_3
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    if-eq p1, v2, :cond_24
 
-    if-eq p1, v1, :cond_2
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    if-eq p1, v2, :cond_21
 
-    if-eq p1, v1, :cond_1
+    const/4 v2, 0x3
 
-    const/16 v1, 0x9
+    if-eq p1, v2, :cond_1e
 
-    if-eq p1, v1, :cond_0
+    const/4 v2, 0x4
 
-    const v0, 0x7f11001f
+    const-string v3, "op_custom_fingerprint_anim_4"
 
-    goto :goto_0
+    if-eq p1, v2, :cond_19
 
-    :cond_0
-    const v0, 0x7f110022
+    const/16 v2, 0x9
 
-    goto :goto_0
+    if-eq p1, v2, :cond_19
 
-    :cond_1
-    const v0, 0x7f110023
+    goto :goto_26
 
-    goto :goto_0
+    :cond_19
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
-    const v0, 0x7f110021
+    move-result v0
 
-    goto :goto_0
+    goto :goto_2a
 
-    :cond_3
-    const v0, 0x7f110020
+    :cond_1e
+    const-string v0, "op_custom_fingerprint_anim_5"
 
-    goto :goto_0
+    goto :goto_26
 
-    :cond_4
-    const v0, 0x7f11001f
+    :cond_21
+    const-string v0, "op_custom_fingerprint_anim_3"
 
-    nop
+    goto :goto_26
 
-    :goto_0
+    :cond_24
+    const-string v0, "op_custom_fingerprint_anim_2"
+
+    :cond_26
+    :goto_26
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    :goto_2a
     return v0
 .end method
 
@@ -452,171 +463,321 @@
 .end method
 
 .method private initStyleAnimViews()V
-    .locals 14
+    .registers 17
 
-    iget-object v0, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    .line 24
+    move-object/from16 v0, p0
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    iget-object v1, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    const/4 v0, 0x0
+    invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    invoke-static {}, Lcom/oneplus/settings/utils/OPThemeUtils;->isSupportMclTheme()Z
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v3, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f120f28
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    const v4, 0x7f080537
-
-    invoke-direct {v1, p0, v3, v4, v2}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v0, v1
-
-    :cond_0
+    .line 25
     const/4 v1, 0x0
 
+    .line 26
+    .local v1, "anim0":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    invoke-static {}, Lcom/oneplus/settings/utils/OPThemeUtils;->isSupportMclTheme()Z
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    const-string v4, "drawable"
+
+    const-string v5, "string"
+
+    if-eqz v2, :cond_2b
+
+    .line 27
+    new-instance v2, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v6, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    const-string v7, "oneplus_select_fingerprint_animation_effect_mcl"
+
+    invoke-static {v7, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v7, "op_img_fod_05"
+
+    invoke-static {v7, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v7
+
+    invoke-direct {v2, v0, v6, v7, v3}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v1, v2
+
+    .line 29
+    :cond_2b
+    const/4 v2, 0x0
+
+    .line 30
+    .local v2, "anim4":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSM8150Products()Z
-
-    move-result v3
-
-    const/16 v4, 0x9
-
-    const v5, 0x7f080535
-
-    const v6, 0x7f120f26
-
-    const v7, 0x7f080534
-
-    const v8, 0x7f080533
-
-    const v9, 0x7f120f24
-
-    const/4 v10, 0x2
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x1
-
-    if-eqz v3, :cond_1
-
-    new-instance v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v13, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v13, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v3, p0, v9, v8, v11}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    new-instance v8, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v9, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    const v13, 0x7f120f27
-
-    invoke-virtual {v9, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v8, p0, v9, v7, v12}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v7, v8
-
-    new-instance v8, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v9, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v8, p0, v6, v5, v10}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v5, v8
-
-    new-instance v6, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v8, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    const v9, 0x7f120f29
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    const v9, 0x7f080536
-
-    invoke-direct {v6, p0, v8, v9, v4}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v1, v6
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v13, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v13, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v3, p0, v9, v8, v11}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    new-instance v8, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v9, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    const v13, 0x7f120f25
-
-    invoke-virtual {v9, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v8, p0, v9, v7, v12}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v7, v8
-
-    new-instance v8, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
-
-    iget-object v9, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v8, p0, v6, v5, v10}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
-
-    move-object v5, v8
-
-    :goto_0
-    iget-object v6, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v6
-
-    const/4 v8, -0x2
-
-    const-string v9, "op_custom_unlock_animation_style"
-
-    invoke-static {v6, v9, v11, v8}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v6
 
+    const-string v8, "op_img_fod_06"
+
+    const-string v9, "oneplus_select_fingerprint_animation_effect_6"
+
+    const-string v10, "op_img_fod_03"
+
+    const-string v11, "oneplus_select_fingerprint_animation_effect_3"
+
+    const-string v12, "op_img_fod_02"
+
+    const-string v13, "op_img_fod_01"
+
+    const-string v14, "oneplus_select_fingerprint_animation_effect_1"
+
+    const/4 v15, 0x0
+
+    const/4 v7, 0x1
+
+    if-eqz v6, :cond_b0
+
+    .line 31
+    new-instance v6, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v3, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v14, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v14
+
+    invoke-virtual {v3, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v13, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v13
+
+    invoke-direct {v6, v0, v3, v13, v15}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v3, v6
+
+    .line 32
+    .local v3, "anim1":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v6, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v13, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    const-string v14, "oneplus_select_fingerprint_animation_effect_4"
+
+    invoke-static {v14, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v14
+
+    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v12
+
+    invoke-direct {v6, v0, v13, v12, v7}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    .line 33
+    .local v6, "anim2":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v12, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v13, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v11, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v11
+
+    invoke-virtual {v13, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v10
+
+    const/4 v13, 0x2
+
+    invoke-direct {v12, v0, v11, v10, v13}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v10, v12
+
+    .line 34
+    .local v10, "anim3":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v11, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v12, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    const-string v13, "oneplus_select_fingerprint_animation_effect_none"
+
+    invoke-static {v13, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v13
+
+    invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, "op_img_fod_04"
+
+    invoke-static {v13, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v13
+
+    const/16 v14, 0x9
+
+    invoke-direct {v11, v0, v12, v13, v14}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v2, v11
+
+    .line 35
+    new-instance v11, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v12, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v9, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v12, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v8, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v4
+
+    const/4 v8, 0x4
+
+    invoke-direct {v11, v0, v5, v4, v8}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v4, v11
+
+    .local v4, "anim5":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    goto :goto_102
+
+    .line 37
+    .end local v3    # "anim1":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    .end local v4    # "anim5":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    .end local v6    # "anim2":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    .end local v10    # "anim3":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    :cond_b0
+    new-instance v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v6, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v14, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v14
+
+    invoke-virtual {v6, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v13, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v13
+
+    invoke-direct {v3, v0, v6, v13, v15}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    .line 38
+    .restart local v3    # "anim1":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v6, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v13, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    const-string v14, "oneplus_select_fingerprint_animation_effect_2"
+
+    invoke-static {v14, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v14
+
+    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v12
+
+    invoke-direct {v6, v0, v13, v12, v7}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    .line 39
+    .restart local v6    # "anim2":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v12, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v13, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v11, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v11
+
+    invoke-virtual {v13, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v10
+
+    const/4 v13, 0x2
+
+    invoke-direct {v12, v0, v11, v10, v13}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v10, v12
+
+    .line 40
+    .restart local v10    # "anim3":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    new-instance v11, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+
+    iget-object v12, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-static {v9, v5}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v12, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v8, v4}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v4
+
+    const/4 v8, 0x4
+
+    invoke-direct {v11, v0, v5, v4, v8}, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;-><init>(Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;Ljava/lang/String;II)V
+
+    move-object v4, v11
+
+    .line 42
+    .restart local v4    # "anim5":Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;
+    :goto_102
+    iget-object v5, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v5
+
+    const-string v8, "op_custom_unlock_animation_style"
+    
+    const/4 v9, -0x2
+
+    invoke-static {v5, v8, v15, v9}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v5
+
+    .line 43
+    .local v5, "style":I
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -625,7 +786,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -635,79 +796,119 @@
 
     invoke-static {v9, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v6, :cond_6
+    .line 44
+    if-nez v5, :cond_129
 
-    if-eq v6, v12, :cond_5
+    .line 45
+    iput-boolean v7, v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
 
-    if-eq v6, v10, :cond_4
+    goto :goto_14b
 
-    if-eq v6, v2, :cond_3
+    .line 46
+    :cond_129
+    if-ne v5, v7, :cond_12e
 
-    if-eq v6, v4, :cond_2
+    .line 47
+    iput-boolean v7, v6, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
 
-    iput-boolean v12, v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    goto :goto_14b
 
-    goto :goto_1
+    .line 48
+    :cond_12e
+    const/4 v8, 0x2
 
-    :cond_2
-    if-eqz v1, :cond_7
+    if-ne v5, v8, :cond_134
 
-    iput-boolean v12, v1, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    .line 49
+    iput-boolean v7, v10, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
 
-    goto :goto_1
+    goto :goto_14b
 
-    :cond_3
-    iput-boolean v12, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    .line 50
+    :cond_134
+    const/4 v8, 0x3
 
-    goto :goto_1
+    if-ne v5, v8, :cond_13a
 
-    :cond_4
-    iput-boolean v12, v5, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    .line 51
+    iput-boolean v7, v1, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
 
-    goto :goto_1
+    goto :goto_14b
 
-    :cond_5
-    iput-boolean v12, v7, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    .line 52
+    :cond_13a
+    const/4 v8, 0x4
 
-    goto :goto_1
+    if-ne v5, v8, :cond_140
 
-    :cond_6
-    iput-boolean v12, v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+    .line 53
+    iput-boolean v7, v4, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
 
-    nop
+    goto :goto_14b
 
-    :cond_7
-    :goto_1
+    .line 54
+    :cond_140
+    const/16 v8, 0x9
+
+    if-eq v5, v8, :cond_147
+
+    .line 55
+    iput-boolean v7, v3, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+
+    goto :goto_14b
+
+    .line 56
+    :cond_147
+    if-eqz v2, :cond_14b
+
+    .line 57
+    iput-boolean v7, v2, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference$AnimEntity;->selected:Z
+
+    .line 59
+    :cond_14b
+    :goto_14b
     invoke-static {}, Lcom/oneplus/settings/utils/OPThemeUtils;->isSupportMclTheme()Z
 
-    move-result v2
+    move-result v7
 
-    if-eqz v2, :cond_8
+    if-eqz v7, :cond_156
 
-    iget-object v2, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    .line 60
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v7, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_8
-    iget-object v2, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    .line 62
+    :cond_156
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v7, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    .line 63
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    .line 64
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v7, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_9
+    .line 65
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+    invoke-interface {v7, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .line 66
+    if-eqz v2, :cond_171
 
-    :cond_9
+    .line 67
+    iget-object v7, v0, Lcom/oneplus/settings/ui/OPCustomFingeprintAnimVideoPreference;->mAnims:Ljava/util/List;
+
+    invoke-interface {v7, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 69
+    :cond_171
     return-void
 .end method
 

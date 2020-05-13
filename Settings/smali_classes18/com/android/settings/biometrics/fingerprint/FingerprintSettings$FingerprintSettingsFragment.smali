@@ -581,8 +581,9 @@
 .end method
 
 .method private getCustomAnimationName()I
-    .locals 8
+    .registers 12
 
+    .line 14
     invoke-virtual {p0}, Lcom/android/settings/biometrics/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -594,88 +595,181 @@
     const-string v1, "op_custom_unlock_animation_style"
 
     const/4 v2, 0x0
-
-    const/4 v3, -0x2
+    
+     const/4 v3, -0x2
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
+    .line 15
+    .local v0, "style":I
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSM8150Products()Z
 
     move-result v1
 
-    const v2, 0x7f1210a6
+    const-string v2, "op_theme_3_title"
 
-    const v3, 0x7f120f26
+    const-string v3, "oneplus_select_fingerprint_animation_effect_3"
 
     const/4 v4, 0x3
 
-    const/4 v5, 0x2
+    const-string v5, "oneplus_select_fingerprint_animation_effect_6"
 
-    const/4 v6, 0x1
+    const/4 v6, 0x2
 
-    const v7, 0x7f120f24
+    const/4 v7, 0x4
 
-    if-eqz v1, :cond_5
+    const/4 v8, 0x1
 
-    if-eqz v0, :cond_4
+    const-string v9, "oneplus_select_fingerprint_animation_effect_1"
 
-    if-eq v0, v6, :cond_3
+    const-string v10, "string"
 
-    if-eq v0, v5, :cond_2
+    if-eqz v1, :cond_58
 
-    if-eq v0, v4, :cond_1
+    .line 16
+    if-nez v0, :cond_2a
 
+    .line 17
+    invoke-static {v9, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 19
+    :cond_2a
+    if-ne v0, v8, :cond_33
+
+    .line 20
+    const-string v1, "oneplus_select_fingerprint_animation_effect_4"
+
+    invoke-static {v1, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 22
+    :cond_33
+    if-ne v0, v6, :cond_3a
+
+    .line 23
+    invoke-static {v3, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 25
+    :cond_3a
+    if-ne v0, v4, :cond_41
+
+    .line 26
+    invoke-static {v2, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 28
+    :cond_41
+    if-ne v0, v7, :cond_48
+
+    .line 29
+    invoke-static {v5, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 31
+    :cond_48
     const/16 v1, 0x9
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_51
 
-    return v7
+    .line 32
+    invoke-static {v9, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
-    const v1, 0x7f120f29
-
-    return v1
-
-    :cond_1
-    return v2
-
-    :cond_2
-    return v3
-
-    :cond_3
-    const v1, 0x7f120f27
+    move-result v1
 
     return v1
 
-    :cond_4
-    return v7
+    .line 34
+    :cond_51
+    const-string v1, "oneplus_select_fingerprint_animation_effect_none"
 
-    :cond_5
-    if-eqz v0, :cond_9
+    invoke-static {v1, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eq v0, v6, :cond_8
-
-    if-eq v0, v5, :cond_7
-
-    if-eq v0, v4, :cond_6
-
-    return v7
-
-    :cond_6
-    return v2
-
-    :cond_7
-    return v3
-
-    :cond_8
-    const v1, 0x7f120f25
+    move-result v1
 
     return v1
 
-    :cond_9
-    return v7
+    .line 35
+    :cond_58
+    if-nez v0, :cond_5f
+
+    .line 36
+    invoke-static {v9, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 38
+    :cond_5f
+    if-ne v0, v8, :cond_68
+
+    .line 39
+    const-string v1, "oneplus_select_fingerprint_animation_effect_2"
+
+    invoke-static {v1, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 41
+    :cond_68
+    if-ne v0, v7, :cond_6f
+
+    .line 42
+    invoke-static {v5, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+
+    .line 44
+    :cond_6f
+    if-eq v0, v6, :cond_7d
+
+    .line 45
+    if-eq v0, v4, :cond_78
+
+    invoke-static {v9, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    goto :goto_7c
+
+    :cond_78
+    invoke-static {v2, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    :goto_7c
+    return v1
+
+    .line 47
+    :cond_7d
+    invoke-static {v3, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
 .end method
 
 .method private getHighlightDrawable()Landroid/graphics/drawable/Drawable;
