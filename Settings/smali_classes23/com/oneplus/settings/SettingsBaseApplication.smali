@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static mGearContext:Landroid/content/Context;
+
 .field public static final ONEPLUS_DEBUG:Z
 
 .field private static handler:Landroid/os/Handler;
@@ -197,6 +199,8 @@
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
     sput-object p0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+    
+    sput-object p0, Lcom/oneplus/settings/SettingsBaseApplication;->mGearContext:Landroid/content/Context;
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isBetaRom()Z
 
@@ -213,4 +217,12 @@
     invoke-virtual {v0}, Lcom/oneplus/settings/OPOnlineConfigManager;->init()V
 
     return-void
+.end method
+
+.method public static getContext()Landroid/content/Context;
+    .locals 1
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mGearContext:Landroid/content/Context;
+
+    return-object v0
 .end method
