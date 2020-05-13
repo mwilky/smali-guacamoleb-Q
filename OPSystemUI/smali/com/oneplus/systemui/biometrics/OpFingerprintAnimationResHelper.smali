@@ -8,6 +8,8 @@
 
 .field private static final DOWN_ANIMATION_03:[I
 
+.field private static final DOWN_ANIMATION_04:[I
+
 .field private static final DOWN_ANIMATION_DEFAULT:[I
 
 .field private static final DOWN_ANIMATION_MCL:[I
@@ -19,3795 +21,7277 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 18
+    .registers 18
 
+    .line 8
     const/16 v0, 0x64
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_00:I
+    const-string v1, "drawable"
 
-    const/4 v2, 0x0
+    const-string v2, "fod02_00"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_01:I
+    move-result v2
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    aput v1, v0, v3
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_02:I
+    const-string v2, "fod02_01"
 
-    const/4 v4, 0x2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v4
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_03:I
+    const/4 v4, 0x1
 
-    const/4 v5, 0x3
+    aput v2, v0, v4
 
-    aput v1, v0, v5
+    const-string v2, "fod02_02"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_04:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v6, 0x4
+    move-result v2
 
-    aput v1, v0, v6
+    const/4 v5, 0x2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_05:I
+    aput v2, v0, v5
 
-    const/4 v7, 0x5
+    const-string v2, "fod02_03"
 
-    aput v1, v0, v7
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_06:I
+    move-result v2
 
-    const/4 v8, 0x6
+    const/4 v6, 0x3
 
-    aput v1, v0, v8
+    aput v2, v0, v6
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_07:I
+    const-string v2, "fod02_04"
 
-    const/4 v9, 0x7
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v9
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_08:I
+    const/4 v7, 0x4
 
-    const/16 v10, 0x8
+    aput v2, v0, v7
 
-    aput v1, v0, v10
+    const-string v2, "fod02_05"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_09:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v11, 0x9
+    move-result v2
 
-    aput v1, v0, v11
+    const/4 v8, 0x5
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_10:I
+    aput v2, v0, v8
 
-    const/16 v12, 0xa
+    const-string v2, "fod02_06"
 
-    aput v1, v0, v12
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_11:I
+    move-result v2
 
-    const/16 v13, 0xb
+    const/4 v9, 0x6
 
-    aput v1, v0, v13
+    aput v2, v0, v9
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_12:I
+    const-string v2, "fod02_07"
 
-    const/16 v14, 0xc
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v14
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_13:I
+    const/4 v10, 0x7
 
-    const/16 v15, 0xd
+    aput v2, v0, v10
 
-    aput v1, v0, v15
+    const-string v2, "fod02_08"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_14:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v16, 0xe
+    move-result v2
 
-    aput v1, v0, v16
+    const/16 v11, 0x8
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_15:I
+    aput v2, v0, v11
+
+    const-string v2, "fod02_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v12, 0x9
+
+    aput v2, v0, v12
+
+    const-string v2, "fod02_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v13, 0xa
+
+    aput v2, v0, v13
+
+    const-string v2, "fod02_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v14, 0xb
+
+    aput v2, v0, v14
+
+    const-string v2, "fod02_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v15, 0xc
+
+    aput v2, v0, v15
+
+    const-string v2, "fod02_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v16, 0xd
+
+    aput v2, v0, v16
+
+    const-string v2, "fod02_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod02_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0xf
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_16:I
+    const-string v2, "fod02_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x10
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_17:I
+    const-string v2, "fod02_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x11
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_18:I
+    const-string v2, "fod02_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x12
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_19:I
+    const-string v2, "fod02_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x13
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_20:I
+    const-string v2, "fod02__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x14
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_21:I
+    const-string v2, "fod02__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x15
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_22:I
+    const-string v2, "fod02__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x16
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_23:I
+    const-string v2, "fod02__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x17
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_24:I
+    const-string v2, "fod02__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x18
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_25:I
+    const-string v2, "fod02__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x19
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_26:I
+    const-string v2, "fod02__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_27:I
+    const-string v2, "fod02__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_28:I
+    const-string v2, "fod02__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_29:I
+    const-string v2, "fod02__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_30:I
+    const-string v2, "fod02__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_31:I
+    const-string v2, "fod02__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_32:I
+    const-string v2, "fod02__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x20
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_33:I
+    const-string v2, "fod02__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x21
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_34:I
+    const-string v2, "fod02__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x22
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_35:I
+    const-string v2, "fod02__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x23
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_36:I
+    const-string v2, "fod02__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x24
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_37:I
+    const-string v2, "fod02__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x25
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_38:I
+    const-string v2, "fod02__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x26
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_39:I
+    const-string v2, "fod02__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x27
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_40:I
+    const-string v2, "fod02__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x28
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_41:I
+    const-string v2, "fod02__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x29
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_42:I
+    const-string v2, "fod02__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_43:I
+    const-string v2, "fod02__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_44:I
+    const-string v2, "fod02__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_45:I
+    const-string v2, "fod02__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_46:I
+    const-string v2, "fod02__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_47:I
+    const-string v2, "fod02__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_48:I
+    const-string v2, "fod02__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x30
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_49:I
+    const-string v2, "fod02__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x31
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_50:I
+    const-string v2, "fod02__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x32
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_51:I
+    const-string v2, "fod02__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x33
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_52:I
+    const-string v2, "fod02__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x34
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_53:I
+    const-string v2, "fod02__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x35
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_54:I
+    const-string v2, "fod02__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x36
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_55:I
+    const-string v2, "fod02__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x37
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_56:I
+    const-string v2, "fod02__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x38
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_57:I
+    const-string v2, "fod02__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x39
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_58:I
+    const-string v2, "fod02__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_59:I
+    const-string v2, "fod02__59"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_60:I
+    const-string v2, "fod02__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_61:I
+    const-string v2, "fod02__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_62:I
+    const-string v2, "fod02__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_63:I
+    const-string v2, "fod02__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_64:I
+    const-string v2, "fod02__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x40
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_65:I
+    const-string v2, "fod02__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x41
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_66:I
+    const-string v2, "fod02__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x42
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_67:I
+    const-string v2, "fod02__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x43
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_68:I
+    const-string v2, "fod02__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x44
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_69:I
+    const-string v2, "fod02__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x45
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_70:I
+    const-string v2, "fod02__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x46
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_71:I
+    const-string v2, "fod02__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x47
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_72:I
+    const-string v2, "fod02__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x48
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_73:I
+    const-string v2, "fod02__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x49
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_74:I
+    const-string v2, "fod02__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_75:I
+    const-string v2, "fod02__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_76:I
+    const-string v2, "fod02__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_77:I
+    const-string v2, "fod02__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_78:I
+    const-string v2, "fod02__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_79:I
+    const-string v2, "fod02__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_80:I
+    const-string v2, "fod02__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x50
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_81:I
+    const-string v2, "fod02__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x51
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_82:I
+    const-string v2, "fod02__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x52
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_83:I
+    const-string v2, "fod02__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x53
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_84:I
+    const-string v2, "fod02__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x54
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_85:I
+    const-string v2, "fod02__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x55
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_86:I
+    const-string v2, "fod02__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x56
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_87:I
+    const-string v2, "fod02__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x57
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_88:I
+    const-string v2, "fod02__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x58
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_89:I
+    const-string v2, "fod02__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x59
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_90:I
+    const-string v2, "fod02__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_91:I
+    const-string v2, "fod02__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_92:I
+    const-string v2, "fod02__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_93:I
+    const-string v2, "fod02__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_94:I
+    const-string v2, "fod02__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_95:I
+    const-string v2, "fod02__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_96:I
+    const-string v2, "fod02__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x60
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_97:I
+    const-string v2, "fod02__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x61
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_98:I
+    const-string v2, "fod02__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x62
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_99:I
+    const-string v2, "fod02_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x63
 
-    aput v1, v0, v17
-
-    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
-
-    const/16 v0, 0x64
-
-    new-array v0, v0, [I
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_00:I
-
-    aput v1, v0, v2
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_01:I
-
-    aput v1, v0, v3
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_02:I
-
-    aput v1, v0, v4
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_03:I
-
-    aput v1, v0, v5
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_04:I
-
-    aput v1, v0, v6
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_05:I
-
-    aput v1, v0, v7
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_06:I
-
-    aput v1, v0, v8
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_07:I
-
-    aput v1, v0, v9
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_08:I
-
-    aput v1, v0, v10
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_09:I
-
-    aput v1, v0, v11
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_10:I
-
-    aput v1, v0, v12
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_11:I
-
-    aput v1, v0, v13
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_12:I
-
-    aput v1, v0, v14
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_13:I
-
-    aput v1, v0, v15
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_14:I
-
-    aput v1, v0, v16
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_15:I
-
-    const/16 v17, 0xf
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_16:I
-
-    const/16 v17, 0x10
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_17:I
-
-    const/16 v17, 0x11
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_18:I
-
-    const/16 v17, 0x12
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_19:I
-
-    const/16 v17, 0x13
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_20:I
-
-    const/16 v17, 0x14
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_21:I
-
-    const/16 v17, 0x15
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_22:I
-
-    const/16 v17, 0x16
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_23:I
-
-    const/16 v17, 0x17
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_24:I
-
-    const/16 v17, 0x18
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_25:I
-
-    const/16 v17, 0x19
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_26:I
-
-    const/16 v17, 0x1a
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_27:I
-
-    const/16 v17, 0x1b
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_28:I
-
-    const/16 v17, 0x1c
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_29:I
-
-    const/16 v17, 0x1d
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_30:I
-
-    const/16 v17, 0x1e
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_31:I
-
-    const/16 v17, 0x1f
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_32:I
-
-    const/16 v17, 0x20
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_33:I
-
-    const/16 v17, 0x21
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_34:I
-
-    const/16 v17, 0x22
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_35:I
-
-    const/16 v17, 0x23
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_36:I
-
-    const/16 v17, 0x24
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_37:I
-
-    const/16 v17, 0x25
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_38:I
-
-    const/16 v17, 0x26
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_39:I
-
-    const/16 v17, 0x27
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_40:I
-
-    const/16 v17, 0x28
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_41:I
-
-    const/16 v17, 0x29
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_42:I
-
-    const/16 v17, 0x2a
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_43:I
-
-    const/16 v17, 0x2b
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_44:I
-
-    const/16 v17, 0x2c
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_45:I
-
-    const/16 v17, 0x2d
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_46:I
-
-    const/16 v17, 0x2e
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_47:I
-
-    const/16 v17, 0x2f
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_48:I
-
-    const/16 v17, 0x30
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_49:I
-
-    const/16 v17, 0x31
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_50:I
-
-    const/16 v17, 0x32
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_51:I
-
-    const/16 v17, 0x33
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_52:I
-
-    const/16 v17, 0x34
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_53:I
-
-    const/16 v17, 0x35
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_54:I
-
-    const/16 v17, 0x36
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_55:I
-
-    const/16 v17, 0x37
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_56:I
-
-    const/16 v17, 0x38
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_57:I
-
-    const/16 v17, 0x39
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_58:I
-
-    const/16 v17, 0x3a
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_59:I
-
-    const/16 v17, 0x3b
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_60:I
-
-    const/16 v17, 0x3c
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_61:I
-
-    const/16 v17, 0x3d
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_62:I
-
-    const/16 v17, 0x3e
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_63:I
-
-    const/16 v17, 0x3f
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_64:I
-
-    const/16 v17, 0x40
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_65:I
-
-    const/16 v17, 0x41
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_66:I
-
-    const/16 v17, 0x42
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_67:I
-
-    const/16 v17, 0x43
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_68:I
-
-    const/16 v17, 0x44
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_69:I
-
-    const/16 v17, 0x45
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_70:I
-
-    const/16 v17, 0x46
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_71:I
-
-    const/16 v17, 0x47
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_72:I
-
-    const/16 v17, 0x48
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_73:I
-
-    const/16 v17, 0x49
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_74:I
-
-    const/16 v17, 0x4a
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_75:I
-
-    const/16 v17, 0x4b
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_76:I
-
-    const/16 v17, 0x4c
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_77:I
-
-    const/16 v17, 0x4d
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_78:I
-
-    const/16 v17, 0x4e
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_79:I
-
-    const/16 v17, 0x4f
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_80:I
-
-    const/16 v17, 0x50
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_81:I
-
-    const/16 v17, 0x51
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_82:I
-
-    const/16 v17, 0x52
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_83:I
-
-    const/16 v17, 0x53
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_84:I
-
-    const/16 v17, 0x54
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_85:I
-
-    const/16 v17, 0x55
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_86:I
-
-    const/16 v17, 0x56
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_87:I
-
-    const/16 v17, 0x57
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_88:I
-
-    const/16 v17, 0x58
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_89:I
-
-    const/16 v17, 0x59
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_90:I
-
-    const/16 v17, 0x5a
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_91:I
-
-    const/16 v17, 0x5b
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_92:I
-
-    const/16 v17, 0x5c
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_93:I
-
-    const/16 v17, 0x5d
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_94:I
-
-    const/16 v17, 0x5e
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_95:I
-
-    const/16 v17, 0x5f
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_96:I
-
-    const/16 v17, 0x60
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_97:I
-
-    const/16 v17, 0x61
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_98:I
-
-    const/16 v17, 0x62
-
-    aput v1, v0, v17
-
-    sget v1, Lcom/android/systemui/R$drawable;->fod02_99:I
-
-    const/16 v17, 0x63
-
-    aput v1, v0, v17
+    aput v2, v0, v17
 
     sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_02:[I
 
+    .line 9
     const/16 v0, 0x64
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_00:I
+    const-string v2, "fod03_00"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_01:I
+    move-result v2
 
-    aput v1, v0, v3
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_02:I
+    const-string v2, "fod03_01"
 
-    aput v1, v0, v4
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_03:I
+    move-result v2
 
-    aput v1, v0, v5
+    aput v2, v0, v4
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_04:I
+    const-string v2, "fod03_02"
 
-    aput v1, v0, v6
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_05:I
+    move-result v2
 
-    aput v1, v0, v7
+    aput v2, v0, v5
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_06:I
+    const-string v2, "fod03_03"
 
-    aput v1, v0, v8
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_07:I
+    move-result v2
 
-    aput v1, v0, v9
+    aput v2, v0, v6
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_08:I
+    const-string v2, "fod03_04"
 
-    aput v1, v0, v10
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_09:I
+    move-result v2
 
-    aput v1, v0, v11
+    aput v2, v0, v7
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_10:I
+    const-string v2, "fod03_05"
 
-    aput v1, v0, v12
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_11:I
+    move-result v2
 
-    aput v1, v0, v13
+    aput v2, v0, v8
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_12:I
+    const-string v2, "fod03_06"
 
-    aput v1, v0, v14
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_13:I
+    move-result v2
 
-    aput v1, v0, v15
+    aput v2, v0, v9
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_14:I
+    const-string v2, "fod03_07"
 
-    aput v1, v0, v16
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_15:I
+    move-result v2
+
+    aput v2, v0, v10
+
+    const-string v2, "fod03_08"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v11
+
+    const-string v2, "fod03_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v12
+
+    const-string v2, "fod03_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v13
+
+    const-string v2, "fod03_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v14
+
+    const-string v2, "fod03_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v15
+
+    const-string v2, "fod03_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v16
+
+    const-string v2, "fod03_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod03_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0xf
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_16:I
+    const-string v2, "fod03_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x10
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_17:I
+    const-string v2, "fod03_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x11
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_18:I
+    const-string v2, "fod03_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x12
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_19:I
+    const-string v2, "fod03_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x13
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_20:I
+    const-string v2, "fod03__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x14
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_21:I
+    const-string v2, "fod03__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x15
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_22:I
+    const-string v2, "fod03__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x16
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_23:I
+    const-string v2, "fod03__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x17
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_24:I
+    const-string v2, "fod03__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x18
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_25:I
+    const-string v2, "fod03__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x19
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_26:I
+    const-string v2, "fod03__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_27:I
+    const-string v2, "fod03__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_28:I
+    const-string v2, "fod03__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_29:I
+    const-string v2, "fod03__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_30:I
+    const-string v2, "fod03__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_31:I
+    const-string v2, "fod03__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_32:I
+    const-string v2, "fod03__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x20
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_33:I
+    const-string v2, "fod03__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x21
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_34:I
+    const-string v2, "fod03__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x22
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_35:I
+    const-string v2, "fod03__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x23
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_36:I
+    const-string v2, "fod03__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x24
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_37:I
+    const-string v2, "fod03__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x25
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_38:I
+    const-string v2, "fod03__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x26
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_39:I
+    const-string v2, "fod03__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x27
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_40:I
+    const-string v2, "fod03__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x28
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_41:I
+    const-string v2, "fod03__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x29
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_42:I
+    const-string v2, "fod03__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_43:I
+    const-string v2, "fod03__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_44:I
+    const-string v2, "fod03__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_45:I
+    const-string v2, "fod03__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_46:I
+    const-string v2, "fod03__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_47:I
+    const-string v2, "fod03__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_48:I
+    const-string v2, "fod03__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x30
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_49:I
+    const-string v2, "fod03__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x31
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_50:I
+    const-string v2, "fod03__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x32
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_51:I
+    const-string v2, "fod03__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x33
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_52:I
+    const-string v2, "fod03__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x34
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_53:I
+    const-string v2, "fod03__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x35
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_54:I
+    const-string v2, "fod03__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x36
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_55:I
+    const-string v2, "fod03__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x37
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_56:I
+    const-string v2, "fod03__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x38
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_57:I
+    const-string v2, "fod03__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x39
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_58:I
+    const-string v2, "fod03__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_59:I
+    const-string v2, "fod03__59"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_60:I
+    const-string v2, "fod03__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_61:I
+    const-string v2, "fod03__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_62:I
+    const-string v2, "fod03__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_63:I
+    const-string v2, "fod03__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_64:I
+    const-string v2, "fod03__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x40
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_65:I
+    const-string v2, "fod03__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x41
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_66:I
+    const-string v2, "fod03__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x42
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_67:I
+    const-string v2, "fod03__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x43
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_68:I
+    const-string v2, "fod03__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x44
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_69:I
+    const-string v2, "fod03__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x45
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_70:I
+    const-string v2, "fod03__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x46
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_71:I
+    const-string v2, "fod03__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x47
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_72:I
+    const-string v2, "fod03__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x48
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_73:I
+    const-string v2, "fod03__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x49
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_74:I
+    const-string v2, "fod03__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_75:I
+    const-string v2, "fod03__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_76:I
+    const-string v2, "fod03__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_77:I
+    const-string v2, "fod03__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_78:I
+    const-string v2, "fod03__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_79:I
+    const-string v2, "fod03__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_80:I
+    const-string v2, "fod03__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x50
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_81:I
+    const-string v2, "fod03__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x51
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_82:I
+    const-string v2, "fod03__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x52
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_83:I
+    const-string v2, "fod03__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x53
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_84:I
+    const-string v2, "fod03__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x54
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_85:I
+    const-string v2, "fod03__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x55
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_86:I
+    const-string v2, "fod03__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x56
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_87:I
+    const-string v2, "fod03__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x57
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_88:I
+    const-string v2, "fod03__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x58
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_89:I
+    const-string v2, "fod03__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x59
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_90:I
+    const-string v2, "fod03__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_91:I
+    const-string v2, "fod03__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_92:I
+    const-string v2, "fod03__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_93:I
+    const-string v2, "fod03__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_94:I
+    const-string v2, "fod03__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_95:I
+    const-string v2, "fod03__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_96:I
+    const-string v2, "fod03__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x60
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_97:I
+    const-string v2, "fod03__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x61
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_98:I
+    const-string v2, "fod03__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x62
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod03_99:I
+    const-string v2, "fod03_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x63
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
     sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_03:[I
 
+    .line 10
+    const/16 v0, 0x64
+
+    new-array v0, v0, [I
+
+    const-string v2, "fod04_00"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v3
+
+    const-string v2, "fod04_01"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v4
+
+    const-string v2, "fod04_02"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v5
+
+    const-string v2, "fod04_03"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v6
+
+    const-string v2, "fod04_04"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v7
+
+    const-string v2, "fod04_05"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v8
+
+    const-string v2, "fod04_06"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v9
+
+    const-string v2, "fod04_07"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v10
+
+    const-string v2, "fod04_08"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v11
+
+    const-string v2, "fod04_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v12
+
+    const-string v2, "fod04_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v13
+
+    const-string v2, "fod04_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v14
+
+    const-string v2, "fod04_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v15
+
+    const-string v2, "fod04_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v16
+
+    const-string v2, "fod04_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xf
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x10
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x11
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x12
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x13
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x14
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x15
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x16
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x17
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x18
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x19
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x20
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x21
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x22
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x23
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x24
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x25
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x26
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x27
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x28
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x29
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x30
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x31
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x32
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x33
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x34
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x35
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x36
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x37
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x38
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x39
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__59"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x40
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x41
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x42
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x43
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x44
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x45
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x46
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x47
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x48
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x49
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x50
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x51
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x52
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x53
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x54
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x55
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x56
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x57
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x58
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x59
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x60
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x61
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x62
+
+    aput v2, v0, v17
+
+    const-string v2, "fod04_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x63
+
+    aput v2, v0, v17
+
+    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_04:[I
+
+    .line 11
+    const/16 v0, 0x64
+
+    new-array v0, v0, [I
+
+    const-string v2, "fod_default_00"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_01"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v4
+
+    const-string v2, "fod_default_02"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v5
+
+    const-string v2, "fod_default_03"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v6
+
+    const-string v2, "fod_default_04"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v7
+
+    const-string v2, "fod_default_05"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v8
+
+    const-string v2, "fod_default_06"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v9
+
+    const-string v2, "fod_default_07"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v10
+
+    const-string v2, "fod_default_08"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v11
+
+    const-string v2, "fod_default_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v12
+
+    const-string v2, "fod_default_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v13
+
+    const-string v2, "fod_default_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v14
+
+    const-string v2, "fod_default_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v15
+
+    const-string v2, "fod_default_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v16
+
+    const-string v2, "fod_default_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xf
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x10
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x11
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x12
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x13
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x14
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x15
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x16
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x17
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x18
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x19
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x1f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x20
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x21
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x22
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x23
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x24
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x25
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x26
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x27
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x28
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x29
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x2f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x30
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x31
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x32
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x33
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x34
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x35
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x36
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x37
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x38
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x39
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x3f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x40
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x41
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x42
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x43
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x44
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x45
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x46
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x47
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x48
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x49
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x4f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x50
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x51
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x52
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x53
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x54
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x55
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x56
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x57
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x58
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x59
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5a
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5b
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5c
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5d
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5e
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x5f
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x60
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x61
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x62
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_default_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0x63
+
+    aput v2, v0, v17
+
+    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+
+    .line 12
     const/16 v0, 0x3c
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_00:I
+    const-string v2, "fod_mc_00"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_01:I
+    move-result v2
 
-    aput v1, v0, v3
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_02:I
+    const-string v2, "fod_mc_01"
 
-    aput v1, v0, v4
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_03:I
+    move-result v2
 
-    aput v1, v0, v5
+    aput v2, v0, v4
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_04:I
+    const-string v2, "fod_mc_02"
 
-    aput v1, v0, v6
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_05:I
+    move-result v2
 
-    aput v1, v0, v7
+    aput v2, v0, v5
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_06:I
+    const-string v2, "fod_mc_03"
 
-    aput v1, v0, v8
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_07:I
+    move-result v2
 
-    aput v1, v0, v9
+    aput v2, v0, v6
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_08:I
+    const-string v2, "fod_mc_04"
 
-    aput v1, v0, v10
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_09:I
+    move-result v2
 
-    aput v1, v0, v11
+    aput v2, v0, v7
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_10:I
+    const-string v2, "fod_mc_05"
 
-    aput v1, v0, v12
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_11:I
+    move-result v2
 
-    aput v1, v0, v13
+    aput v2, v0, v8
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_12:I
+    const-string v2, "fod_mc_06"
 
-    aput v1, v0, v14
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_13:I
+    move-result v2
 
-    aput v1, v0, v15
+    aput v2, v0, v9
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_14:I
+    const-string v2, "fod_mc_07"
 
-    aput v1, v0, v16
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_15:I
+    move-result v2
+
+    aput v2, v0, v10
+
+    const-string v2, "fod_mc_08"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v11
+
+    const-string v2, "fod_mc_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v12
+
+    const-string v2, "fod_mc_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v13
+
+    const-string v2, "fod_mc_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v14
+
+    const-string v2, "fod_mc_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v15
+
+    const-string v2, "fod_mc_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v16
+
+    const-string v2, "fod_mc_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_mc_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0xf
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_16:I
+    const-string v2, "fod_mc_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x10
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_17:I
+    const-string v2, "fod_mc_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x11
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_18:I
+    const-string v2, "fod_mc_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x12
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_19:I
+    const-string v2, "fod_mc_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x13
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_20:I
+    const-string v2, "fod_mc__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x14
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_21:I
+    const-string v2, "fod_mc__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x15
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_22:I
+    const-string v2, "fod_mc__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x16
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_23:I
+    const-string v2, "fod_mc__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x17
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_24:I
+    const-string v2, "fod_mc__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x18
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_25:I
+    const-string v2, "fod_mc__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x19
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_26:I
+    const-string v2, "fod_mc__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_27:I
+    const-string v2, "fod_mc__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_28:I
+    const-string v2, "fod_mc__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_29:I
+    const-string v2, "fod_mc__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_30:I
+    const-string v2, "fod_mc__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_31:I
+    const-string v2, "fod_mc__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_32:I
+    const-string v2, "fod_mc__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x20
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_33:I
+    const-string v2, "fod_mc__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x21
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_34:I
+    const-string v2, "fod_mc__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x22
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_35:I
+    const-string v2, "fod_mc__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x23
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_36:I
+    const-string v2, "fod_mc__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x24
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_37:I
+    const-string v2, "fod_mc__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x25
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_38:I
+    const-string v2, "fod_mc__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x26
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_39:I
+    const-string v2, "fod_mc__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x27
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_40:I
+    const-string v2, "fod_mc__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x28
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_41:I
+    const-string v2, "fod_mc__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x29
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_42:I
+    const-string v2, "fod_mc__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_43:I
+    const-string v2, "fod_mc__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_44:I
+    const-string v2, "fod_mc__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_45:I
+    const-string v2, "fod_mc__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_46:I
+    const-string v2, "fod_mc__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_47:I
+    const-string v2, "fod_mc__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_48:I
+    const-string v2, "fod_mc__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x30
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_49:I
+    const-string v2, "fod_mc__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x31
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_50:I
+    const-string v2, "fod_mc__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x32
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_51:I
+    const-string v2, "fod_mc__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x33
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_52:I
+    const-string v2, "fod_mc__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x34
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_53:I
+    const-string v2, "fod_mc__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x35
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_54:I
+    const-string v2, "fod_mc__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x36
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_55:I
+    const-string v2, "fod_mc__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x37
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_56:I
+    const-string v2, "fod_mc__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x38
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_57:I
+    const-string v2, "fod_mc__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x39
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_58:I
+    const-string v2, "fod_mc__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_mc_59:I
+    const-string v2, "fod_mc_59"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
     sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
 
+    .line 13
     const/16 v0, 0x64
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_00:I
+    const-string v2, "fod_cust01_anim_00"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_01:I
+    move-result v2
 
-    aput v1, v0, v3
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_02:I
+    const-string v2, "fod_cust01_anim_01"
 
-    aput v1, v0, v4
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_03:I
+    move-result v2
 
-    aput v1, v0, v5
+    aput v2, v0, v4
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_04:I
+    const-string v2, "fod_cust01_anim_02"
 
-    aput v1, v0, v6
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_05:I
+    move-result v2
 
-    aput v1, v0, v7
+    aput v2, v0, v5
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_06:I
+    const-string v2, "fod_cust01_anim_03"
 
-    aput v1, v0, v8
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_07:I
+    move-result v2
 
-    aput v1, v0, v9
+    aput v2, v0, v6
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_08:I
+    const-string v2, "fod_cust01_anim_04"
 
-    aput v1, v0, v10
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_09:I
+    move-result v2
 
-    aput v1, v0, v11
+    aput v2, v0, v7
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_10:I
+    const-string v2, "fod_cust01_anim_05"
 
-    aput v1, v0, v12
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_11:I
+    move-result v2
 
-    aput v1, v0, v13
+    aput v2, v0, v8
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_12:I
+    const-string v2, "fod_cust01_anim_06"
 
-    aput v1, v0, v14
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_13:I
+    move-result v2
 
-    aput v1, v0, v15
+    aput v2, v0, v9
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_14:I
+    const-string v2, "fod_cust01_anim_07"
 
-    aput v1, v0, v16
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_15:I
+    move-result v2
+
+    aput v2, v0, v10
+
+    const-string v2, "fod_cust01_anim_08"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v11
+
+    const-string v2, "fod_cust01_anim_09"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v12
+
+    const-string v2, "fod_cust01_anim_10"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v13
+
+    const-string v2, "fod_cust01_anim_11"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v14
+
+    const-string v2, "fod_cust01_anim_12"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v15
+
+    const-string v2, "fod_cust01_anim_13"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    aput v2, v0, v16
+
+    const-string v2, "fod_cust01_anim_14"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v17, 0xe
+
+    aput v2, v0, v17
+
+    const-string v2, "fod_cust01_anim_15"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0xf
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_16:I
+    const-string v2, "fod_cust01_anim_16"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x10
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_17:I
+    const-string v2, "fod_cust01_anim_17"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x11
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_18:I
+    const-string v2, "fod_cust01_anim_18"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x12
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_19:I
+    const-string v2, "fod_cust01_anim_19"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x13
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_20:I
+    const-string v2, "fod_cust01_anim__20"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x14
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_21:I
+    const-string v2, "fod_cust01_anim__21"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x15
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_22:I
+    const-string v2, "fod_cust01_anim__22"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x16
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_23:I
+    const-string v2, "fod_cust01_anim__23"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x17
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_24:I
+    const-string v2, "fod_cust01_anim__24"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x18
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_25:I
+    const-string v2, "fod_cust01_anim__25"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x19
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_26:I
+    const-string v2, "fod_cust01_anim__26"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_27:I
+    const-string v2, "fod_cust01_anim__27"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_28:I
+    const-string v2, "fod_cust01_anim__28"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_29:I
+    const-string v2, "fod_cust01_anim__29"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_30:I
+    const-string v2, "fod_cust01_anim__30"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_31:I
+    const-string v2, "fod_cust01_anim__31"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x1f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_32:I
+    const-string v2, "fod_cust01_anim__32"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x20
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_33:I
+    const-string v2, "fod_cust01_anim__33"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x21
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_34:I
+    const-string v2, "fod_cust01_anim__34"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x22
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_35:I
+    const-string v2, "fod_cust01_anim__35"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x23
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_36:I
+    const-string v2, "fod_cust01_anim__36"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x24
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_37:I
+    const-string v2, "fod_cust01_anim__37"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x25
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_38:I
+    const-string v2, "fod_cust01_anim__38"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x26
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_39:I
+    const-string v2, "fod_cust01_anim__39"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x27
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_40:I
+    const-string v2, "fod_cust01_anim__40"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x28
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_41:I
+    const-string v2, "fod_cust01_anim__41"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x29
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_42:I
+    const-string v2, "fod_cust01_anim__42"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_43:I
+    const-string v2, "fod_cust01_anim__43"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_44:I
+    const-string v2, "fod_cust01_anim__44"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_45:I
+    const-string v2, "fod_cust01_anim__45"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_46:I
+    const-string v2, "fod_cust01_anim__46"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_47:I
+    const-string v2, "fod_cust01_anim__47"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x2f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_48:I
+    const-string v2, "fod_cust01_anim__48"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x30
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_49:I
+    const-string v2, "fod_cust01_anim__49"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x31
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_50:I
+    const-string v2, "fod_cust01_anim__50"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x32
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_51:I
+    const-string v2, "fod_cust01_anim__51"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x33
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_52:I
+    const-string v2, "fod_cust01_anim__52"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x34
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_53:I
+    const-string v2, "fod_cust01_anim__53"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x35
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_54:I
+    const-string v2, "fod_cust01_anim__54"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x36
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_55:I
+    const-string v2, "fod_cust01_anim__55"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x37
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_56:I
+    const-string v2, "fod_cust01_anim__56"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x38
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_57:I
+    const-string v2, "fod_cust01_anim__57"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x39
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_58:I
+    const-string v2, "fod_cust01_anim__58"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_59:I
+    const-string v2, "fod_cust01_anim__59"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_60:I
+    const-string v2, "fod_cust01_anim__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_61:I
+    const-string v2, "fod_cust01_anim__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_62:I
+    const-string v2, "fod_cust01_anim__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_63:I
+    const-string v2, "fod_cust01_anim__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x3f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_64:I
+    const-string v2, "fod_cust01_anim__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x40
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_65:I
+    const-string v2, "fod_cust01_anim__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x41
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_66:I
+    const-string v2, "fod_cust01_anim__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x42
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_67:I
+    const-string v2, "fod_cust01_anim__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x43
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_68:I
+    const-string v2, "fod_cust01_anim__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x44
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_69:I
+    const-string v2, "fod_cust01_anim__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x45
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_70:I
+    const-string v2, "fod_cust01_anim__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x46
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_71:I
+    const-string v2, "fod_cust01_anim__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x47
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_72:I
+    const-string v2, "fod_cust01_anim__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x48
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_73:I
+    const-string v2, "fod_cust01_anim__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x49
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_74:I
+    const-string v2, "fod_cust01_anim__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_75:I
+    const-string v2, "fod_cust01_anim__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_76:I
+    const-string v2, "fod_cust01_anim__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_77:I
+    const-string v2, "fod_cust01_anim__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_78:I
+    const-string v2, "fod_cust01_anim__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_79:I
+    const-string v2, "fod_cust01_anim__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x4f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_80:I
+    const-string v2, "fod_cust01_anim__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x50
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_81:I
+    const-string v2, "fod_cust01_anim__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x51
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_82:I
+    const-string v2, "fod_cust01_anim__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x52
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_83:I
+    const-string v2, "fod_cust01_anim__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x53
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_84:I
+    const-string v2, "fod_cust01_anim__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x54
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_85:I
+    const-string v2, "fod_cust01_anim__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x55
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_86:I
+    const-string v2, "fod_cust01_anim__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x56
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_87:I
+    const-string v2, "fod_cust01_anim__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x57
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_88:I
+    const-string v2, "fod_cust01_anim__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x58
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_89:I
+    const-string v2, "fod_cust01_anim__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x59
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_90:I
+    const-string v2, "fod_cust01_anim__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5a
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_91:I
+    const-string v2, "fod_cust01_anim__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5b
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_92:I
+    const-string v2, "fod_cust01_anim__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5c
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_93:I
+    const-string v2, "fod_cust01_anim__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5d
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_94:I
+    const-string v2, "fod_cust01_anim__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5e
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_95:I
+    const-string v2, "fod_cust01_anim__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x5f
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_96:I
+    const-string v2, "fod_cust01_anim__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x60
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_97:I
+    const-string v2, "fod_cust01_anim__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x61
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_98:I
+    const-string v2, "fod_cust01_anim__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x62
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_default_f_99:I
+    const-string v2, "fod_cust01_anim_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
 
     const/16 v17, 0x63
 
-    aput v1, v0, v17
+    aput v2, v0, v17
 
-    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
+    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
 
+    .line 14
     const/16 v0, 0x64
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_00:I
+    const-string v2, "fod_default_f_00"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_01:I
+    move-result v2
 
-    aput v1, v0, v3
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_02:I
+    const-string v2, "fod_default_f_01"
 
-    aput v1, v0, v4
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_03:I
+    move-result v2
 
-    aput v1, v0, v5
+    aput v2, v0, v4
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_04:I
+    const-string v2, "fod_default_f_02"
 
-    aput v1, v0, v6
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_05:I
+    move-result v2
 
-    aput v1, v0, v7
+    aput v2, v0, v5
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_06:I
+    const-string v2, "fod_default_f_03"
 
-    aput v1, v0, v8
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_07:I
+    move-result v2
 
-    aput v1, v0, v9
+    aput v2, v0, v6
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_08:I
+    const-string v2, "fod_default_f_04"
 
-    aput v1, v0, v10
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_09:I
+    move-result v2
 
-    aput v1, v0, v11
+    aput v2, v0, v7
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_10:I
+    const-string v2, "fod_default_f_05"
 
-    aput v1, v0, v12
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_11:I
+    move-result v2
 
-    aput v1, v0, v13
+    aput v2, v0, v8
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_12:I
+    const-string v2, "fod_default_f_06"
 
-    aput v1, v0, v14
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_13:I
+    move-result v2
 
-    aput v1, v0, v15
+    aput v2, v0, v9
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_14:I
+    const-string v2, "fod_default_f_07"
 
-    aput v1, v0, v16
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_15:I
+    move-result v2
 
-    const/16 v2, 0xf
+    aput v2, v0, v10
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f_08"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_16:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x10
+    move-result v2
 
-    aput v1, v0, v2
+    aput v2, v0, v11
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_17:I
+    const-string v2, "fod_default_f_09"
 
-    const/16 v2, 0x11
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_18:I
+    aput v2, v0, v12
 
-    const/16 v2, 0x12
+    const-string v2, "fod_default_f_10"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_19:I
+    move-result v2
 
-    const/16 v2, 0x13
+    aput v2, v0, v13
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f_11"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_20:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x14
+    move-result v2
 
-    aput v1, v0, v2
+    aput v2, v0, v14
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_21:I
+    const-string v2, "fod_default_f_12"
 
-    const/16 v2, 0x15
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_22:I
+    aput v2, v0, v15
 
-    const/16 v2, 0x16
+    const-string v2, "fod_default_f_13"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_23:I
+    move-result v2
 
-    const/16 v2, 0x17
+    aput v2, v0, v16
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f_14"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_24:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x18
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0xe
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_25:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x19
+    const-string v2, "fod_default_f_15"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_26:I
+    move-result v2
 
-    const/16 v2, 0x1a
+    const/16 v3, 0xf
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_27:I
+    const-string v2, "fod_default_f_16"
 
-    const/16 v2, 0x1b
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_28:I
+    const/16 v3, 0x10
 
-    const/16 v2, 0x1c
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f_17"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_29:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x1d
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x11
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_30:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x1e
+    const-string v2, "fod_default_f_18"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_31:I
+    move-result v2
 
-    const/16 v2, 0x1f
+    const/16 v3, 0x12
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_32:I
+    const-string v2, "fod_default_f_19"
 
-    const/16 v2, 0x20
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_33:I
+    const/16 v3, 0x13
 
-    const/16 v2, 0x21
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__20"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_34:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x22
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x14
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_35:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x23
+    const-string v2, "fod_default_f__21"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_36:I
+    move-result v2
 
-    const/16 v2, 0x24
+    const/16 v3, 0x15
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_37:I
+    const-string v2, "fod_default_f__22"
 
-    const/16 v2, 0x25
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_38:I
+    const/16 v3, 0x16
 
-    const/16 v2, 0x26
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__23"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_39:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x27
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x17
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_40:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x28
+    const-string v2, "fod_default_f__24"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_41:I
+    move-result v2
 
-    const/16 v2, 0x29
+    const/16 v3, 0x18
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_42:I
+    const-string v2, "fod_default_f__25"
 
-    const/16 v2, 0x2a
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_43:I
+    const/16 v3, 0x19
 
-    const/16 v2, 0x2b
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__26"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_44:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x2c
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x1a
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_45:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x2d
+    const-string v2, "fod_default_f__27"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_46:I
+    move-result v2
 
-    const/16 v2, 0x2e
+    const/16 v3, 0x1b
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_47:I
+    const-string v2, "fod_default_f__28"
 
-    const/16 v2, 0x2f
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_48:I
+    const/16 v3, 0x1c
 
-    const/16 v2, 0x30
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__29"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_49:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x31
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x1d
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_50:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x32
+    const-string v2, "fod_default_f__30"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_51:I
+    move-result v2
 
-    const/16 v2, 0x33
+    const/16 v3, 0x1e
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_52:I
+    const-string v2, "fod_default_f__31"
 
-    const/16 v2, 0x34
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_53:I
+    const/16 v3, 0x1f
 
-    const/16 v2, 0x35
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__32"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_54:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x36
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x20
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_55:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x37
+    const-string v2, "fod_default_f__33"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_56:I
+    move-result v2
 
-    const/16 v2, 0x38
+    const/16 v3, 0x21
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_57:I
+    const-string v2, "fod_default_f__34"
 
-    const/16 v2, 0x39
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_58:I
+    const/16 v3, 0x22
 
-    const/16 v2, 0x3a
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__35"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_59:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x3b
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x23
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_60:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x3c
+    const-string v2, "fod_default_f__36"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_61:I
+    move-result v2
 
-    const/16 v2, 0x3d
+    const/16 v3, 0x24
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_62:I
+    const-string v2, "fod_default_f__37"
 
-    const/16 v2, 0x3e
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_63:I
+    const/16 v3, 0x25
 
-    const/16 v2, 0x3f
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__38"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_64:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x40
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x26
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_65:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x41
+    const-string v2, "fod_default_f__39"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_66:I
+    move-result v2
 
-    const/16 v2, 0x42
+    const/16 v3, 0x27
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_67:I
+    const-string v2, "fod_default_f__40"
 
-    const/16 v2, 0x43
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_68:I
+    const/16 v3, 0x28
 
-    const/16 v2, 0x44
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__41"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_69:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x45
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x29
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_70:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x46
+    const-string v2, "fod_default_f__42"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_71:I
+    move-result v2
 
-    const/16 v2, 0x47
+    const/16 v3, 0x2a
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_72:I
+    const-string v2, "fod_default_f__43"
 
-    const/16 v2, 0x48
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_73:I
+    const/16 v3, 0x2b
 
-    const/16 v2, 0x49
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__44"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_74:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x4a
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x2c
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_75:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x4b
+    const-string v2, "fod_default_f__45"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_76:I
+    move-result v2
 
-    const/16 v2, 0x4c
+    const/16 v3, 0x2d
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_77:I
+    const-string v2, "fod_default_f__46"
 
-    const/16 v2, 0x4d
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_78:I
+    const/16 v3, 0x2e
 
-    const/16 v2, 0x4e
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__47"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_79:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x4f
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x2f
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_80:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x50
+    const-string v2, "fod_default_f__48"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_81:I
+    move-result v2
 
-    const/16 v2, 0x51
+    const/16 v3, 0x30
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_82:I
+    const-string v2, "fod_default_f__49"
 
-    const/16 v2, 0x52
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_83:I
+    const/16 v3, 0x31
 
-    const/16 v2, 0x53
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__50"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_84:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x54
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x32
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_85:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x55
+    const-string v2, "fod_default_f__51"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_86:I
+    move-result v2
 
-    const/16 v2, 0x56
+    const/16 v3, 0x33
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_87:I
+    const-string v2, "fod_default_f__52"
 
-    const/16 v2, 0x57
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_88:I
+    const/16 v3, 0x34
 
-    const/16 v2, 0x58
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__53"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_89:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x59
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x35
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_90:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x5a
+    const-string v2, "fod_default_f__54"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_91:I
+    move-result v2
 
-    const/16 v2, 0x5b
+    const/16 v3, 0x36
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_92:I
+    const-string v2, "fod_default_f__55"
 
-    const/16 v2, 0x5c
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_93:I
+    const/16 v3, 0x37
 
-    const/16 v2, 0x5d
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__56"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_94:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v2, 0x5e
+    move-result v2
 
-    aput v1, v0, v2
+    const/16 v3, 0x38
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_95:I
+    aput v2, v0, v3
 
-    const/16 v2, 0x5f
+    const-string v2, "fod_default_f__57"
 
-    aput v1, v0, v2
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_96:I
+    move-result v2
 
-    const/16 v2, 0x60
+    const/16 v3, 0x39
 
-    aput v1, v0, v2
+    aput v2, v0, v3
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_97:I
+    const-string v2, "fod_default_f__58"
 
-    const/16 v2, 0x61
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    aput v1, v0, v2
+    move-result v2
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_98:I
+    const/16 v3, 0x3a
 
-    const/16 v2, 0x62
+    aput v2, v0, v3
 
-    aput v1, v0, v2
+    const-string v2, "fod_default_f__59"
 
-    sget v1, Lcom/android/systemui/R$drawable;->fod_cust01_anim_99:I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x3b
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__60"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x3c
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__61"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x3d
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__62"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x3e
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__63"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x3f
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__64"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x40
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__65"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x41
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__66"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x42
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__67"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x43
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__68"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x44
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__69"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x45
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__70"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x46
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__71"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x47
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__72"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x48
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__73"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x49
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__74"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4a
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__75"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4b
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__76"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4c
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__77"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4d
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__78"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4e
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__79"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x4f
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__80"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x50
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__81"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x51
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__82"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x52
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__83"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x53
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__84"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x54
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__85"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x55
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__86"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x56
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__87"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x57
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__88"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x58
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__89"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x59
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__90"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5a
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__91"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5b
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__92"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5c
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__93"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5d
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__94"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5e
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__95"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x5f
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__96"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x60
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__97"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x61
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f__98"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/16 v3, 0x62
+
+    aput v2, v0, v3
+
+    const-string v2, "fod_default_f_99"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
 
     const/16 v2, 0x63
 
     aput v1, v0, v2
 
-    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
+    sput-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static getDownAnimationRes(Landroid/content/Context;I)[I
-    .locals 0
+    .registers 3
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
-    if-nez p1, :cond_0
+    .line 17
+    if-nez p1, :cond_5
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+    .line 18
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
 
-    return-object p0
+    return-object v0
 
-    :cond_0
-    const/4 p0, 0x1
-
-    if-ne p1, p0, :cond_1
-
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_02:[I
-
-    return-object p0
-
-    :cond_1
-    const/4 p0, 0x2
-
-    if-ne p1, p0, :cond_2
-
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_03:[I
-
-    return-object p0
-
-    :cond_2
-    const/4 p0, 0x3
-
-    if-ne p1, p0, :cond_3
-
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
-
-    return-object p0
-
-    :cond_3
-    const/16 p0, 0x9
-
-    if-ne p1, p0, :cond_4
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_4
-    const/16 p0, 0xa
-
-    if-ne p1, p0, :cond_5
-
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
-
-    return-object p0
-
+    .line 20
     :cond_5
-    const/16 p0, 0xb
+    const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_6
+    if-ne p1, v0, :cond_b
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
+    .line 21
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_02:[I
 
-    return-object p0
+    return-object v0
 
-    :cond_6
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+    .line 23
+    :cond_b
+    const/4 v0, 0x2
 
-    return-object p0
+    if-ne p1, v0, :cond_11
+
+    .line 24
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_03:[I
+
+    return-object v0
+
+    .line 26
+    :cond_11
+    const/4 v0, 0x3
+
+    if-ne p1, v0, :cond_17
+
+    .line 27
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
+
+    return-object v0
+
+    .line 29
+    :cond_17
+    const/4 v0, 0x4
+
+    if-ne p1, v0, :cond_1d
+
+    .line 30
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_04:[I
+
+    return-object v0
+
+    .line 32
+    :cond_1d
+    const/16 v0, 0x9
+
+    if-ne p1, v0, :cond_23
+
+    .line 33
+    const/4 v0, 0x0
+
+    return-object v0
+
+    .line 35
+    :cond_23
+    const/16 v0, 0xa
+
+    if-ne p1, v0, :cond_2a
+
+    .line 36
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
+
+    return-object v0
+
+    .line 38
+    :cond_2a
+    const/16 v0, 0xb
+
+    if-ne p1, v0, :cond_31
+
+    .line 39
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
+
+    return-object v0
+
+    .line 41
+    :cond_31
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+
+    return-object v0
 .end method
 
 .method public static getDownEndFrameIndex(Landroid/content/Context;I)I
-    .locals 1
+    .registers 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
-    if-nez p1, :cond_0
+    .line 77
+    const-string v0, "fod_default_down_anim_end_frame"
 
+    const-string v1, "integer"
+
+    if-nez p1, :cond_13
+
+    .line 78
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v2
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_down_anim_end_frame:I
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v0
 
-    move-result p0
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_0
-    const/4 v0, 0x1
+    return v0
 
-    if-ne p1, v0, :cond_1
+    .line 80
+    :cond_13
+    const/4 v2, 0x1
 
+    if-ne p1, v2, :cond_25
+
+    .line 81
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_02_anim_end_frame:I
+    const-string v2, "fod_02_anim_end_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_1
-    const/4 v0, 0x2
+    move-result v0
 
-    if-ne p1, v0, :cond_2
+    return v0
 
+    .line 83
+    :cond_25
+    const/4 v2, 0x2
+
+    if-ne p1, v2, :cond_37
+
+    .line 84
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_03_anim_end_frame:I
+    const-string v2, "fod_03_anim_end_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_2
-    const/4 v0, 0x3
+    move-result v0
 
-    if-ne p1, v0, :cond_3
+    return v0
 
+    .line 86
+    :cond_37
+    const/4 v2, 0x3
+
+    const-string v3, "fod_mcl_anim_end_frame"
+
+    if-ne p1, v2, :cond_49
+
+    .line 87
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_mcl_anim_end_frame:I
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v1
 
-    move-result p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_3
-    const/16 v0, 0x9
+    return v0
 
-    if-ne p1, v0, :cond_4
+    .line 89
+    :cond_49
+    const/4 v2, 0x4
 
-    const/4 p0, -0x1
+    if-ne p1, v2, :cond_5b
 
-    return p0
-
-    :cond_4
-    const/16 v0, 0xa
-
-    if-ne p1, v0, :cond_5
-
+    .line 90
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_mcl_anim_end_frame:I
+    const-string v2, "fod_04_anim_end_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_5
-    const/16 v0, 0xb
+    move-result v0
 
-    if-ne p1, v0, :cond_6
+    return v0
 
+    .line 92
+    :cond_5b
+    const/16 v2, 0x9
+
+    if-ne p1, v2, :cond_61
+
+    .line 93
+    const/4 v0, -0x1
+
+    return v0
+
+    .line 95
+    :cond_61
+    const/16 v2, 0xa
+
+    if-ne p1, v2, :cond_72
+
+    .line 96
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_cust01_anim_end_frame:I
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v1
 
-    move-result p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_6
+    return v0
+
+    .line 98
+    :cond_72
+    const/16 v2, 0xb
+
+    if-ne p1, v2, :cond_85
+
+    .line 99
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_down_anim_end_frame:I
+    const-string v2, "fod_cust01_anim_end_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    return v0
+
+    .line 101
+    :cond_85
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static getDownPlayFrameNum(Landroid/content/Context;I)I
-    .locals 3
+    .registers 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
+    .line 105
     invoke-static {p0, p1}, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->getDownStartFrameIndex(Landroid/content/Context;I)I
 
     move-result v0
 
+    .line 106
+    .local v0, "downStartFrameIndex":I
     invoke-static {p0, p1}, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->getDownEndFrameIndex(Landroid/content/Context;I)I
 
-    move-result p0
+    move-result v1
 
-    const/4 v1, 0x0
+    .line 107
+    .local v1, "downEndFrameIndex":I
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-ltz v0, :cond_2
+    if-ltz v0, :cond_18
 
-    if-ltz p0, :cond_2
+    if-ltz v1, :cond_18
 
-    if-le v0, p0, :cond_0
+    if-le v0, v1, :cond_11
 
-    goto :goto_0
+    goto :goto_18
 
-    :cond_0
-    if-ne v0, p0, :cond_1
+    .line 133
+    :cond_11
+    if-ne v0, v1, :cond_14
 
-    return v1
+    .line 134
+    return v2
 
-    :cond_1
-    sub-int/2addr p0, v0
+    .line 136
+    :cond_14
+    sub-int v2, v1, v0
 
-    add-int/2addr p0, v2
+    add-int/2addr v2, v3
 
-    return p0
+    return v2
 
-    :cond_2
-    :goto_0
-    if-nez p1, :cond_3
+    .line 108
+    :cond_18
+    :goto_18
+    if-nez p1, :cond_1e
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+    .line 109
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
 
-    array-length p0, p0
+    array-length v2, v2
 
-    return p0
+    return v2
 
-    :cond_3
-    if-ne p1, v2, :cond_4
+    .line 111
+    :cond_1e
+    if-ne p1, v3, :cond_24
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_02:[I
+    .line 112
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_02:[I
 
-    array-length p0, p0
+    array-length v2, v2
 
-    return p0
+    return v2
 
-    :cond_4
-    const/4 p0, 0x2
+    .line 114
+    :cond_24
+    const/4 v3, 0x2
 
-    if-ne p1, p0, :cond_5
+    if-ne p1, v3, :cond_2b
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_03:[I
+    .line 115
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_03:[I
 
-    array-length p0, p0
+    array-length v2, v2
 
-    return p0
+    return v2
 
-    :cond_5
-    const/4 p0, 0x3
+    .line 117
+    :cond_2b
+    const/4 v3, 0x3
 
-    if-ne p1, p0, :cond_6
+    if-ne p1, v3, :cond_32
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
+    .line 118
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
 
-    array-length p0, p0
+    array-length v2, v2
 
-    return p0
+    return v2
 
-    :cond_6
-    const/16 p0, 0x9
+    .line 120
+    :cond_32
+    const/4 v3, 0x4
 
-    if-ne p1, p0, :cond_7
+    if-ne p1, v3, :cond_39
 
-    return v1
+    .line 121
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_04:[I
 
-    :cond_7
-    const/16 p0, 0xa
+    array-length v2, v2
 
-    if-ne p1, p0, :cond_8
+    return v2
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
+    .line 123
+    :cond_39
+    const/16 v3, 0x9
 
-    array-length p0, p0
+    if-ne p1, v3, :cond_3e
 
-    return p0
+    .line 124
+    return v2
 
-    :cond_8
-    const/16 p0, 0xb
+    .line 126
+    :cond_3e
+    const/16 v2, 0xa
 
-    if-ne p1, p0, :cond_9
+    if-ne p1, v2, :cond_46
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
+    .line 127
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_MCL:[I
 
-    array-length p0, p0
+    array-length v2, v2
 
-    return p0
+    return v2
 
-    :cond_9
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+    .line 129
+    :cond_46
+    const/16 v2, 0xb
 
-    array-length p0, p0
+    if-ne p1, v2, :cond_4e
 
-    return p0
+    .line 130
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_CUST01_ANIMATION:[I
+
+    array-length v2, v2
+
+    return v2
+
+    .line 132
+    :cond_4e
+    sget-object v2, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->DOWN_ANIMATION_DEFAULT:[I
+
+    array-length v2, v2
+
+    return v2
 .end method
 
 .method public static getDownStartFrameIndex(Landroid/content/Context;I)I
-    .locals 1
+    .registers 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
-    if-nez p1, :cond_0
+    .line 49
+    const-string v0, "fod_default_down_anim_start_frame"
 
+    const-string v1, "integer"
+
+    if-nez p1, :cond_13
+
+    .line 50
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v2
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_down_anim_start_frame:I
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v0
 
-    move-result p0
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_0
-    const/4 v0, 0x1
+    return v0
 
-    if-ne p1, v0, :cond_1
+    .line 52
+    :cond_13
+    const/4 v2, 0x1
 
+    if-ne p1, v2, :cond_25
+
+    .line 53
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_02_anim_start_frame:I
+    const-string v2, "fod_02_anim_start_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_1
-    const/4 v0, 0x2
+    move-result v0
 
-    if-ne p1, v0, :cond_2
+    return v0
 
+    .line 55
+    :cond_25
+    const/4 v2, 0x2
+
+    if-ne p1, v2, :cond_37
+
+    .line 56
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_03_anim_start_frame:I
+    const-string v2, "fod_03_anim_start_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_2
-    const/4 v0, 0x3
+    move-result v0
 
-    if-ne p1, v0, :cond_3
+    return v0
 
+    .line 58
+    :cond_37
+    const/4 v2, 0x3
+
+    const-string v3, "fod_mcl_anim_start_frame"
+
+    if-ne p1, v2, :cond_49
+
+    .line 59
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_mcl_anim_start_frame:I
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v1
 
-    move-result p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_3
-    const/16 v0, 0x9
+    return v0
 
-    if-ne p1, v0, :cond_4
+    .line 61
+    :cond_49
+    const/4 v2, 0x4
 
-    const/4 p0, -0x1
+    if-ne p1, v2, :cond_5b
 
-    return p0
-
-    :cond_4
-    const/16 v0, 0xa
-
-    if-ne p1, v0, :cond_5
-
+    .line 62
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_mcl_anim_start_frame:I
+    const-string v2, "fod_04_anim_start_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    :cond_5
-    const/16 v0, 0xb
+    move-result v0
 
-    if-ne p1, v0, :cond_6
+    return v0
 
+    .line 64
+    :cond_5b
+    const/16 v2, 0x9
+
+    if-ne p1, v2, :cond_61
+
+    .line 65
+    const/4 v0, -0x1
+
+    return v0
+
+    .line 67
+    :cond_61
+    const/16 v2, 0xa
+
+    if-ne p1, v2, :cond_72
+
+    .line 68
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_cust01_anim_start_frame:I
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v1
 
-    move-result p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
 
-    :cond_6
+    return v0
+
+    .line 70
+    :cond_72
+    const/16 v2, 0xb
+
+    if-ne p1, v2, :cond_85
+
+    .line 71
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_down_anim_start_frame:I
+    const-string v2, "fod_cust01_anim_start_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result p0
+    move-result v1
 
-    return p0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    return v0
+
+    .line 73
+    :cond_85
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static getUpAnimationRes(I)[I
-    .locals 0
+    .registers 2
+    .param p0, "i"    # I
 
-    if-nez p0, :cond_0
+    .line 45
+    if-nez p0, :cond_5
 
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
 
-    return-object p0
+    goto :goto_8
 
-    :cond_0
-    const/4 p0, 0x0
+    :cond_5
+    const/4 v0, 0x0
 
-    new-array p0, p0, [I
+    new-array v0, v0, [I
 
-    return-object p0
+    :goto_8
+    return-object v0
 .end method
 
 .method public static getUpEndFrameIndex(Landroid/content/Context;I)I
-    .locals 0
+    .registers 5
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
-    if-nez p1, :cond_0
+    .line 148
+    if-nez p1, :cond_13
 
+    .line 149
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_up_anim_end_frame:I
+    const-string v1, "fod_default_up_anim_end_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    const-string v2, "integer"
 
-    move-result p0
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    return p0
+    move-result v1
 
-    :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
+
+    return v0
+
+    .line 151
+    :cond_13
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public static getUpPlayFrameNum(Landroid/content/Context;I)I
-    .locals 2
+    .registers 5
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
+    .line 155
     const/4 v0, 0x0
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_4
 
+    .line 156
+    return v0
+
+    .line 158
+    :cond_4
     invoke-static {p0, p1}, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->getUpStartFrameIndex(Landroid/content/Context;I)I
 
     move-result v1
 
+    .line 159
+    .local v1, "upStartFrameIndex":I
     invoke-static {p0, p1}, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->getUpEndFrameIndex(Landroid/content/Context;I)I
 
-    move-result p0
+    move-result v2
 
-    if-ltz v1, :cond_2
+    .line 160
+    .local v2, "upEndFrameIndex":I
+    if-ltz v1, :cond_1b
 
-    if-ltz p0, :cond_2
+    if-ltz v2, :cond_1b
 
-    if-le v1, p0, :cond_0
+    if-le v1, v2, :cond_13
 
-    goto :goto_0
+    goto :goto_1b
 
-    :cond_0
-    if-ne v1, p0, :cond_1
+    .line 163
+    :cond_13
+    if-ne v1, v2, :cond_16
+
+    .line 164
+    return v0
+
+    .line 166
+    :cond_16
+    sub-int v0, v2, v1
+
+    add-int/lit8 v0, v0, 0x1
 
     return v0
 
-    :cond_1
-    sub-int/2addr p0, v1
+    .line 161
+    :cond_1b
+    :goto_1b
+    sget-object v0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
 
-    add-int/lit8 p0, p0, 0x1
+    array-length v0, v0
 
-    return p0
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lcom/oneplus/systemui/biometrics/OpFingerprintAnimationResHelper;->UP_ANIMATION_DEFAULT:[I
-
-    array-length p0, p0
-
-    return p0
-
-    :cond_3
     return v0
 .end method
 
 .method public static getUpStartFrameIndex(Landroid/content/Context;I)I
-    .locals 0
+    .registers 5
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "i"    # I
 
-    if-nez p1, :cond_0
+    .line 141
+    if-nez p1, :cond_13
 
+    .line 142
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    sget p1, Lcom/android/systemui/R$integer;->fod_default_up_anim_start_frame:I
+    const-string v1, "fod_default_up_anim_start_frame"
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getInteger(I)I
+    const-string v2, "integer"
 
-    move-result p0
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    return p0
+    move-result v1
 
-    :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    return p0
+    move-result v0
+
+    return v0
+
+    .line 144
+    :cond_13
+    const/4 v0, 0x0
+
+    return v0
 .end method

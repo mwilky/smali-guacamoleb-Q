@@ -49,7 +49,7 @@
     <integer name="fod_02_anim_start_frame">0</integer>
     <integer name="fod_03_anim_end_frame">25</integer>
     <integer name="fod_03_anim_start_frame">0</integer>
-    <integer name="fod_04_anim_end_frame">0</integer>
+    <integer name="fod_04_anim_end_frame">45</integer>
     <integer name="fod_04_anim_start_frame">0</integer>
     <integer name="fod_cust01_anim_end_frame">0</integer>
     <integer name="fod_cust01_anim_start_frame">0</integer>
