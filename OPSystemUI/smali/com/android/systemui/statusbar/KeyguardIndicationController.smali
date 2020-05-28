@@ -3059,10 +3059,10 @@
     iget-object p0, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    
-    invoke-virtual {v3}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
 
     :cond_7
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
+    
     return-void
 .end method
 
