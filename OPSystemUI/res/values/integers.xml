@@ -57,7 +57,7 @@
     <integer name="fod_default_down_anim_start_frame">0</integer>
     <integer name="fod_default_up_anim_end_frame">0</integer>
     <integer name="fod_default_up_anim_start_frame">0</integer>
-    <integer name="fod_mcl_anim_end_frame">60</integer>
+    <integer name="fod_mcl_anim_end_frame">51</integer>
     <integer name="fod_mcl_anim_start_frame">0</integer>
     <integer name="heads_up_default_snooze_length_ms">60000</integer>
     <integer name="heads_up_notification_decay">5000</integer>
