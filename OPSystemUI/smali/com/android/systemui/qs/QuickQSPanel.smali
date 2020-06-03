@@ -143,7 +143,7 @@
 
     sget v0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQsNumber:I
 
-    const-string v1, "sysui_qqs_count"
+    const-string/jumbo v1, "sysui_qqs_count"
 
     invoke-virtual {p0, v1, v0}, Lcom/android/systemui/tuner/TunerService;->getValue(Ljava/lang/String;I)I
 
@@ -196,7 +196,7 @@
 
     iget-object p0, p0, Lcom/android/systemui/qs/QuickQSPanel;->mNumTiles:Lcom/android/systemui/tuner/TunerService$Tunable;
 
-    const-string v1, "sysui_qqs_count"
+    const-string/jumbo v1, "sysui_qqs_count"
 
     filled-new-array {v1}, [Ljava/lang/String;
 

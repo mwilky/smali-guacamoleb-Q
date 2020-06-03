@@ -230,7 +230,7 @@
 
     iget-boolean v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mVisible:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mVisibleState:I
 
@@ -238,12 +238,27 @@
 
     const/16 v2, 0x8
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/4 v3, 0x1
 
+    if-eq v0, v3, :cond_1
+
+    const/4 v3, 0x2
+
     if-eq v0, v3, :cond_0
 
+    iget-object v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mOPCustView:Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;->setVisibility(I)V
+
+    iget-object p0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
+
+    invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setVisibility(I)V
+
+    goto :goto_0
+
+    :cond_0
     iget-object v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mOPCustView:Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;->setVisibility(I)V
@@ -254,7 +269,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mOPCustView:Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;
 
     const/4 v2, 0x4
@@ -267,7 +282,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/oneplus/networkspeed/StatusBarOPCustView;->mOPCustView:Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/networkspeed/StatusBarOPCustView$OPCustView;->setVisibility(I)V
@@ -276,7 +291,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setVisibility(I)V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 .end method
