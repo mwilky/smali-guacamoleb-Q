@@ -140,6 +140,8 @@
     const p2, -0x7f000001
 
     :cond_0
+    sget p1, Lcom/android/mwilky/Renovate;->mBatteryIconColor:I
+    
     iget-object v0, p0, Lcom/oneplus/systemui/OpBatteryMeterView;->mBatteryDashChargeView:Lcom/oneplus/battery/OpBatteryDashChargeView;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/battery/OpBatteryDashChargeView;->setIconTint(I)V
